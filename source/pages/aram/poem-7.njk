@@ -1,0 +1,24 @@
+{% extends template %}
+
+{% set title = "«Унылый день. Слепа надежда…»" %}
+{% set pubdate = "17.04.2002" %}
+{% set next = "buryan/prose-1" %}
+{% set workplace = "Санкт-Петербург" %}
+
+{% block content %}
+  {% filter poem %}
+    Унылый день. Слепа надежда…
+    Я в парке жду её давно.
+    Прекрасный взгляд, красивая одежда —
+    Увидеть мне не суждено.
+
+    Моя любимая, родная,
+    Прийти на встречу не спешит.
+    Лишь зимний ветер, завывая,
+    Все мысли медленно мути{{ acute }}т.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2002-02">Февраль 2002, {{ workplace }}</time>
+{% endblock %}

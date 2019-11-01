@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Разбудить во взрослых детство…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Разбудить во взрослых детство,
+    Вспомнить шалости свои.
+    Лучше нет от грусти средства,
+    Чем святого детства дни.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2003-03">Март 2003</time>
+{% endblock %}

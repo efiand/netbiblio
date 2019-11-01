@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Душа осветилась надеждой…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Душа осветилась надеждой,
+    Что снова поможет мне Бог
+    И стану я сильной, как прежде,
+    На перекрёстке дорог.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2004-10">Октябрь 2004</time>
+{% endblock %}

@@ -1,0 +1,52 @@
+{
+  "host": "https://netbiblio.ru",
+  "siteName": "«Netbiblio»",
+  "template": "source/components/_page/page.njk",
+  "tasks": {
+    "compile": [
+      "css",
+      "scripts",
+      "pages",
+      "html",
+      "img",
+      "webp",
+      "static"
+    ],
+    "dev": [
+      "clean",
+      "tmp",
+      "compile",
+      "server"
+    ],
+    "build": [
+      "clean",
+      "tmp",
+      "favicons",
+      "compile",
+      "amp",
+      "sitemap"
+    ]
+  },
+  "watchers": [
+    [
+      ["source/**/*.js"],
+      ["scripts"]
+    ],
+    [
+      ["source/**/*.scss"],
+      ["css"]
+    ],
+    [
+      ["source/**/*.njk"],
+      ["pages", "html"]
+    ],
+    [
+      "source/img/**/*.{jpg,png}",
+      ["img", "webp"]
+    ],
+    [
+      "source/static/**/*",
+      ["static"]
+    ]
+  ]
+}

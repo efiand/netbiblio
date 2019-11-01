@@ -1,0 +1,19 @@
+{% extends template %}
+
+{% set title = "«Мне спокойно на этой Земле…»" %}
+{% set pubdate = "10.03.2018" %}
+
+{% block content %}
+  {% filter poem %}
+    Мне спокойно на этой Земле,
+    Если знать, что живут друзья,
+    Что родня у себя во дворе,
+    В полном сборе моя семья.
+    Мне уютно на этой Земле,
+    Если знать. что я не одна.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1990">1990</time>
+{% endblock %}

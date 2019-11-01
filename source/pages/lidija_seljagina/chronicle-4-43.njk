@@ -1,0 +1,25 @@
+{% extends template %}
+
+{% set title = "«В магазин войду, открою рот…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block preface %}
+  {% filter ins %}
+    {% filter short %}
+      Бешеный подскок цен (в несколько раз) и бесконтрольность этого вопроса свели в могилу море людей.
+    {% endfilter %}
+  {% endfilter %}
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    В магазин войду, открою рот —
+    И уйду, забыв его захлопнуть,
+    И от навалившихся забот
+    Сердце, испугавшись, может лопнуть.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1992">1992</time>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% macro animationRuleBody(value) %}
+  -webkit-animation: {{ value }};
+  -moz-animation: {{ value }};
+  -ms-animation: {{ value }};
+  animation: {{ value }};
+{% endmacro %}
+
+{% set keyframe = "-amp-start {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility:visible;
+  }
+}" %}
+
+{% set codeBaseUrl = "//cdn.ampproject.org/v0" %}
+
+<style amp-custom>
+  {% filter prepareInlineCss(page) %}
+    {% include "build/css/style.min.css" %}
+  {% endfilter %}
+</style>
+<style amp-boilerplate>
+  body {
+    {{ animationRuleBody('-amp-start 8s steps(1, end) 0s 1 normal both') }}
+  }
+  @-webkit-keyframes {{ keyframe }}
+  @-moz-keyframes {{ keyframe }}
+  @-ms-keyframes {{ keyframe }}
+  @-o-keyframes {{ keyframe }}
+  @keyframes {{ keyframe }}
+</style>
+<noscript>
+  <style amp-boilerplate>
+    body {
+      {{ animationRuleBody('none') }}
+    }
+  </style>
+</noscript>
+
+<script type="application/ld+json">
+  {% filter minifyJson %}
+    {
+      '@context': 'http://schema.org',
+      '@type': '{{ openGraphType }}',
+      'headline': '{{ headTitle }}',
+      'image': ['{{ host }}/img/{{ openGraphImg }}']
+    }
+  {% endfilter %}
+</script>
+<script async src="{{ codeBaseUrl }}.js"></script>
+<script async custom-element="amp-form"
+  src="{{ codeBaseUrl }}/amp-form-0.1.js"></script>
+{% if yandexMetrikaId %}
+  <script async custom-element="amp-analytics"
+    src="{{ codeBaseUrl }}/amp-analytics-0.1.js"></script>
+{% endif %}

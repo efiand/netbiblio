@@ -1,0 +1,22 @@
+.code {
+  font-family: $monospace;
+
+  .art & {
+    font-size: 1rem;
+  }
+
+  &--example {
+    padding: 0.2rem 0.5rem;
+    background-color: $color-brand-lite;
+    border-radius: 0.25rem;
+  }
+
+  &--block {
+    display: table;
+    margin: 1.5rem auto;
+    padding: 1rem 1.5rem;
+    white-space: pre-wrap;
+    background-color: $color-brand-lite;
+    border-radius: 0.25rem;
+  }
+}

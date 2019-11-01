@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«А у меня есть большее, чем ты…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    А у меня есть большее, чем ты —
+    Есть взмах пера израненной души.
+    И жажду жизни горем не задушишь,
+    А память сохранит твои черты.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2003-09">Сентябрь 2003</time>
+{% endblock %}

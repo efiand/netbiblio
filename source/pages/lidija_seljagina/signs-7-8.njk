@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Распахнулось окно — и послышалась песня…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Распахнулось окно — и послышалась песня.
+    Солнце в стёклышках мягко разбросало лучи,
+    Так что в комнате сразу стало шумно и тесно,
+    И петух окаянный во всё горло кричит.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1974">1974</time>
+{% endblock %}

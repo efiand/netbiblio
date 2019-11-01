@@ -1,0 +1,9 @@
+{# Выводит ссылку на блок сносок #}
+{% macro notelink(text, n, param = "") -%}
+  <span class="art__note-place"
+    {%- if param !== "double" %} id="note-{{ n }}-place"{% endif %}>
+    {{- text -}}
+  </span><a class="art__note-link" href="#note-{{ n }}">
+    {{- n -}}
+  </a>
+{%- endmacro %}

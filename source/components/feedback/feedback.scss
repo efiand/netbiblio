@@ -1,0 +1,133 @@
+.feedback {
+  &.modal--target {
+    background-color: rgba($color-brand, 0.6);
+  }
+}
+
+.feedback__form {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem 0;
+  background-color: #ffffff;
+
+  .modal--js & {
+    max-width: 72rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+
+    @media (min-width: 768px) {
+      padding: 4rem 3rem;
+    }
+
+    @media (min-width: 1024px) {
+      padding: 4rem 5rem;
+    }
+  }
+}
+
+.feedback__heading {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 0 3rem;
+  padding: 0 48px;
+}
+
+.feedback__error-note {
+  margin: -1.5rem auto 3rem;
+}
+
+.feedback__group {
+  width: 100%;
+  margin: 0 0 2rem;
+  font-size: 0.9375rem;
+
+  @media (min-width: 768px) {
+    width: calc(50% - 1rem);
+
+    &--message {
+      width: 100%;
+    }
+  }
+}
+
+.feedback__field {
+  width: 100%;
+  min-height: 2.75rem;
+  margin: 0.5rem 0 0;
+  padding: 0.5rem;
+  color: $color-brand;
+  -webkit-text-fill-color: $color-brand;
+  border: 2px solid rgba($color-brand, 0.4);
+  border-radius: 0.25rem;
+
+  &:-webkit-autofill {
+    border-color: rgba($color-brand, 0.4);
+  }
+
+  &:invalid {
+    color: $color-text;
+    -webkit-text-fill-color: $color-text;
+    border-color: rgba($color-text, 0.4);
+  }
+
+  &:focus {
+    border-color: currentColor;
+
+    &:-webkit-autofill {
+      border-color: $color-brand;
+    }
+  }
+
+  &::placeholder {
+    color: inherit;
+    opacity: 0.5;
+  }
+
+  &--message {
+    height: 12rem;
+  }
+}
+
+.feedback__button {
+  display: table;
+  margin: 0 auto;
+}
+
+.feedback__closer {
+  @include crossIcon(24px, 3px);
+
+  position: absolute;
+  top: 2.35rem;
+  right: 1.5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.5s ease-in-out;
+
+  @media (min-width: 768px) {
+    top: 4.35rem;
+    right: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    right: 5rem;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.1;
+  }
+
+  &::before,
+  &::after {
+    background-color: $color-brand;
+  }
+}

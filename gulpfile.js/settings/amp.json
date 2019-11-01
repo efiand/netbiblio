@@ -1,0 +1,13 @@
+{
+  "dest": "build/amp",
+  "files": [
+    [
+      "build/img/*.{jpg,png,svg,webp}",
+      "build/fonts/*.{woff,woff2}"
+    ],
+    {
+      "base": "build"
+    }
+  ],
+  "css": "build/css/style.min.css"
+}

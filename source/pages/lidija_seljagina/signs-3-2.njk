@@ -1,0 +1,18 @@
+{% extends template %}
+
+{% set title = "Девочке из блокады" %}
+{% set workdate = "05.06.2004" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block preface %}
+  <p class="art__dedic">Инне Николаевне Платоновой</p>
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Ушла в миры иные упокоенной,
+    Что всё-таки успела передать
+    Связному (что судьбою уготовано)
+    Эпохи след — блокадную тетрадь.
+  {% endfilter %}
+{% endblock %}

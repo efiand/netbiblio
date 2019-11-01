@@ -1,0 +1,107 @@
+{% extends template %}
+
+{% set title = "Лидия Селягина" %}
+{% set pubdate = "10.03.2008" %}
+{% set contact = "//vk.com/lidija_seljagina" %}
+{% set prev = "irges/index" %}
+{% set next = "shuvalow/index" %}
+{% set biographyHeading = "Автобиография" %}
+
+{% set openGraphImg = "lidija_seljagina.jpg" %}
+{% set openGraphImgType = "image/jpeg" %}
+{% set openGraphImgWidth = 432 %}
+{% set openGraphImgHeight = 312 %}
+{% set openGraphImgAlt = "Автор в период работы участковым инспектором" %}
+{% set gender = "female" %}
+
+{% block toc %}
+  <h2 class="art__subtitle">Следы оставлю на Земле</h2>
+  <p class="page__subtitle-descr">(Сборник стихотворений)</p>
+  {{ tocSeria([
+    "Земля любимая",
+    "О поэзии и поэтах",
+    "Литературному клубу «Рунеж»",
+    "С кем рядом шла",
+    "Моя Родина Россия",
+    "Детства уголок",
+    "Времена года",
+    "Женские судьбы",
+    "Не унывай",
+    "Лирика",
+    "Ах, думы краткие мои!",
+    "Раздумья"
+  ], "signs") }}
+
+  <h2 class="art__subtitle">Дорогие мои земляки!</h2>
+  <p class="page__subtitle-descr">(Сборник стихотворений)</p>
+  <ul class="page__toc toc">
+    <li class="toc__item">
+      <a class="toc__link" href="/lidija_seljagina/resorts.html">
+        Курортных городков волшебное кольцо
+      </a>
+    </li>
+  </ul>
+  {{ tocSeria([
+    "Родные местечки",
+    "Дорогие мои земляки!",
+    "О поэзии вчера и сегодня"
+  ], "fc") }}
+
+  <h2 class="art__subtitle">Летопись от Древнекиевской Руси до России. От Рюрика до Путина</h2>
+  <p class="page__subtitle-descr">(В стихах)</p>
+  {{ tocSeria([
+    "Часть 1-я",
+    "Часть 2-я",
+    "Часть 3-я",
+    ["Перестройка, перебранка, перекличка", "Летопись 90-х гг. XX века в России"]
+  ], "chronicle") }}
+
+  <h2 class="art__subtitle">Стихотворения</h2>
+  {{ worksCollection("poem") }}
+
+  <h3 class="page__toc-title">Любознательным ребяткам. Узнаём всё по порядку</h3>
+  {{ worksCollection("children") }}
+
+  <h2 class="art__subtitle">Иришкины истории</h2>
+  <p class="page__subtitle-descr">(Рассказы)</p>
+  {{ tocSeria([
+    "Детство",
+    "Юность",
+    "Тяжела ты, шапка Мономаха!",
+    "Жизнь продолжается"
+  ], "ir") }}
+
+  <h2 class="art__subtitle">
+    Точка отсчёта <small>или</small> По лабиринтам жизни
+  </h2>
+  {{ tocSeria([
+    "I",
+    "II"
+  ], "point") }}
+{% endblock %}
+
+{% block biography %}
+  {{ worksCollection("bio") }}
+
+  {{ figure("lidija_seljagina.jpg", "", "Лидия Дмитриевна Селягина на службе", openGraphImgWidth, openGraphImgHeight) }}
+
+  {% filter prose %}
+    Я, Селягина Лидия Дмитриевна, родилась в Ленинграде 24 августа 1941 года. Девичья фамилия — Виноградова.
+    Окончила педучилище. С 1965 года живу в Сестрорецке. Работала на заводе имени М. И. Калинина, на заводе имени С. П. Воскова, в Сестрорецком РК ВЛКСМ, позже воспитателем в детском саду, участковым инспектором в РУВД, в военно-морской академии имени Н. Г. Кузнецова.
+    Стихи пишу с детства. Занималась в литературных объединениях Ленинграда у Николая Новосёлова и Николая Кутова. Сейчас состою в литературном клубе «<a href="https://vk.com/club23358182" target="_blank" rel="nofollow">Рунеж</a>». Литература стала для меня таким же стимулом жизни, как дети.
+    Книги — и есть наши дети…
+  {% endfilter %}
+
+  <ul class="page__toc toc">
+    <li class="toc__item">
+      <a class="toc__link" href="/lidija_seljagina/dates.html">
+        Перечень рассказов Лидии Селягиной с указанием дат отражённых в них событий
+      </a>
+    </li>
+  </ul>
+
+  <h3 class="page__toc-title">Истории участкового инспектора</h3>
+  {{ worksCollection("inspector") }}
+
+  {{ authorLinks("//vk.com/l_sel") }}
+{% endblock %}

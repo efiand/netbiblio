@@ -1,0 +1,15 @@
+{% extends template %}
+
+{% set title = "Душа" %}
+{% set pubdate = "05.11.2007" %}
+{% set workdate = "02.10.2007" %}
+{% set workplace = "Дачное" %}
+
+{% block content %}
+  {% filter poem %}
+    Нагой души естественны черты,
+    Невинны, словно девы юной плоть, —
+    И только для неё, как свет мечты,
+    Откроет слово истины Господь.
+  {% endfilter %}
+{% endblock %}

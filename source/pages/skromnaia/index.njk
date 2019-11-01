@@ -1,0 +1,28 @@
+{% extends template %}
+
+{% set title = "Skromnaia" %}
+{% set pubdate = "23.02.2012" %}
+{% set contact = "mailto:lbsorkina@gmail.com" %}
+{% set prev = "icecreamhater/index" %}
+{% set next = "delf/index" %}
+{% set gender = "female" %}
+
+{% block toc %}
+  <h2 class="art__subtitle">Малая проза</h2>
+  <ul class="page__toc toc">
+    <li class="toc__item">
+      <a class="toc__link" href="/skromnaia/inner.html">
+        То, что внутри… <span class="toc__item-descr">(Миниатюра)</span>
+      </a>
+    </li>
+  </ul>
+
+  <h2 class="art__subtitle">Крупная проза</h2>
+  <h3 class="page__toc-title">Надеюсь и верю</h3>
+  <p class="page__subtitle-descr">(Эротическая повесть)</p>
+  {{ worksCollection("hope") }}
+
+  <h3 class="page__toc-title">История плохой-хорошей девочки</h3>
+  <p class="page__subtitle-descr">(Повесть)</p>
+  {{ worksCollection("girl") }}
+{% endblock %}

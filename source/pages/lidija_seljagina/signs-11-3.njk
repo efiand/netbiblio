@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Я кусочек души выпускаю…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Я кусочек души выпускаю
+    В кругосветное плаванье, в мир.
+    Всем своим существом замираю
+    За судьбу расплескавшихся лир.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2002-12">Декабрь 2002</time>
+{% endblock %}

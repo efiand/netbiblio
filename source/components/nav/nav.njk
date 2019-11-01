@@ -1,0 +1,39 @@
+<header class="nav">
+  <nav>
+    <div class="nav__logo">
+      <a class="nav__link nav__link--logo"
+        {% if page !== "index" %} href="../index.html"{% endif %}>
+        <span class="visually-hidden">
+          Логотип {{ siteName }}, ссылка на главную страницу
+        </span>
+        {% include "source/img/service/nb-logo.svg" %}
+      </a>
+    </div>
+
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a class="nav__link nav__link--prev" rel="prev" href="/{{ prev }}.html" title="{{ prevTitle }}">
+          <span class="visually-hidden">
+            {{ prevTitle }}
+          </span>
+        </a>
+      </li>
+
+      {% if page !== "index" %}
+        <li class="nav__item">
+          <a class="nav__link nav__link--toc" rel="toc" href="/{{ tocHref }}" title="{{ tocTitle }}">
+            {{ tocText }}
+          </a>
+        </li>
+      {% endif %}
+
+      <li class="nav__item">
+        <a class="nav__link nav__link--next" rel="next" href="/{{ next }}.html" title="{{ nextTitle }}">
+          <span class="visually-hidden">
+            {{ nextTitle }}
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

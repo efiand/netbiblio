@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Перестали девочки девочками быть…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Перестали девочки девочками быть,
+    Перестали платьица славные носить.
+    Чаще всё штанишки, сигаретки нить.
+    Что ж вы, девы, девочками перестали быть?
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2002-08">Август 2002</time>
+{% endblock %}

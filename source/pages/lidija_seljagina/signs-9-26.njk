@@ -1,0 +1,20 @@
+{% extends template %}
+
+{% set title = "«Не будем торопиться…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Не будем торопиться.
+    Пусть всё здесь отстоится.
+    И что должно случиться —
+    Когда-то приключится.
+
+    Не будем торопиться.
+    Пусть всё здесь отстоится.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2001-05">Май 2001</time>
+{% endblock %}

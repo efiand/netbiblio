@@ -1,0 +1,29 @@
+.collapse {
+  @media screen {
+    position: absolute;
+    left: -10000px;
+    visibility: hidden;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  clip: rect(0, 0, 0, 0);
+
+  &--no-mobile {
+    @media (max-width: 767px) {
+      position: static;
+    }
+  }
+}
+
+.no-print {
+  @media print {
+    display: none;
+  }
+}

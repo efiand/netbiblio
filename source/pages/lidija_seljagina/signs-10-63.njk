@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Я не боюсь брожения молвы…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Я не боюсь брожения молвы.
+    Пусть говорят, соединяя нас.
+    Так пусть хоть в ней я буду вся твоя!
+    И разум наш от счастия угас.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1975">1975</time>
+{% endblock %}

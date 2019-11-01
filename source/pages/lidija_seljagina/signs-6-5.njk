@@ -1,0 +1,31 @@
+{% extends template %}
+
+{% set title = "«А у Сашки на рубашке…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block preface %}
+  <p class="art__dedic">Моему племяннику</p>
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    А у Сашки на рубашке
+    Расцвели ромашки,
+    И такие же ромашки —
+    Рядом на бумажке.
+
+    Он ручонки тянет к ним
+    И не понимает,
+    Почему же мама их
+    Водой не поливает.
+
+    Саше спать пора в кроватке —
+    Тихо, не смеяться,
+    И ромашкам вместе с Сашкой
+    Сны смешные снятся.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1962">1962</time>
+{% endblock %}

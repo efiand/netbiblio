@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "Эпилог для Библии" %}
+{% set pubdate = "01.01.2012" %}
+{% set next = "galamala/she-wolf" %}
+
+{% block content %}
+  {% filter poem %}
+    Весь мир утонул во лжи,
+    в грязном потоке слов.
+    В Итоге — убита жизнь.
+    В Начале была любовь.
+  {% endfilter %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "Камилла Ф." %}
+{% set pubdate = "03.10.2011" %}
+{% set prev = "tulina/index" %}
+{% set next = "irges/index" %}
+{% set gender = "female" %}
+
+{% block toc %}
+  <h2 class="art__subtitle">Малая проза</h2>
+  <ul class="page__toc toc">
+    <li class="toc__item">
+      <a class="toc__link" href="/emma/gold.html">
+        День, когда сжигают золото <span class="toc__item-descr">(Рассказ)</span>
+      </a>
+    </li>
+  </ul>
+
+  <h3 class="page__toc-title">Очерки уходящего лета</h3>
+  <p class="page__subtitle-descr">(Рассказы)</p>
+  {{ worksCollection("summer") }}
+{% endblock %}

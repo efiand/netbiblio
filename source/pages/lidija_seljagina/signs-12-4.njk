@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Для чего живёшь ты?» — я спрошу однажды…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    «Для чего живёшь ты?» — я спрошу однажды.
+    Не дослушав даже, скажешь: «Так хочу». —
+    «Для чего живёшь ты?» — спрашиваю дважды.
+    «Сам не знаю, милая, жизни смысл ищу».
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1960">1960</time>
+{% endblock %}

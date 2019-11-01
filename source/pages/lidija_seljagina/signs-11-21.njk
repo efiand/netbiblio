@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "«Ряды редеют…»" %}
+{% set workdate = "03.06.2004" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Ряды редеют.
+    Волосы седеют.
+    Всё так обычно.
+    Сердцу — непривычно.
+  {% endfilter %}
+{% endblock %}

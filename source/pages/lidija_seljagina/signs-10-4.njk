@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Словно птицы, мысли разлетятся…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Словно птицы, мысли разлетятся.
+    Только дрогнет сердце, а глаза твои,
+    Заглянув мне в душу, жарко загорятся
+    И заставят вспомнить только наши дни.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1960">1960</time>
+{% endblock %}

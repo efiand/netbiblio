@@ -1,0 +1,19 @@
+{% extends template %}
+
+{% set title = "«Жизнь, ты так быстро пробежала…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Жизнь, ты так быстро пробежала,
+    Что я заметить не смогла.
+    Я для кого-то всё бежала,
+    Я за кого-то всё решала,
+    А ты всё рядышком бежала.
+    И вот… К чему теперь пришла?
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2001">2001</time>
+{% endblock %}

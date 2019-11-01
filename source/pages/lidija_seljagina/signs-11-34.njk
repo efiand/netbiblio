@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Вы о чём, ребята, спорите…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Вы о чём, ребята, спорите?
+    Здесь уж нечего делить.
+    Если б было всё по совести,
+    Видно, было б скучно жить.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2003-06">Июнь 2003</time>
+{% endblock %}

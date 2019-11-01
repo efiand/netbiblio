@@ -1,0 +1,13 @@
+{% extends template %}
+
+{% set title = "Михаил Костин" %}
+{% set pubdate = "17.03.2008" %}
+{% set contact = "//vk.com/id4947562" %}
+{% set prev = "skyfield/index" %}
+{% set next = "natashe5ka/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+
+{% block toc %}
+  {{ worksCollection("poem") }}
+{% endblock %}

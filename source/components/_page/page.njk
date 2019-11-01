@@ -1,0 +1,145 @@
+{% extends 'source/layouts/netbiblio/index.njk' %}
+
+{% block layout %}
+  <!DOCTYPE html>
+  <html class="page" lang="ru" {{ htmlParams }}>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+
+    <title>{{ headTitle }}</title>
+    <meta name="description" content="{{ pageDescription }}">
+    <link rel="canonical" href="{{ url }}">
+
+    {% include "source/layouts/netbiblio/head" + ampSuffix + ".njk" %}
+  </head>
+
+  <body class="page__body">
+    <div class="page__inner">
+      {% include "source/components/nav/nav.njk" %}
+
+      <main class="art">
+        {# Пробелы для 1) предлогов и 2) тире — явные, чтобы не засорять код, #}
+        {% filter typograph(" ", " ") %}
+
+          {# Заголовок страницы #}
+          <header>
+            {% block heading %}
+              {% if title.slice(-2) === "…»" %}
+                <h1 class="art__title art__title--asters">
+                  <span class="visually-hidden">{{ title }}</span>
+                </h1>
+              {% else %}
+                <h1 class="art__title">
+                  {% if parentTitle %}
+                    {# Если страница — часть произведения, то здесь заголовок произведения #}
+                    {{ parentTitle }}
+                  {% else %}
+                    {{ title }}
+                  {% endif %}
+                </h1>
+              {% endif %}
+
+              {% if titleDescr %}
+                <p class="art__title-descr">({{ titleDescr }})</p>
+              {% endif %}
+            {% endblock %}
+          </header>
+
+          {% if pageType === "work" %}
+            <p class="page__author">
+              <a class="page__author-link" href="/{{ authorPage }}.html" title="{{ tocTitle }}">
+                {{ author }}
+              </a>
+            </p>
+
+            {% block preface %}{% endblock %}
+
+            {% block subtitle %}
+              {% if parentTitle %}
+                {# Если страница — часть произведения, то здесь её заголовок #}
+                <h2 class="art__subtitle">{{ title }}</h2>
+              {% endif %}
+            {% endblock %}
+          {% endif %}
+
+          {% block content %}
+            {% if pageType === "work" %}
+              <p class="art__short">Текст в работе, скоро будет опубликован!</p>
+            {% endif %}
+          {% endblock %}
+
+          {% if pageType === "author" %}
+            {% if tocBlockHeading %}
+              <h2 class="art__subtitle">{{ tocBlockHeading }}</h2>
+            {% endif %}
+
+            {% block toc %}
+              {{ worksCollection() }}
+            {% endblock %}
+
+            {% if biographyHeading %}
+              {# Биография автора #}
+              <h2 class="art__subtitle page__targetable" id="biography">{{ biographyHeading }}</h2>
+
+              {% block biography %}{% endblock %}
+            {% endif %}
+          {% endif %}
+
+          {% block dateplace %}
+            {% if workdate %}
+              <time class="page__workdate" datetime="{{ workdate | dateToUtc }}">
+                {{ workdate }}{% if workplace %}, {{ workplace }}{% endif %}
+              </time>
+            {% endif %}
+          {% endblock %}
+
+          {% block addition %}{% endblock %}
+
+          {# Список примечаний #}
+          {% filter notesList %}
+            {% block notes %}{% endblock %}
+          {% endfilter %}
+        {% endfilter %}
+      </main>
+
+      {% if nick !== "docs" %}
+        <aside class="art reviews no-print">
+          <button class="reviews__button reviews__button--shower button hidden">Показать отзывы</button>
+          <div class="reviews__wrapper">
+            <h2 class="reviews__heading art__subtitle">Отзывы</h2>
+
+            {% block reviews %}
+            <p class="art__ins art__short page__noselect">
+              Отзывов нет. Ваш будет первым!
+            </p>
+            {% endblock %}
+
+            <button class="reviews__button button hidden" data-open="feedback">Добавить отзыв</button>
+            <p class="art__ins art__short reviews__error-note page__noselect hidden">
+              Для отправки сообщения об ошибке выделите текст и нажмите эту кнопку или <kbd class="code">Ctrl+Enter</kbd>.
+            </p>
+          </div>
+
+          {% include "source/components/feedback/feedback.njk" %}
+        </aside>
+      {% endif %}
+
+      {% include "source/components/footer/footer.njk" %}
+    </div>
+
+    {% if not isAmp %}
+      <script src="/js/scripts{{ minSuffix }}.js"></script>
+    {% endif %}
+
+    {% if not isDev %}
+      {% include "source/layouts/netbiblio/yandex-metrika.njk" %}
+    {% endif %}
+  </body>
+  </html>
+{% endblock %}

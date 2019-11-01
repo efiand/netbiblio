@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Чмокну в щёчку беззубым ртом…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Чмокну в щёчку беззубым ртом,
+    Засмеюсь, как дитё малое,
+    Заискрюсь, засвечусь огнём.
+    Эх, души состоянье хмельное!
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2003-01">Январь 2003</time>
+{% endblock %}

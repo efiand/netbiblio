@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Захлебнёмся в кошмарном угаре…»" %}
+{% set pubdate = "10.03.2018" %}
+
+{% block content %}
+  {% filter poem %}
+    Захлебнёмся в кошмарном угаре.
+    Чёрный рынок набрал виражи.
+    Уж утрачено чувство морали.
+    Супербанки погрязли во лжи.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1991">1991</time>
+{% endblock %}

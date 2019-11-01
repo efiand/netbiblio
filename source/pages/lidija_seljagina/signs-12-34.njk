@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Не надо ворошить моё бельё…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Не надо ворошить моё бельё.
+    Всё, что моё, — воистину законно.
+    Я не хочу, чтоб всякое жульё
+    Искало грязь в моей душе бездонной.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1992">1992</time>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "«Мы все пережили шок…»" %}
+{% set workdate = "21.11.2003" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Мы все пережили шок.
+    Воспоминаний — мешок.
+    Как трудно остаться людьми
+    В такие безумные дни!
+  {% endfilter %}
+{% endblock %}

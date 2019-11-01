@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Мир по-прежнему хитрый и сложный…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Мир по-прежнему хитрый и сложный.
+    В нём святого — одна природа
+    Да спина от рабочего пота.
+    В остальном же он — грешный и ложный.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1963">1963</time>
+{% endblock %}

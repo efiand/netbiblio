@@ -1,0 +1,18 @@
+{% extends template %}
+
+{% set title = "«Синь такая отражается в воде…»" %}
+{% set workplace = "Мурмаши, р. Тулома" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Синь такая отражается в воде,
+    Что утонешь взглядом, если глянешь.
+    Взгляд поднимешь… словно покрывалом,
+    Сопки скрыты в снежной белизне.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1961">1961, Мурмаши, р. Тулома</time>
+{% endblock %}

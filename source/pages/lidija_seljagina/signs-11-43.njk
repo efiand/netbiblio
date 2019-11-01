@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Скоро в жизни придёт обновленье…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Скоро в жизни придёт обновленье:
+    Вставим зубы и сменим одежды.
+    Нам подарит весна озаренье,
+    И реальными станут надежды.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2002-02">Февраль 2002</time>
+{% endblock %}

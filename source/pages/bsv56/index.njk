@@ -1,0 +1,13 @@
+{% extends template %}
+
+{% set title = "Сергей Багаев" %}
+{% set pubdate = "26.02.2008" %}
+{% set contact = "mailto@bsv56@rambler.ru" %}
+{% set prev = "lanadar/index" %}
+{% set next = "s.fedotovz/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+
+{% block toc %}
+  {{ worksCollection("poem") }}
+{% endblock %}

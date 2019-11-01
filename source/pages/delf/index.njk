@@ -1,0 +1,64 @@
+{% extends template %}
+
+{% set title = "Ал.Боссер" %}
+{% set pubdate = "18.12.2011" %}
+{% set prev = "skromnaia/index" %}
+{% set next = "aleteya/index" %}
+{% set gender = "female" %}
+{% set biographyHeading = "О себе" %}
+
+{% block toc %}
+  <h2 class="art__subtitle">Малая проза</h2>
+  <h3 class="page__toc-title">Несерьёзное настроение</h3>
+  <p class="page__subtitle-descr">(Юмористические рассказы)</p>
+  {{ worksCollection("humor", 0) }}
+
+  <h3 class="page__toc-title">Никогда. Иногда. Всегда</h3>
+  <p class="page__subtitle-descr">(Рассказы)</p>
+  {{ worksCollection("never-ever", 0) }}
+
+  <h3 class="page__toc-title">Превратности любви…</h3>
+  <p class="page__subtitle-descr">(Рассказы)</p>
+  {{ worksCollection("love", 0) }}
+
+  <h2 class="art__subtitle">Крупная проза</h2>
+  <h3 class="page__toc-title">Я такое расскажу — не поверишь!</h3>
+  <p class="page__subtitle-descr">(Детектив)</p>
+  {{ worksCollection("detective", 0) }}
+
+  <h3 class="page__toc-title">Ни фига себе поездочка! <span class="toc__item-descr">или</span> Отдых по-миллионерски</h3>
+  <p class="page__subtitle-descr">(Детектив)</p>
+  {{ worksCollection("million", 0) }}
+
+  <h3 class="page__toc-title">Её глаза пленительны, как звёзды <span class="toc__item-descr">или</span> Дело было в Ленинске. Байконур</h3>
+  <p class="page__subtitle-descr">(Повесть)</p>
+  {{ worksCollection("baikonur", 0) }}
+
+  <h3 class="page__toc-title">Синдром памяти</h3>
+  <p class="page__subtitle-descr">(Повесть)</p>
+  {{ worksCollection("memory", 0) }}
+
+  <h3 class="page__toc-title">Моё нескучное лето</h3>
+  <p class="page__subtitle-descr">(Повесть)</p>
+  {{ worksCollection("summer", 0) }}
+
+  <h3 class="page__toc-title">Вера</h3>
+  <p class="page__subtitle-descr">(Повесть)</p>
+  {{ worksCollection("vera", 0) }}
+
+  <h3 class="page__toc-title">Джек</h3>
+  <p class="page__subtitle-descr">(Повесть)</p>
+  {{ worksCollection("jack", 0) }}
+
+  {{ tocSeria([
+    ["«Ничего личного» — принцип киллеров. Часть 1", "Авантюрный роман"],
+    ["«Ничего личного» — принцип киллеров. Часть 2", "Авантюрный роман"]
+  ], "killer") }}
+{% endblock %}
+
+{% block biography %}
+  {% filter prose %}
+    Ал.Боссер — это псевдоним творческого тандема: Альберт (Пират) и Алина (Дельф).
+    Будем рады, если наши стихи вдохновят кого-нибудь на создание песен. «Спасибо» будет вполне достаточно!
+  {% endfilter %}
+{% endblock %}

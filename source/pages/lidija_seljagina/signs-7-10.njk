@@ -1,0 +1,20 @@
+{% extends template %}
+
+{% set title = "«Присмирели даже комары…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Присмирели даже комары
+    От такой неистовой жары.
+    Помоги нам, Господи, родной,
+    Выдержать неотвратимый зной.
+
+    Отдыхает тело и душа
+    Ночью, что прохладой хороша.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2003-07">Июль 2003</time>
+{% endblock %}

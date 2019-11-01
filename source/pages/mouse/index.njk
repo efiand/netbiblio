@@ -1,0 +1,39 @@
+{% extends template %}
+
+{% set title = "Елена Мухамадеева" %}
+{% set pubdate = "02.11.2011" %}
+{% set contact = "//www.facebook.com/aljonamouse" %}
+{% set prev = "jesholland/index" %}
+{% set next = "elizaveta-zolotuhina/index" %}
+{% set openGraphImg = "mouse.jpg" %}
+{% set openGraphImgType = "image/jpeg" %}
+{% set openGraphImgWidth = 400 %}
+{% set openGraphImgHeight = 600 %}
+{% set openGraphImgAlt = "Портрет автора" %}
+{% set gender = "female" %}
+{% set tocBlockHeading = "Стихотворения" %}
+{% set biographyHeading = "Об авторе" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">Любовь размножается только в неволе</h3>
+  {{ worksCollection("love") }}
+
+  <h2 class="art__subtitle">Малая проза</h2>
+  <h3 class="page__toc-title">Егоркины сказки</h3>
+  {{ worksCollection("ft") }}
+
+  <h3 class="page__toc-title">Невозможные отношения</h3>
+  {{ worksCollection("impossible") }}
+{% endblock %}
+
+{% block biography %}
+  {% filter prose %}
+    36 лет, живёт и работает в Перми, официально не замужем, сыну 9 лет. Образование — Пермский Государственный Университет, филолог-переводчик.
+    Поле деятельности: консультант в сфере навыков самопрезентации и повышения самооценки, владелец студии имиджа.
+    Увлечения: креативное восприятие действительности.
+    Особые достижения в сфере творчества: издание в США в мае <time datetime="2010">2010</time> года руководства для людей с заниженной самооценкой на русском языке «Школа Анти-Стервы».
+    <time datetime="2012-01-29">29.01.2012</time> полностью отказалась от своего псевдонима (Алёна Маус) в пользу настоящего имени.
+  {% endfilter %}
+
+  {{ figure("mouse.jpg", "Елена Мухамадеева", "", openGraphImgWidth, openGraphImgHeight) }}
+{% endblock %}

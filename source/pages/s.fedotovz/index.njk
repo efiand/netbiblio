@@ -1,0 +1,19 @@
+{% extends template %}
+
+{% set title = "Сергей Федотов" %}
+{% set pubdate = "23.03.2008" %}
+{% set contact = "mailto:s.fedotovz@gmail.com" %}
+{% set prev = "bsv56/index" %}
+{% set next = "gusarova-matveeva/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Малая проза" %}
+{% set biographyHeading = "Об авторе" %}
+
+{% block biography %}
+  {% filter prose %}
+    Родился и вырос в Латвии, где и проживаю в данный момент. Учусь на экономиста.
+    В раннем возрасте начал ходить на курсы в молодежную актёрскую школу, но ввиду некоторых обстоятельств закончить её не удалось. Остались любовь к сцене и некоторые навыки игры. С недавнего времени пишу тексты на музыку.
+  {% endfilter %}
+
+  {{ authorLinks("//vk.com/id4486399") }}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "«Дом, окружённый крысами…»" %}
+{% set workdate = "24.03.2003" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Дом, окружённый крысами.
+    Ночью их много здесь.
+    Станем от страха лысыми —
+    Каждая хочет есть!
+  {% endfilter %}
+{% endblock %}

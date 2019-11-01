@@ -1,0 +1,20 @@
+{% extends template %}
+
+{% set title = "«Я всё равно приду к тебе во сне…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Я всё равно приду к тебе во сне,
+    Растормошу, занежу, зацелую.
+    Из сна не выгнать милую тебе.
+    К твоей душе всем сердцем припаду я.
+
+    Проснёшься ты. А где меня искать?
+    А я ушла, чтоб больше не мешать.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1976">1976</time>
+{% endblock %}

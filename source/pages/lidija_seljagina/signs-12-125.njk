@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "«Забытое в книге лекало…»" %}
+{% set workdate = "04.03.2007" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block preface %}
+  {% filter ins %}
+    {% filter short %}
+      По заказу М. П. Балашова.
+    {% endfilter %}
+  {% endfilter %}
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Забытое в книге лекало
+    От мысли едва отвлекало.
+    Моряк понимал, что причал
+    Его одиноко встречал.
+  {% endfilter %}
+{% endblock %}

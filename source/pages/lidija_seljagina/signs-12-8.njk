@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Нам нельзя предаваться горестным думам…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Нам нельзя предаваться горестным думам.
+    Жизнь на это нам прав не даёт никаких.
+    Время мчится вперёд с непредвиденным шумом,
+    Оставляя следы свежих ран, как живых.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1960">1960</time>
+{% endblock %}

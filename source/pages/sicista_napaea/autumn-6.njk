@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "Кредо" %}
+{% set pubdate = "25.10.2011" %}
+
+{% block content %}
+  {% filter poem %}
+    Растворяюсь в жизни без остатка.
+    Сердце бьётся ровно и спокойно:
+    Не ищу в достойных недостатков,
+    Не ищу достоинств в недостойных…
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2011-08">Август 2011</time>
+{% endblock %}

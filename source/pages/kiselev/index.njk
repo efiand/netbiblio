@@ -1,0 +1,13 @@
+{% extends template %}
+
+{% set title = "Юрий Киселёв" %}
+{% set pubdate = "06.03.2008" %}
+{% set contact = "//vk.com/id6762635" %}
+{% set prev = "chumakova/index" %}
+{% set next = "icecreamhater/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+
+{% block toc %}
+  {{ worksCollection("poem") }}
+{% endblock %}

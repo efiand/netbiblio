@@ -1,0 +1,13 @@
+{% extends template %}
+
+{% set title = "Олег Есин" %}
+{% set pubdate = "05.11.2007" %}
+{% set contact = "mailto:esin@icmail.ru" %}
+{% set prev = "natashe5ka/index" %}
+{% set next = "olgadyakova/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+
+{% block toc %}
+  {{ worksCollection("poem") }}
+{% endblock %}

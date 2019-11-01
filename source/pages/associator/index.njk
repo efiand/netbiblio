@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "Павел Филюшкин" %}
+{% set pubdate = "07.03.2008" %}
+{% set contact = "//vk.com/associator" %}
+{% set prev = "karro/index" %}
+{% set next = "miss_rina/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+{% set biographyHeading = "Об авторе" %}
+
+{% block biography %}
+  {{ authorLinks("//stihi.ru/avtor/pavel3289") }}
+{% endblock %}

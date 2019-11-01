@@ -1,0 +1,12 @@
+{% extends template %}
+
+{% set title = "О песенке" %}
+{% set workdate = "21.10.2004" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Мотив приснился, слова — от Бога.
+    Возьмите, люди, её в дорогу.
+  {% endfilter %}
+{% endblock %}

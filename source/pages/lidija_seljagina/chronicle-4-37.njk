@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Искалеченная Россия…»" %}
+{% set pubdate = "10.03.2018" %}
+
+{% block content %}
+  {% filter poem %}
+    Искалеченная Россия,
+    Неразгаданная судьба…
+    Весь народ обращён в бессилье…
+    Кто тебя? И за что тебя?
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1992">1992</time>
+{% endblock %}

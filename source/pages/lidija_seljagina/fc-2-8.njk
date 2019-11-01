@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "Памяти Ивана Григорьевича Лемешко" %}
+{% set workdate = "31.03.2017" %}
+{% set pubdate = "05.11.2017" %}
+
+{% block preface %}
+  {% filter ins %}
+    {% filter short %}
+      <time datetime="2016-12-04">4 декабря 2016 года</time>.
+    {% endfilter %}
+  {% endfilter %}
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Проходя дороги земные,
+    Мы уходим все в Мир Иной.
+    Мы уходим, словно немые.
+    Неизбежность дарит покой.
+  {% endfilter %}
+{% endblock %}

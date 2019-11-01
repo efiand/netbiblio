@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "В метро" %}
+{% set workdate = "25.03.2006" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Ищу в потоке твоё лицо.
+    Я понимаю: неординарно —
+    Почти полвека, как рук кольцо
+    Вмиг разомкнулось, предав коварно.
+  {% endfilter %}
+{% endblock %}

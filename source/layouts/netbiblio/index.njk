@@ -1,0 +1,163 @@
+{% set minSuffix = "" if isDev else ".min" %}
+{% set ampSuffix = ".amp" if isAmp else "" %}
+{% set openGraphSuffix = "" %}
+{% set url = host + "/" + page + ".html" %}
+
+{# Никнейм автора (название каталога) #}
+{% if (pageType) %}
+  {% set nick = page.slice(0, page.indexOf("/")) %}
+{% endif %}
+
+{# Title страницы в <title> и OpenGraph #}
+{% set headTitle = siteName + titleDelimiter + title %}
+
+{% if pageType === "author" %}
+  {% if nick !== "docs" %}
+    {% set prevTitle = "К предыдущему автору" %}
+    {% set nextTitle = "К следующему автору" %}
+
+    {# Набор из имени и фамилии #}
+    {% set names = title.split(" ") %}
+
+    {% set pageDescription = title + " — автор бесплатного веб-издательства " + siteName + "." %}
+    {% set openGraphType = "profile" %}
+  {% endif %}
+
+{% elif pageType === "work" %}
+  {% set authorPage = nick + "/index" %}
+
+  {# Использование настроек авторской страницы на страницы с его произведением #}
+  {% import "source/pages/" + authorPage + ".njk" as authorParams %}
+  {% set author = authorParams.title %}
+
+  {% if nick !== "docs" %}
+    {# Название и описание страницы с произведением #}
+    {% set titlePostfix = " (автор — " + author + ")" %}
+    {% if parentTitle %}
+      {% set headTitle = siteName + titleDelimiter + parentTitle + titleDelimiter + title %}
+    {% endif %}
+    {% set headTitle = headTitle + titlePostfix %}
+
+    {% if not pageDescription %}
+      {% set pageDescription = title + titlePostfix + " — публикация бесплатного веб-издательства " + siteName + "." %}
+    {% endif %}
+  {% else %}
+    {% set headTitle = siteName + titleDelimiter + author + titleDelimiter + title %}
+  {% endif %}
+
+  {# Если часть имени после дефиса является числом - страница является частью сборника #}
+  {% set scorePos = page.lastIndexOf("-") %}
+  {% if (scorePos !== -1) %}
+    {% set collectionIndex = page.slice(scorePos + 1) %}
+  {% endif %}
+  {% if collectionIndex and not (collectionIndex | isNaN) %}
+    {% set collectionBase = page.slice(0, scorePos) %}
+    {% set collectionName = collectionBase.slice(page.indexOf("/") + 1) %}
+
+    {% if not tocHref %}
+      {% set tocHref = authorPage + ".html#" + collectionName %}
+    {% endif %}
+    {% if not tocTitle %}
+      {% set tocTitle = "Оглавление сборника" %}
+    {% endif %}
+
+  {% else %}
+    {% if not tocHref %}
+      {% set tocHref = authorPage + ".html" %}
+    {% endif %}
+    {% if not tocTitle %}
+      {% set tocTitle= "Страница автора" %}
+    {% endif %}
+  {% endif %}
+
+  {# Подписи для навигационного ринга по произведениям #}
+  {% if nick !== "docs" %}
+    {% if not prevTitle %}
+      {% if parentTitle and not prev %}
+        {% set prevTitle = "К предыдущей части произведения" %}
+      {% else %}
+        {% set prevTitle = "К предыдущему произведению" %}
+      {% endif %}
+    {% endif %}
+    {% if not nextTitle %}
+      {% if parentTitle and not next %}
+        {% set nextTitle = "К следующей части произведения" %}
+      {% else %}
+        {% set nextTitle = "К следующему произведению" %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+  {# Автоматические установки ринга для фрагментов сборников #}
+  {% if collectionBase %}
+    {% if not prev %}
+      {% set prev = collectionBase + "-" + (+collectionIndex - 1) %}
+    {% endif %}
+    {% if not next %}
+      {% set next = collectionBase + "-" + (+collectionIndex + 1) %}
+    {% endif %}
+  {% endif %}
+
+  {% set openGraphType = "article" %}
+
+  {# Если нет изображения произведения, но есть изображение автора, используется оно #}
+  {% if not openGraphImg and authorParams.openGraphImg %}
+    {% set openGraphImg = authorParams.openGraphImg %}
+    {% set openGraphImgType = authorParams.openGraphImgType %}
+    {% set openGraphImgWidth = authorParams.openGraphImgWidth %}
+    {% set openGraphImgHeight = authorParams.openGraphImgHeight %}
+    {% set openGraphImgAlt = authorParams.openGraphImgAlt %}
+  {% endif %}
+{% endif %}
+
+{# Дефолтные настройки #}
+{% if not tocHref %}
+  {% set tocHref = "index.html#authors" %}
+{% endif %}
+{% if not tocTitle %}
+  {% set tocTitle = "Список авторов" %}
+{% endif %}
+{% if not prevTitle %}
+  {% set prevTitle = "К предыдущей странице" %}
+{% endif %}
+{% if not nextTitle %}
+  {% set nextTitle = "К следующей странице" %}
+{% endif %}
+
+{% if openGraphType !== "website" %}
+  {% set openGraphSuffix = " " + openGraphType + ": http://ogp.me/ns/" + openGraphType + "#" %}
+{% endif %}
+
+{% if not openGraphImg %}
+  {% set openGraphImg = "nb-social.png" %}
+  {% set openGraphImgType = "image/png" %}
+  {% set openGraphImgWidth = 360 %}
+  {% set openGraphImgHeight = 216 %}
+  {% set openGraphImgAlt = "Знак логотипа Netbiblio" %}
+{% endif %}
+
+{# Подписи для навигационного ринга #}
+{% if not isAmp %}
+  {% set prevTitle = prevTitle + " (стрелка «влево» на клавиатуре)" %}
+  {% set tocText = tocTitle + " <span class=\"visually-hidden\">(клавиша Backspace)</span>" %}
+  {% set tocTitle = tocTitle + " (клавиша Backspace)" %}
+  {% set nextTitle = nextTitle + " (стрелка «вправо» на клавиатуре)" %}
+{% endif %}
+
+{# Параметры тега <html> #}
+{% set htmlParams = "amp" if isAmp else "prefix=\"og: http://ogp.me/ns#" + openGraphSuffix + "\"" %}
+
+{# Макросы #}
+{% from "source/layouts/netbiblio/macro/figure.njk" import figure with context %}
+{% from "source/layouts/netbiblio/macro/notelink.njk" import notelink %}
+{% if pageType === "author" %}
+  {% from "source/layouts/netbiblio/macro/author-links.njk" import authorLinks %}
+  {% from "source/layouts/netbiblio/macro/works-collection.njk" import worksCollection with context %}
+  {% from "source/layouts/netbiblio/macro/toc-seria.njk" import tocSeria with context %}
+{% endif %}
+
+{# Внедрение разметки с заменой всех ссылок от корня на относительные #}
+{# и протокола на https:// (если не указан иной) #}
+{% filter manageUrl(page) %}
+  {% block layout %}{% endblock %}
+{% endfilter %}

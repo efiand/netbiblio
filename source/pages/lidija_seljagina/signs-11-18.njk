@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Не пряча хрупкости и не прося пощады…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Не пряча хрупкости и не прося пощады,
+    Живёт земная наша красота.
+    Она — надежда наша и услада,
+    Святой наивностью своей чиста.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1975">1975</time>
+{% endblock %}

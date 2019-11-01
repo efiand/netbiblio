@@ -1,0 +1,12 @@
+{% extends template %}
+
+{% set title = "«Дай Бог, Корея! В добрый путь…»" %}
+{% set workdate = "27.04.2018" %}
+{% set pubdate = "28.04.2018" %}
+
+{% block content %}
+  {% filter poem %}
+    Дай Бог, Корея! В добрый путь!
+    И слово чести не забудь.
+  {% endfilter %}
+{% endblock %}

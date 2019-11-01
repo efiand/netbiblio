@@ -1,0 +1,15 @@
+{% extends template %}
+
+{% set title = "Псевдокорифеям" %}
+{% set pubdate = "05.11.2008" %}
+{% set workdate = "02.01.2008" %}
+{% set workplace = "Лигово" %}
+
+{% block content %}
+  {% filter poem %}
+    Как праздник — ровная строфа
+    Для корифея-рифмоплёта!
+    Так пыжится во время взлёта
+    Степная жирная дрофа.
+  {% endfilter %}
+{% endblock %}

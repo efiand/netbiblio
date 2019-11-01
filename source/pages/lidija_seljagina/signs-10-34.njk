@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "«Во всём я вижу тебя…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Во всём я вижу тебя,
+    Улыбку твою угадывая.
+    Как будто зовя и любя,
+    Глаза твои, в душу заглядывая,
+
+    Тенью спешат за мной,
+    Просят побыть с тобой.
+    Взгляды наши с мольбой
+    Встретились, милый.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1963">1963</time>
+{% endblock %}

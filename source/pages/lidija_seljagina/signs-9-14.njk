@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Бросаю якорь у родного дома…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Бросаю якорь у родного дома.
+    Чиню детали тела своего.
+    И всё, что было в прошлом мне знакомо,
+    Я отражаю, как в немом кино.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2003-03">Март 2003</time>
+{% endblock %}

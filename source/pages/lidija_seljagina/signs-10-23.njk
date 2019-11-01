@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Давай помолчим. Да не всё ли равно…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Давай помолчим. Да не всё ли равно,
+    Что будет там лет через пять?
+    Сейчас нам с тобою вдвоём хорошо.
+    Давай до утра гулять.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1962">1962</time>
+{% endblock %}

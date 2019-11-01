@@ -1,0 +1,12 @@
+{% extends template %}
+
+{% set title = "«Весеннее брожение — пьянящий аромат…»" %}
+{% set workdate = "01.04.2005" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Весеннее брожение — пьянящий аромат.
+    Звенящие проталинки шумят, шумят, шумят…
+  {% endfilter %}
+{% endblock %}

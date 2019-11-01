@@ -1,0 +1,18 @@
+{% extends template %}
+
+{% set title = "Арам Гаспарян" %}
+{% set pubdate = "17.04.2002" %}
+{% set prev = "sukhanoff/index" %}
+{% set next = "buryan/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+{% set biographyHeading = "Графические работы автора" %}
+
+{% block toc %}
+  {{ worksCollection("poem") }}
+{% endblock %}
+
+{% block biography %}
+  {{ figure("aram-1.png", "Роспись по тарелке. Автор — Арам Гаспарян", "Роспись по тарелке.", 600, 600) }}
+  {{ figure("aram-2.png", "Роспись по тарелке. Автор — Арам Гаспарян", "Роспись по тарелке.", 600, 600) }}
+{% endblock %}

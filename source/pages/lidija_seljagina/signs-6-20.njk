@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "«О комарах и мушках…»" %}
+{% set workdate = "01.04.2005" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    О комарах и мушках,
+    Что прятались в кадушках,
+    И о смешных лягушках,
+    Что квакали на ушко.
+  {% endfilter %}
+{% endblock %}

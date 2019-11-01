@@ -1,0 +1,21 @@
+{% extends template %}
+
+{% set title = "«Я знаю: тот, кто Пасху ждёт…»" %}
+{% set workdate = "05.05.2002" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Я знаю: тот, кто Пасху ждёт,
+    А утром Солнышко встречает —
+    Тот знает, как оно играет,
+    Искрится, радуясь, встаёт.
+
+    То — знак хороший для того,
+    Кто видел в тот рассвет его.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2002-05-05">05.05.2002 (Пасха)</time>
+{% endblock %}

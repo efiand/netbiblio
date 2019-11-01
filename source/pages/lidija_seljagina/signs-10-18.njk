@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Возвращая записи твои…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Возвращая записи твои,
+    Словно душу возвращаю в них.
+    Страшно жить на свете без души.
+    Трудно жить без глаз и рук твоих.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1961">1961</time>
+{% endblock %}

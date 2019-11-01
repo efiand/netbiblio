@@ -1,0 +1,50 @@
+.reviews__heading {
+  margin-top: 0;
+}
+
+.reviews__button {
+  display: table;
+  margin: 2rem auto 0;
+
+  &--shower {
+    margin: 0 auto;
+  }
+}
+
+.reviews__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+
+  &--answer {
+    margin-left: 2rem;
+  }
+}
+
+.reviews__name {
+  margin: 0 0.5rem 0 -0.5rem;
+  text-indent: 0;
+}
+
+.reviews__date {
+  font: 0.75rem/1.5rem $sans-serif;
+  text-indent: 0;
+
+  @media (min-width: 768px) {
+    line-height: 1.25rem;
+  }
+}
+
+.reviews__body {
+  width: 100%;
+  margin-top: 0.5rem;
+
+  .art__poem {
+    margin: 0 auto;
+    font-size: inherit;
+  }
+
+  .art__prose + .art__poem {
+    margin-top: 1.5rem;
+  }
+}

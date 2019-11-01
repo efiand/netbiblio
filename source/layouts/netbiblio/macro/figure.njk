@@ -1,0 +1,16 @@
+{% from "source/layouts/netbiblio/macro/img.njk" import img with context %}
+
+{# Блок адаптивного изображения с описанием #}
+{% macro figure(src, alt, caption = "", width = 0, height = 0) %}
+  {% if not alt and caption %}
+    {% set alt = caption %}
+  {% endif %}
+
+  <figure class="art__illustration">
+    {{ img("/img/" + src, alt, "art__img", width, height) }}
+
+    {% if caption %}
+      <figcaption class="art__illustration-descr">{{ caption }}</figcaption>
+    {% endif %}
+  </figure>
+{% endmacro %}

@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«По улице хожу на костылях…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    По улице хожу на костылях,
+    По дому — как шахиньская царица.
+    Порой душа испытывает страх,
+    Но жизни не дано остановиться.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2003-09">Сентябрь 2003</time>
+{% endblock %}

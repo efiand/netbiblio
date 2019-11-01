@@ -1,0 +1,264 @@
+.art {
+  margin: 0 0 3rem;
+}
+
+.art__title {
+  margin: 0 0 3rem;
+  font: italic 2.5rem/3rem $serif;
+  text-align: center;
+
+  @media screen {
+    color: $color-brand;
+  }
+
+  &--asters {
+    &::before {
+      content: "***";
+      position: relative;
+      top: (1em / 3);
+      font-size: 1.5em;
+      line-height: (1em / 6);
+    }
+  }
+}
+
+.art__title-descr {
+  margin: -2.5rem 0 3rem;
+  font: italic 1.25rem/1.5rem $serif;
+  text-align: center;
+
+  & + .art__title {
+    margin: -2.5rem 0 3rem;
+  }
+}
+
+.art__subtitle {
+  margin: 3rem 1.5rem 1.5rem;
+  font: italic 1.75rem/2rem $serif;
+  text-align: center;
+
+  + .page__toc-title {
+    margin-top: -0.5rem;
+  }
+
+  + .art__illustration {
+    margin-top: 1.5rem;
+  }
+}
+
+.art__prose {
+  margin: 1.5rem 0;
+  font: 1.125rem/1.5rem $serif;
+  text-indent: 2rem;
+  hyphens: auto;
+
+  @media (min-width: 768px) {
+    text-align: justify;
+  }
+
+  &--list {
+    padding: 0;
+    list-style: none;
+  }
+
+  + .art__illustration {
+    margin-top: 2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.art__list-item {
+  &::before {
+    content: "—\200A\2009";
+  }
+}
+
+.art__poem {
+  display: table;
+  margin: 1.5rem auto;
+  font: 1.125rem/1.5rem $serif;
+
+  &--end-acro {
+    text-align: right;
+  }
+
+  .art__subtitle,
+  .art__asters {
+    page-break-after: avoid;
+
+    &:first-child {
+      margin: 0 1.5rem 1.5rem;
+    }
+  }
+
+  p {
+    margin: 0 0 1.5rem;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}
+
+.art__epigraph {
+  display: table;
+  margin: 1.5rem 0 1.5rem auto;
+  font: 1rem/1.5rem $serif;
+
+  &.art__prose {
+    width: 80%;
+
+    @media (min-width: 768px) {
+      width: 60%;
+    }
+  }
+}
+
+.art__cite-author {
+  display: table;
+  margin: 0.5rem 0 -0.5rem auto;
+  font: 0.875rem/1.5rem $sans-serif;
+  font-style: inherit;
+}
+
+.art__role {
+  letter-spacing: 0.25em;
+}
+
+.art__dedic {
+  margin: 1.5rem 0;
+  font: 1rem/1.5rem $serif;
+  text-align: right;
+}
+
+.art__short {
+  margin: 1.5rem 0;
+  font: 1.125rem/1.5rem $serif;
+  text-align: center;
+}
+
+.art__ins {
+  display: table;
+  margin: 1.5rem auto;
+  font-size: 1rem;
+
+  &.art__prose {
+    margin: 1.5rem 0;
+  }
+
+  &:not(.art__poem) > p {
+    margin: 0;
+    font: 1rem/1.5rem $serif;
+  }
+}
+
+.art__asters {
+  margin: 3rem 1.5rem 1.5rem;
+  font: italic 1.75rem/1.5rem $serif;
+  text-align: center;
+
+  &::before {
+    content: "***";
+    position: relative;
+    top: (1em / 3);
+    font-size: 1.5em;
+    line-height: (1em / 6);
+  }
+}
+
+.art__acute {
+  &::after {
+    content: "\301";
+    line-height: 1rem;
+    font-family: $sans-serif;
+  }
+}
+
+.art__abbr {
+  text-decoration: none;
+  border-bottom: 1px dashed $color-brand;
+  cursor: help;
+
+  &::after {
+    @media print {
+      content: " [" attr(title) "]";
+    }
+  }
+}
+
+.art__illustration {
+  margin: 3rem 0 1.5rem;
+
+  & + & {
+    margin-top: 1.5rem;
+  }
+
+  + .art__prose {
+    margin-top: 2rem;
+  }
+}
+
+.art__illustration-descr {
+  display: block;
+  padding: 0.75rem 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+.art__img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.art__notes-list {
+  display: table;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  font-family: $serif;
+  border-top: 1px solid;
+}
+
+.art__note-name {
+  position: relative;
+  display: inline;
+  margin-left: 0.5rem;
+}
+
+.art__note-link {
+  display: inline-block;
+  padding: 0.15rem;
+  font: 0.6rem/0.72rem "Arial", sans-serif;
+  vertical-align: top;
+  text-decoration: none;
+  text-indent: 0;
+  user-select: none;
+
+  .art__note-name & {
+    position: absolute;
+    top: 0;
+    right: 100%;
+  }
+}
+
+.art__note-place {
+  border-radius: 2px;
+  transition: background-color 0.5s ease-in-out;
+
+  &:target {
+    background-color: $color-brand-lite;
+  }
+
+  .art__note & {
+    padding: 0 0.25rem;
+  }
+}
+
+.art__note-comment {
+  display: inline;
+  margin-left: 0;
+}

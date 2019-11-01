@@ -1,0 +1,27 @@
+{% extends template %}
+
+{% set title = "«Ты не прячь, ты не прячь свои строчки…»" %}
+{% set pubdate = "05.11.2017" %}
+
+{% block preface %}
+  {% filter epigraph %}
+    {% filter poem("quote") %}
+      Дорогой мой, хороший, далёкий…
+
+      [Ирина Силина]
+    {% endfilter %}
+  {% endfilter %}
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Ты не прячь, ты не прячь свои строчки.
+    Ластик твой здесь совсем ни при чём.
+    Не стирай своё счастье, дружочек.
+    Эта дрожь — тебе в память о нём.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2016">2016</time>
+{% endblock %}

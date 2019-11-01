@@ -1,0 +1,24 @@
+{% extends template %}
+
+{% set title = "«Здоровья, силы, моря ярких встреч…»" %}
+{% set pubdate = "05.11.2017" %}
+
+{% block preface %}
+  <p class="art__dedic">Внучке Оле</p>
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Здоровья, силы, моря ярких встреч!
+    И дружбу нашу хочется сберечь.
+    Чтоб в жизни быть уверенной вдвойне,
+    Мы вместе прошагаем по Земле.
+
+    В твой день рожденья я тебе дарю
+    При пробужденье — раннюю зарю.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2016-06">Июнь 2016</time>
+{% endblock %}

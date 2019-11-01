@@ -1,0 +1,20 @@
+{% extends template %}
+
+{% set title = "«Душа кричит. Кому она кричит…»" %}
+{% set pubdate = "10.03.2018" %}
+
+{% block content %}
+  {% filter poem %}
+    Душа кричит. Кому она кричит?
+    Кто даст услышать то, чем мы живём?
+    Страна кричит. Кому она кричит?
+    Тому, из-за кого мы так живём?
+
+    И нужно ли стране моей кричать?
+    Давно пора бы действовать начать.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1990">1990</time>
+{% endblock %}

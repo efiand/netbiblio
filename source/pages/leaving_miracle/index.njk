@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "Георгий Авдеев" %}
+{% set pubdate = "12.04.2008" %}
+{% set contact = "mailto:leaving_miracle@mail.ru" %}
+{% set prev = "galamala/index" %}
+{% set next = "sangry-ya/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+{% set biographyHeading = "Об авторе" %}
+
+{% block biography %}
+  {{ authorLinks("//vk.com/id4237174") }}
+{% endblock %}

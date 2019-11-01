@@ -1,0 +1,30 @@
+{% extends template %}
+
+{% set title = "«Я внутри вся клокочу…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block preface %}
+  {% filter ins %}
+    {% filter short %}
+      На каждой автобусной остановке в Сестрорецке установили павильоны для продажи спиртного и курева.
+    {% endfilter %}
+  {% endfilter %}
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Я внутри вся клокочу
+    И уже не хохочу.
+    Ну, у каждой остановки
+    Выпью всё что захочу!
+
+    Как умеет наша власть
+    Волновать любую страсть,
+    Подливать в ядрёный корень,
+    Чтобы быстро всем пропасть!..
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2002-02">Февраль 2002</time>
+{% endblock %}

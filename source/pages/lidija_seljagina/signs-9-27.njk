@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "«Раскатился слух по свету…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Раскатился слух по свету,
+    Что меня уж с вами нету.
+    Раскатился и пропал.
+    И в меня он не попал.
+
+    Нет, друзья мои, я здесь,
+    Хоть диагноз, правда, есть.
+    Никуда не собираюсь,
+    Вместе с вами здесь помаюсь.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1992">1992</time>
+{% endblock %}

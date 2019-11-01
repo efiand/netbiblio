@@ -1,0 +1,23 @@
+{% extends template %}
+
+{% set title = "Ангел" %}
+{% set pubdate = "17.04.2002" %}
+{% set workplace = "Санкт-Петербург" %}
+
+{% block content %}
+  {% filter poem %}
+    Мой ангел чистой красоты!
+    Меня одна ты вдохновляешь.
+    Но с наступленьем темноты
+    Ты незаметно с грустью таешь…
+
+    Ты — как чудесное вино!
+    Источник радости и счастья!
+    Недостающее звено
+    В прекрасный миг и миг ненастья.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2001-11">Ноябрь 2001, {{ workplace }}</time>
+{% endblock %}

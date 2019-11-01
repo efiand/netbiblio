@@ -1,0 +1,12 @@
+{% extends template %}
+
+{% set title = "«Я теряю дар красноречия…»" %}
+{% set workdate = "09.11.2005" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Я теряю дар красноречия,
+    Когда Вами бываю замечена.
+  {% endfilter %}
+{% endblock %}

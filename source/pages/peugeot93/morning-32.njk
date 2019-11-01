@@ -1,0 +1,23 @@
+{% extends template %}
+
+{% set title = "Твой день" %}
+{% set pubdate = "13.01.2012" %}
+{% set workplace = "Санкт-Петербург" %}
+
+{% block content %}
+  {% filter poem %}
+    Хочешь, я подарю тебе себя?
+    Со мною сможешь ты дружить,
+    Я буду нежно целовать тебя,
+    Оберегать и не давать грустить.
+
+    В твой день, сегодня, я желаю
+    Тебе сказать лишь об одном,
+    Что я сейчас тебе, родная, посылаю
+    Тепло, покой и счастье в дом.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2010">2010, {{ workplace }}</time>
+{% endblock %}

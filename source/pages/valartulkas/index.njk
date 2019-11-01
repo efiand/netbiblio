@@ -1,0 +1,18 @@
+{% extends template %}
+
+{% set title = "Валерий Березин" %}
+{% set pubdate = "01.01.2012" %}
+{% set prev = "vadim_strannik/index" %}
+{% set next = "galamala/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+{% set biographyHeading = "Об авторе" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">Миниатюры</h3>
+  {{ worksCollection("mini") }}
+{% endblock %}
+
+{% block biography %}
+  {{ authorLinks("//stihi.ru/avtor/valartulkas") }}
+{% endblock %}

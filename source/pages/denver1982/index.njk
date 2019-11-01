@@ -1,0 +1,18 @@
+{% extends template %}
+
+{% set title = "Денис Туленцев" %}
+{% set pubdate = "30.11.2011" %}
+{% set prev = "silver88darya/index" %}
+{% set next = "eva/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+{% set biographyHeading = "Об авторе" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">Твоим строкам гореть сквозь тёмные века…</h3>
+  {{ worksCollection("your") }}
+{% endblock %}
+
+{% block biography %}
+  {{ authorLinks("//stihi.ru/avtor/denver1982") }}
+{% endblock %}

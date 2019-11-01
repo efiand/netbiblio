@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Опять я что-то сделала не так…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Опять я что-то сделала не так
+    И вновь прошу прощения у Бога.
+    Терниста, не безоблачна дорога.
+    Вернуться б в детство! Да нельзя никак.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1994">1994</time>
+{% endblock %}

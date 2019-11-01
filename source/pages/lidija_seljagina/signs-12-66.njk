@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«С Рождеством вас, с большой удачей…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    С Рождеством вас, с большой удачей,
+    Чтобы Бог помогал в пути
+    Верно ставить свои задачи
+    И секреты Вселенной найти!
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2002-01">Январь 2002</time>
+{% endblock %}

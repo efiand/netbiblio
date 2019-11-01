@@ -1,0 +1,15 @@
+{% extends template %}
+
+{% set title = "Светлана Дар" %}
+{% set pubdate = "31.10.2011" %}
+{% set prev = "peugeot93/index" %}
+{% set next = "bsv56/index" %}
+{% set gender = "female" %}
+{% set tocBlockHeading = "Стихотворения" %}
+
+{% block toc %}
+  {{ worksCollection("poem") }}
+
+  <h3 class="page__toc-title">Магдалина</h3>
+  {{ worksCollection("magdalina") }}
+{% endblock %}

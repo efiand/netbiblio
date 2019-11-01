@@ -1,0 +1,19 @@
+{% extends template %}
+
+{% set title = "Предъюбилейное" %}
+{% set pubdate = "10.03.2003" %}
+{% set workdate = "04.12.2002" %}
+{% set workplace = "Лигово" %}
+
+{% block heading %}
+  <h1 class="art__title">Предъюби&shy;лейное</h1>
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Мой бедный старый Питер! К юбилею
+    Расковыряли каждый твой клочок!
+    Всё прикрывают, чистят и лелеют —
+    Чтоб к торжеству бодрей казался старичок!
+  {% endfilter %}
+{% endblock %}

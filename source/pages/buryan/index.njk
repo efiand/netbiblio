@@ -1,0 +1,23 @@
+{% extends template %}
+
+{% set title = "Борис Хантаев" %}
+{% set pubdate = "05.07.2011" %}
+{% set contact = "//vk.com/id63188391" %}
+{% set prev = "aram/index" %}
+{% set next = "vadim_strannik/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Малая проза" %}
+{% set biographyHeading = "О себе" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">Рассказы</h3>
+  {{ worksCollection("prose") }}
+{% endblock %}
+
+{% block biography %}
+  {% filter prose %}
+    Люблю свои произведения выкладывать поздно вечером, когда за окном вовсю гуляет ночь, когда луна наедине со звёздами перешёптывается и смеётся над нами, ведь мы для них такие глупые, такие маленькие и беззащитные. Ночь — вообще, наверное, моё любимое время суток.
+  {% endfilter %}
+
+  {{ authorLinks("//proza.ru/avtor/buryan") }}
+{% endblock %}

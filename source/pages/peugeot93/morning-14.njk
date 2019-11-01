@@ -1,0 +1,23 @@
+{% extends template %}
+
+{% set title = "Незнакомке" %}
+{% set pubdate = "13.01.2012" %}
+{% set workplace = "Санкт-Петербург" %}
+
+{% block content %}
+  {% filter poem %}
+    Не видел вас и не знаком,
+    Но каждый раз, когда общаюсь,
+    Заворожённый, в горле ком,
+    Встаёт, когда я вами восхищаюсь.
+
+    Нет пошлых мыслей в голове,
+    Я не желаю вас, как блядь,
+    Лишь хочется узреть наедине,
+    Почувствовать, услышать и понять.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2009">2009, {{ workplace }}</time>
+{% endblock %}

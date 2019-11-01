@@ -1,0 +1,12 @@
+{% extends template %}
+
+{% set title = "«Стреляют часто, Господи прости…»" %}
+{% set workdate = "14.06.2002" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Стреляют часто, Господи прости!
+    Куда бы, друг мой, ноги унести!
+  {% endfilter %}
+{% endblock %}

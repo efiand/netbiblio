@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "«Как боюсь расслабиться…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Как боюсь расслабиться,
+    Как боюсь расплакаться!
+    Безутешным вижу я
+    Горе у себя…
+
+    Как боюсь задуматься,
+    Чтоб вовремя одуматься!
+    Научите жить меня
+    В этом море зла.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1994">1994</time>
+{% endblock %}

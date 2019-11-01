@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "«Вы меня не бойтесь…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Вы меня не бойтесь —
+    Я не приставучая.
+    Душою успокойтесь —
+    Я ищу созвучия.
+
+    Как редко в русле жизненном
+    Мы унисон находим!
+    С другими очень искренни,
+    А свой родник — проходим.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1993-01">Январь 1993</time>
+{% endblock %}

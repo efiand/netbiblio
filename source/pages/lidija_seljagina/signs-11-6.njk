@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "«Наши книги — наши души…»" %}
+{% set workdate = "22.04.2005" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Наши книги — наши души.
+    Это — сила наших крыл.
+    И не должен быть сконфужен
+    Человек среди ветрил.
+  {% endfilter %}
+{% endblock %}

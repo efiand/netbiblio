@@ -1,0 +1,12 @@
+{% extends template %}
+
+{% set title = "«О Медный всадник, ты велик…»" %}
+{% set workdate = "21.07.2014" %}
+{% set pubdate = "05.11.2017" %}
+
+{% block content %}
+  {% filter poem %}
+    О Медный всадник, ты велик,
+    Неотразим, могуч твой лик.
+  {% endfilter %}
+{% endblock %}

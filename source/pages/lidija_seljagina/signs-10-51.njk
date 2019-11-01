@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Уезжало счастье от меня…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Уезжало счастье от меня,
+    На прощанье мне махнув рукой,
+    Так к себе магически маня.
+    Но судьбой был отдан он другой.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1974">1974</time>
+{% endblock %}

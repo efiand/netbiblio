@@ -1,0 +1,41 @@
+{% extends template %}
+
+{% set title = "Тамара Гусарова-Матвеева" %}
+{% set pubdate = "06.02.2019" %}
+{% set prev = "s.fedotovz/index" %}
+{% set next = "taniacet/index" %}
+{% set gender = "female" %}
+
+{% block toc %}
+  <h2 class="art__subtitle">Стихотворения</h2>
+  {{ worksCollection("poem") }}
+
+  <h2 class="art__subtitle">Малая проза</h2>
+  {{ worksCollection("prose") }}
+
+  <h3 class="page__toc-title">Синяя Ирма</h3>
+  {{ worksCollection("irma") }}
+
+  <h3 class="page__toc-title">Встреча в «Подводной лодке»</h3>
+  {{ worksCollection("submarine") }}
+
+  <h3 class="page__toc-title">Раствориться в «Рунеже»…</h3>
+  <p class="page__subtitle-descr">(Воспоминания. Случай)</p>
+  {{ worksCollection("runezh") }}
+
+  <h3 class="page__toc-title">Лесная быль</h3>
+  {{ worksCollection("forest", 0) }}
+
+  <h3 class="page__toc-title">Художница</h3>
+  <p class="page__subtitle-descr">(Документальная проза)</p>
+  {{ worksCollection("artist", 0) }}
+
+  <h2 class="art__subtitle">Крупная проза</h2>
+  <h3 class="page__toc-title">Компаньонка</h3>
+  <p class="page__subtitle-descr">(Повесть)</p>
+  {{ worksCollection("partner") }}
+
+  <h3 class="page__toc-title">Мёртвое дерево</h3>
+  <p class="page__subtitle-descr">(Повесть)</p>
+  {{ worksCollection("tree", 0) }}
+{% endblock %}

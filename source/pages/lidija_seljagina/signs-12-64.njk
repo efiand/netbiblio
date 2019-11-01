@@ -1,0 +1,25 @@
+{% extends template %}
+
+{% set title = "«Есть темы, о которых мы молчим…»" %}
+{% set workdate = "29.07.2002" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block preface %}
+  {% filter ins %}
+    {% filter short %}
+      К <a href="http://constrf.ru/razdel-1/glava-2/st-51-krf" target="_blank" rel="nofollow">статье 51</a> Конституции РФ.
+    {% endfilter %}
+  {% endfilter %}
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Есть темы, о которых мы молчим.
+    Есть беды — их боимся задевать.
+    Есть тайны… о которых мы смолчим —
+    И если даже будут убивать.
+
+    И в Кодексе имеется статья:
+    Молчать имеем право ты и я!
+  {% endfilter %}
+{% endblock %}

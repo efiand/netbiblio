@@ -1,0 +1,25 @@
+{% extends template %}
+
+{% set title = "«Ужимки и прыжки — есть разные моменты…»" %}
+{% set workdate = "01.10.2007" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block preface %}
+  {% filter epigraph %}
+    {% filter poem("quote") %}
+      Осёл останется ослом,
+      Хотя осыпь его златами.
+
+      [Г. Державин]
+    {% endfilter %}
+  {% endfilter %}
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Ужимки и прыжки — есть разные моменты.
+    Но как ни отпускай ослёнку комплименты,
+    Всё ж вырастет ослом — и это аксиома.
+    Осёл — везде осёл: на улице и дома.
+  {% endfilter %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends template %}
+
+{% set title = "Юлия Зябрева" %}
+{% set pubdate = "23.06.2012" %}
+{% set prev = "urfygeck/index" %}
+{% set next = "chumakova/index" %}
+{% set gender = "female" %}
+
+{% block toc %}
+  <h2 class="art__subtitle">Антисумерки. Блог вампира</h2>
+  <p class="page__subtitle-descr">(Роман-пародия)</p>
+
+  <h3 class="page__toc-title">Часть I. Антисумерки. Начало</h3>
+  {{ worksCollection("blog-1") }}
+
+  <h3 class="page__toc-title">Часть II. Блог вампира</h3>
+  {{ worksCollection("blog-2") }}
+
+  <h3 class="page__toc-title">И снова Часть I. Антисумерки. Окончание</h3>
+  {{ worksCollection("blog-3") }}
+{% endblock %}

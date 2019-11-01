@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Ты мне нужен, как желание…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Ты мне нужен, как желание,
+    Как колечко чудодейное.
+    Ты уйдёшь — одно страдание,
+    Возвратишься — вновь рождение.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1961">1961</time>
+{% endblock %}

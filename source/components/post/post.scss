@@ -1,0 +1,10 @@
+.post {
+  .modal--js &--invalid-detect {
+    .field:invalid {
+      &,
+      &:focus {
+        animation: shake 0.6s ease-in-out;
+      }
+    }
+  }
+}

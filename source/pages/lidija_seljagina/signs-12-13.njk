@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Она была всегда прелестна…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Она была всегда прелестна,
+    Смела, наивна, широка,
+    Так безгранично интересна —
+    Большая русская душа!
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1962">1962</time>
+{% endblock %}

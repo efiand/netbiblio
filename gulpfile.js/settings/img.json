@@ -1,0 +1,11 @@
+{
+  "src": [
+    "source/img/content/**/*.{jpg,png,svg}",
+    "source/img/service/**/*.{jpg,png,svg}"
+  ],
+  "dest": "build/img",
+  "jpegoptim": {
+    "max": 80,
+    "progressive": true
+  }
+}

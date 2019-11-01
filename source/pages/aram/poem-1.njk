@@ -1,0 +1,19 @@
+{% extends template %}
+
+{% set title = "«Что с нами делает любовь…»" %}
+{% set pubdate = "17.04.2000" %}
+{% set workplace = "Санкт-Петербург" %}
+{% set prev = "sukhanoff/prose-2" %}
+
+{% block content %}
+  {% filter poem %}
+    Что с нами делает любовь!
+    Не убежать, не затаиться…
+    Мы режем вены вновь и вновь,
+    Хотим порой мы застрелиться…
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2000-04">Апрель 2000, {{ workplace }}</time>
+{% endblock %}

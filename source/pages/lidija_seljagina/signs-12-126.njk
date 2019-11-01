@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "«Внизу на спуске лыжник…»" %}
+{% set workdate = "04.03.2007" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block preface %}
+  {% filter ins %}
+    {% filter short %}
+      По заказу М. П. Балашова.
+    {% endfilter %}
+  {% endfilter %}
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Внизу на спуске лыжник
+    Установил булыжник
+    И надпись: «Никотин
+    Мы нюхать не хотим».
+  {% endfilter %}
+{% endblock %}

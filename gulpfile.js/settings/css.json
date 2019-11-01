@@ -1,0 +1,15 @@
+{
+  "src": {
+    "compile": "source/scss/style.scss",
+    "lint": "source/**/*.scss"
+  },
+  "dest": "build/css",
+  "stylelint": {
+    "reporters": [
+      {
+        "console": true,
+        "formatter": "string"
+      }
+    ]
+  }
+}

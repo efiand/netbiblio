@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Ещё мгновение — и лопнут почки сада…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Ещё мгновение — и лопнут почки сада!
+    И кажется, уж ничего не надо.
+    Вдохнув хмельного воздуха весной,
+    Нам не захочется в квартиру на покой.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1993-04">Апрель 1993</time>
+{% endblock %}

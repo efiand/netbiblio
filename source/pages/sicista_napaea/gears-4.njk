@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Овации. Занавес. Лето со сцены…»" %}
+{% set pubdate = "13.11.2011" %}
+
+{% block content %}
+  {% filter poem %}
+    Овации. Занавес. Лето со сцены
+    Уходит с улыбкой счастливой —
+    А осень по-подлому, в спину, прицельно
+    Швыряет подгнившие сливы…
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2011-10">Октябрь 2011</time>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "«Он был похож, друзья…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Он был похож, друзья,
+    На шарик надувной.
+    И, пыжась и юля,
+    Он дверь открыл спиной.
+
+    И так вся жизнь моя
+    Прошла в сплошных преградах:
+    То шарики юлят,
+    То рядом — кто не надо.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1992">1992</time>
+{% endblock %}

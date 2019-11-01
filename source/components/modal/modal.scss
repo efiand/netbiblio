@@ -1,0 +1,56 @@
+.modal {
+  &--js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    visibility: hidden;
+    transition: background-color 0.3s ease-in-out, visibility 0s 0.75s;
+
+    .modal__inner {
+      position: relative;
+      top: -1500px;
+      flex-shrink: 0;
+      box-sizing: border-box;
+      width: 100%;
+      transition: top 0.75s ease-in-out;
+    }
+
+    .modal__closer {
+      display: block;
+    }
+  }
+}
+
+.modal__closer {
+  display: none;
+}
+
+.modal-mode {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+
+  .modal {
+    overflow-x: auto;
+    overflow-y: scroll;
+    visibility: visible;
+    transition: none;
+  }
+
+  .modal__inner {
+    top: 0;
+
+    &--overflowed {
+      align-self: flex-start;
+      transition: none;
+    }
+  }
+}

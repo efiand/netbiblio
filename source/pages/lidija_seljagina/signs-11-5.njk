@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Надо всем переболеть…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Надо всем переболеть,
+    До всего душой коснуться,
+    Опьянеть и отрезветь,
+    В жизнь реальную вернуться.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1994">1994</time>
+{% endblock %}

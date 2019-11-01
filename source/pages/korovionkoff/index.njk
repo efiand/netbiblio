@@ -1,0 +1,29 @@
+{% extends template %}
+
+{% set title = "Андрей Коровёнков" %}
+{% set pubdate = "09.11.2011" %}
+{% set contact = "mailto:korovionkoff@rambler.ru" %}
+{% set prev = "alra/index" %}
+{% set next = "raskatov/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+
+{% block toc %}
+  {% for alias, name in {
+    "grief": "Тихая моя грусть",
+    "quietly": "Тише… Ну пожалуйста, тише…",
+    "destiny": "С Судьбой играя…",
+    "heat": "Тепло и свет моей души примите в дар…",
+    "soul": "С открытою душой",
+    "humor": "Бывает, что не грех и пошутить…"
+  } %}
+    <h3 class="page__toc-title">{{ name }}</h3>
+    {{ worksCollection(alias, 0) }}
+  {% endfor %}
+{% endblock %}
+
+{% block reviews %}
+  {% filter review("Татьяна Шеина", "sicista_napaea", "10.11.2011 21:25") %}
+    Андрей, у Вас очень тёплые, душевные стихи! Прочитала и перечитала с огромным удовольствием!
+  {% endfilter %}
+{% endblock %}

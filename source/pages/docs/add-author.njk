@@ -1,0 +1,30 @@
+{% extends template %}
+
+{% set title = "Добавление автора" %}
+{% set pubdate = "22.03.2019" %}
+{% set prev = "docs/vars" %}
+{% set next = "docs/add-work" %}
+{% set tocTitle = "Содержание" %}
+
+{% block content %}
+  <h2 class="art__subtitle" id="file">Создание файла</h2>
+  {% filter prose("list-marked") %}
+    Создайте каталог автора — `/source/pages/nick`. Здесь и далее `nick` — никнейм, алиас автора, соответствующий как каталогу с исходниками его произведений, так и каталогу с его произведениями на сайте.
+    Создайте файл `index.html` (можно копировать уже существующий из каталога другого автора и изменять настройки). Задайте все необходимые <a href="/docs/page-settings">настройки</a>.
+    Первой строкой подключите <a href="/docs/page-structure.html#template">основной шаблон</a>.
+  {% endfilter %}
+
+  <h2 class="art__subtitle" id="vars">Добавление переменных</h2>
+  {% filter ins %}
+    {% filter prose("short") %}
+      Добавьте обязательные <a href="/docs/page-structure.html#settings">основные</a> настройки, а также специфичные для данного типа страниц:
+    {% endfilter %}
+  {% endfilter %}
+
+  {% filter prose("list-marked") %}
+    `contact` — контактная информация (если есть). Выводится ссылкой в копирайте на авторской странице.
+    `gender` — пол автора. Для корректной работы OpenGraph эту настройку приравниваем к обязательной.
+    `tocBlockHeading` — выводит заголовок оглавления, при этом блок `toc` доступен и без этого параметра.
+    `biographyHeading` — выводит заголовок биографии. Без этой настройки блок `biography` вообще не будет отображаться.
+  {% endfilter %}
+{% endblock %}

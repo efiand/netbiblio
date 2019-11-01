@@ -1,0 +1,15 @@
+{% extends template %}
+
+{% set title = "«Весна всегда, как в первый раз…»" %}
+{% set workdate = "01.01.2004" %}
+{% set pubdate = "17.04.2008" %}
+{% set prev = "lidija_seljagina/signs-6-27" %}
+
+{% block content %}
+  {% filter poem %}
+    Весна всегда, как в первый раз,
+    Окрасит наш обычный быт.
+    И каждый миг, и каждый час
+    Дурманным воздухом пьянит.
+  {% endfilter %}
+{% endblock %}

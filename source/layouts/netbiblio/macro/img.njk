@@ -1,0 +1,21 @@
+{# Блок изображения с поддержкой webp #}
+{% macro img(src, alt, cssClass = "", width = 0, height = 0) %}
+  {% if cssClass %}
+    {% set cssClass = "class=\"" + cssClass + "\"" %}
+  {% endif %}
+
+  {% if width and height %}
+    {% set size = " width=\"" + width + "\"" + " height=\"" + height + "\"" %}
+  {% endif %}
+
+  {% if isAmp %}
+    <amp-img {{ cssClass }} src="{{ src | withoutExt }}.webp" {{ size }} alt="{{ alt }}">
+      <amp-img fallback src="{{ src }}" {{ size }} alt="{{ alt }}"></amp-img>
+    </amp-img>
+  {% else %}
+    <picture>
+      <source type="image/webp" srcset="{{ src | withoutExt }}.webp"/>
+      <img {{ cssClass }} src="{{ src }}" {{ size }} alt="{{ alt }}">
+    </picture>
+  {% endif %}
+{% endmacro %}

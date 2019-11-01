@@ -1,0 +1,23 @@
+{% extends template %}
+
+{% set title = "Елизавета Золотухина" %}
+{% set pubdate = "25.11.2011" %}
+{% set prev = "mouse/index" %}
+{% set next = "vshiviliceist/index" %}
+{% set gender = "female" %}
+
+{% block toc %}
+  <h2 class="art__subtitle">Малая проза</h2>
+  <ul class="page__toc toc">
+    <li class="toc__item">
+      <a class="toc__link" href="/elizaveta-zolotuhina/lisa.html">
+        Спасение бедной Лизы <span class="toc__item-descr">(Рассказ)</span>
+      </a>
+    </li>
+  </ul>
+
+  <h2 class="art__subtitle">Крупная проза</h2>
+  <h3 class="page__toc-title">Осколки чувств</h3>
+  <p class="page__subtitle-descr">(Цикл повестей)</p>
+  {{ worksCollection("chips") }}
+{% endblock %}

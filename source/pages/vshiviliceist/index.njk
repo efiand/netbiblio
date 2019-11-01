@@ -1,0 +1,13 @@
+{% extends template %}
+
+{% set title = "Жёлтый" %}
+{% set pubdate = "04.05.2008" %}
+{% set contact = "mailto:vshiviliceist@mail.ru" %}
+{% set prev = "elizaveta-zolotuhina/index" %}
+{% set next = "ivanup/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+
+{% block toc %}
+  {{ worksCollection("poem") }}
+{% endblock %}

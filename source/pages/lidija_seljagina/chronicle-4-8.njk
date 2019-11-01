@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "«Кто сейчас за мной следит…»" %}
+{% set pubdate = "10.03.2018" %}
+
+{% block content %}
+  {% filter poem %}
+    Кто сейчас за мной следит?
+    Кто? Какой там мальчик?
+    Может, бабушка глядит —
+    Божий одуванчик?
+
+    Ах, следи и не следи —
+    Всё равно не словишь.
+    Мысль взовьётся на листе —
+    И не остановишь.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1990">1990</time>
+{% endblock %}

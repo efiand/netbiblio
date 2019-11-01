@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "«Выручает нас “авось”…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Выручает нас «авось».
+    Вот на нём и держимся.
+    Хоть дурной дают прогноз,
+    А мы всё же вертимся.
+
+    По инерции живём,
+    Самозаряжаемся,
+    Близко к сердцу не берём,
+    Жизнью вдохновляемся.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1992">1992</time>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Постучу мигом трижды…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Постучу мигом трижды,
+    Поплюю чрез плечо,
+    А в душе от надежды —
+    Горячо-горячо!
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2003-01">Январь 2003</time>
+{% endblock %}

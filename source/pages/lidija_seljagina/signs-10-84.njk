@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Волнение души…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Волнение души
+    Переросло границы.
+    Но волосы седы
+    И бледны наши лица.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1992">1992</time>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Переболеть бы всем зараз…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Переболеть бы всем зараз,
+    Чтоб открылся третий глаз.
+    Вот тогда б мы посмотрели,
+    Что у вас, а что — у нас.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1993-12">Декабрь 1993</time>
+{% endblock %}

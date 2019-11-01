@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«И плачет, и грозится…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    И плачет, и грозится,
+    И манит, и таится
+    Бермудский треугольник.
+    Ах, как бы не разбиться!
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1992">1992</time>
+{% endblock %}

@@ -1,0 +1,230 @@
+.page {
+  font-size: 14px;
+  font-family: $sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.page__body {
+  min-width: 320px;
+  margin: 0;
+  overflow-y: scroll;
+  line-height: 1.5rem;
+
+  @media screen {
+    background-color: $color-back;
+  }
+}
+
+.page__inner {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: 72rem;
+  min-height: calc(100vh - 1px);
+  margin: 0 auto 1px;
+  padding: 0 0 4.5rem;
+
+  @media screen {
+    padding: 6rem 1.5rem 4.5rem;
+    color: $color-text;
+    background-color: #ffffff;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 6rem 3rem 4.5rem;
+  }
+
+  @media screen and (min-width: 1154px) {
+    padding: 6rem 5rem 4.5rem;
+  }
+
+  @media screen and (min-width: 1154px) {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+  }
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    background-color: $color-brand;
+    opacity: 0.1;
+    animation: fade-out 0.3s ease-in-out forwards;
+    pointer-events: none;
+  }
+}
+
+.page__toc-title {
+  margin: 2rem 0 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  page-break-after: avoid;
+
+  + .page__subtitle-descr {
+    margin: -0.5rem 0 0.5rem;
+  }
+}
+
+.page__subtitle-descr {
+  margin: 0;
+  font-size: 0.8125rem;
+  text-align: center;
+  page-break-after: avoid;
+
+  .art__subtitle + & {
+    margin: -1.5rem 0 1.5rem;
+    padding: 0.6875rem 0 0;
+    line-height: 1;
+  }
+
+  + .page__toc-title {
+    margin-top: -0.5rem;
+  }
+}
+
+.page__toc-long-wrapper {
+  display: table;
+  margin: 0 auto;
+}
+
+.page__toc {
+  display: table;
+  margin: 1.5rem auto;
+
+  &--in-section {
+    margin: 0 auto;
+  }
+
+  .page__toc-title + &,
+  .page__subtitle-descr + & {
+    margin: 0 auto 1.5rem;
+  }
+}
+
+.page__toc-toggler {
+  display: table;
+  margin: -1rem auto 0;
+
+  .collapse + & {
+    margin: 0 auto;
+  }
+}
+
+.page__author {
+  margin: 3rem 0;
+  text-align: right;
+}
+
+.page__author-link {
+  display: inline-block;
+  margin: 0 -0.5rem;
+  padding: 0 0.5rem;
+  font: italic 1.0625rem/1.5rem $sans-serif;
+  vertical-align: top;
+  color: inherit;
+}
+
+.page__mark {
+  font: 1rem/1 $sans-serif;
+
+  &::after {
+    content: "\200A";
+  }
+}
+
+.page__workdate,
+.page__content-author {
+  display: block;
+  margin: 1.5rem 0;
+  font-style: italic;
+  text-align: right;
+  page-break-before: avoid;
+}
+
+.page__independent-link {
+  display: inline-block;
+  margin: 0 -0.5rem;
+  padding: 0 0.5rem;
+  vertical-align: baseline;
+}
+
+.page__copyright {
+  align-self: center;
+  margin: auto auto 0;
+  page-break-before: avoid;
+}
+
+.page__copyright-item {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.page__copyright-link {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.page__targetable {
+  position: relative;
+
+  &:target {
+    &::before {
+      @media (min-width: 768px) {
+        content: "";
+      }
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: -0.5rem;
+    bottom: 0;
+    left: -0.5rem;
+    z-index: 2;
+    background-color: rgba($color-brand, 0.33);
+    border-radius: 2px;
+    animation: fade-out 1.5s ease-in-out forwards;
+    pointer-events: none;
+  }
+}
+
+.page__addition {
+  display: table;
+  margin: 1.5rem -0.5rem 1.5rem auto;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+.page__cite {
+  &::before,
+  &::after {
+    content: none;
+  }
+}
+
+.page__cite-author {
+  font-style: inherit;
+}
+
+.page__noselect {
+  user-select: none;
+}
+
+.page__print-link {
+  &::after {
+    @media print {
+      content: " [" attr(href) "]";
+    }
+  }
+}

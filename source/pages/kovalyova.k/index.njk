@@ -1,0 +1,28 @@
+{% extends template %}
+
+{% set title = "Екатерина Ковалёва" %}
+{% set pubdate = "17.03.2008" %}
+{% set contact = "mailto:kovalyova.k@mail.ru" %}
+{% set prev = "kate_nest/index" %}
+{% set next = "jesholland/index" %}
+{% set gender = "female" %}
+
+{% block toc %}
+  <h2 class="art__subtitle">Стихотворения</h2>
+  <ul class="page__toc toc">
+    <li class="toc__item">
+      <a class="toc__link" href="/kovalyova.k/poem.html">
+        «Я ни о чём не пожалела никогда…»
+      </a>
+    </li>
+  </ul>
+
+  <h2 class="art__subtitle">Малая проза</h2>
+  <ul class="page__toc toc">
+    <li class="toc__item">
+      <a class="toc__link" href="/kovalyova.k/prose.html">
+        В маленьком шумном городе <span class="toc__item-descr">(Рассказ)</span>
+      </a>
+    </li>
+  </ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "«Беги, пока бежится…»" %}
+{% set workdate = "28.02.2008" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Беги, пока бежится,
+    Куда душа стремится.
+    Какое счастье, братцы,
+    Вдруг встать и разбежаться!
+  {% endfilter %}
+{% endblock %}

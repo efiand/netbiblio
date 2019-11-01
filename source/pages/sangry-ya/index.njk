@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "Григорий Саньков" %}
+{% set pubdate = "13.12.2011" %}
+{% set contact = "mailto:sangrisha@rambler.ru" %}
+{% set prev = "leaving_miracle/index" %}
+{% set next = "silver88darya/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">Лабиринтовый плен</h3>
+  {{ worksCollection("labirint") }}
+
+  <h3 class="page__toc-title">Философская Соломка</h3>
+  {{ worksCollection("phil") }}
+{% endblock %}

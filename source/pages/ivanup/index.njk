@@ -1,0 +1,12 @@
+{% extends template %}
+
+{% set title = "Иван Панов" %}
+{% set pubdate = "01.03.2008" %}
+{% set prev = "vshiviliceist/index" %}
+{% set next = "worldeater/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+
+{% block toc %}
+  {{ worksCollection("poem") }}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "«Люди бывают разные…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Люди бывают разные:
+    Кляузные, капризные,
+    Милые, безобразные,
+    До тошноты сюрпризные.
+
+    Люди бывают разные…
+    И потому, наверное,
+    Кто-то находит равное,
+    А я ищу вдохновенное.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1962">1962</time>
+{% endblock %}

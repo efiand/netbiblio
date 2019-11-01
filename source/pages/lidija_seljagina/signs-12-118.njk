@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "«Я, как над пропастью, лежу…»" %}
+{% set workdate = "29.01.2007" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Я как над пропастью лежу.
+    Я как над пропастью хожу.
+    Вниз заглядеться не стремлюсь:
+    Боюсь…
+  {% endfilter %}
+{% endblock %}

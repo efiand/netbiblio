@@ -1,0 +1,6 @@
+{
+  "src": "source/layouts/sitemap.njk",
+  "rename": {
+    "extname": ".xml"
+  }
+}

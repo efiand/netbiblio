@@ -1,0 +1,52 @@
+{% extends template %}
+
+{% set title = "Елена Евгеньева" %}
+{% set pubdate = "22.10.2011" %}
+{% set contact = "mailto:jesholland11@gmail.com" %}
+{% set prev = "kovalyova.k/index" %}
+{% set next = "mouse/index" %}
+{% set openGraphImg = "jesholland.jpg" %}
+{% set openGraphImgType = "image/jpeg" %}
+{% set openGraphImgWidth = 600 %}
+{% set openGraphImgHeight = 792 %}
+{% set openGraphImgAlt = "Портрет автора" %}
+{% set gender = "female" %}
+{% set biographyHeading = "Автобиография" %}
+
+{% block toc %}
+  <h2 class="art__subtitle">Стихотворения</h2>
+  <h3 class="page__toc-title">Любителям готики</h3>
+  {{ worksCollection("gothic") }}
+
+  <h3 class="page__toc-title">Экспериментальная поэзия</h3>
+  {{ worksCollection("experiment") }}
+
+  <h3 class="page__toc-title">Лоскутная песня</h3>
+  {{ worksCollection("song") }}
+
+  <h3 class="page__toc-title">Сказки о Хорватии</h3>
+  <p class="page__subtitle-descr">(Стихотворения в прозе)</p>
+  {{ worksCollection("cro") }}
+
+  <h3 class="page__toc-title">Немного о любви</h3>
+  {{ worksCollection("love") }}
+
+  <h2 class="art__subtitle">Малая проза</h2>
+  <h3 class="page__toc-title">Нелюбовь в чёрном и недотыкомка в придачу</h3>
+  <p class="page__subtitle-descr">(Рассказы)</p>
+  {{ worksCollection("black") }}
+
+  <h3 class="page__toc-title">Пубертат в теории и на практике</h3>
+  <p class="page__subtitle-descr">(Мини-сборник миниатюр)</p>
+  {{ worksCollection("puberty") }}
+{% endblock %}
+
+{% block biography %}
+  {% filter prose %}
+    Русская гражданка Эстонии. Коренная таллиннка. Окончила Таллиннский Университет как русский филолог, но по профессии не работала. Второе образование — дизайнер. 9 лет руководила в Таллинне молодёжным театром авангардной моды. Сейчас живу в Нидерландах. Пишу стихи всего три месяца. Прозу — немного дольше.
+    Занимаюсь публицистикой на политические темы. Несколько статей были опубликованы на сайте «Эхо Москвы» и в рубрике «Золотой фонд общественно-политической публицистики» на Форуме Демократического сетевого сообщества, а также в различных интернет-изданиях стран Балтии, Западной Европы, Америки.
+    Все предложенные сборники стихов и прозы в {{ siteName }} — мои первые серьёзные опыты как поэта и прозаика. Надеюсь, понравятся читателям.
+  {% endfilter %}
+
+  {{ figure("jesholland.jpg", "Елена Евгеньева", "", openGraphImgWidth, openGraphImgHeight) }}
+{% endblock %}

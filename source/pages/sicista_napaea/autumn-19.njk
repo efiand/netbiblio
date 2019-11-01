@@ -1,0 +1,16 @@
+{% extends template %}
+
+{% set title = "Концевой акростих" %}
+{% set pubdate = "25.10.2011" %}
+{% set workdate = "22.09.2011" %}
+
+{% block content %}
+  <div class="art__poem art__poem--end-acro">
+    {% filter poem("raw") %}
+      Снова вечер будет добры<b>м</b>,
+      И закат — сродни румянц<b>у</b>,
+      А в груди забьется обра<b>з</b>
+      В ритме сердца, в ритме танц<b>а</b>.
+    {% endfilter %}
+  </div>
+{% endblock %}

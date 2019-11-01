@@ -1,0 +1,38 @@
+{% extends template %}
+
+{% set title = "Татьяна Соната" %}
+{% set pubdate = "01.12.2011" %}
+{% set contact = "mailto:taniacet@mail.ru" %}
+{% set prev = "gusarova-matveeva/index" %}
+{% set next = "sicista_napaea/index" %}
+{% set gender = "female" %}
+{% set tocBlockHeading = "Стихотворения" %}
+{% set biographyHeading = "Автобиография" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">Двое</h3>
+  {{ worksCollection("two") }}
+
+  <h3 class="page__toc-title">Мой Век</h3>
+  {{ worksCollection("century") }}
+
+  <h3 class="page__toc-title">Пробегала мимо жизнь…</h3>
+  {{ worksCollection("life") }}
+{% endblock %}
+
+{% block biography %}
+  {% filter prose %}
+    Жилинская Татьяна Геннадьевна.
+    Преподаватель музыки. Режиссёр телевидения. Старший преподаватель кафедры «Теория и методика преподавания искусства» Белорусского Государственного педагогического университета им. М. Танка. Заведующая секцией преподавания театральных дисциплин. Увлекаюсь всем, что связано с моими профессиями. Стихи — всегда, стихи — везде!
+  {% endfilter %}
+{% endblock %}
+
+{% block reviews %}
+  {% filter review("Татьяна Шеина", "sicista_napaea", "14.12.2011 09:31") %}
+    Татьяна, я очень рада Вас здесь видеть! Теперь ещё и по{{ acute }}лками будем дружить!
+  {% endfilter %}
+
+  {% filter review("Лидия", "mavlyutova51@mail.ru", "04.12.2011 00:05") %}
+    Мне очень нравятся Ваши стихи. Я восторгаюсь такими людьми. Спасибо за удовольствие, которое мне предоставили. Удачи Вам!
+  {% endfilter %}
+{% endblock %}

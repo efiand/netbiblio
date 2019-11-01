@@ -1,0 +1,23 @@
+{% extends template %}
+
+{% set title = "Борису Краснову" %}
+{% set workdate = "28.07.2018" %}
+{% set pubdate = "13.08.2018" %}
+{% set next = "lidija_seljagina/ir-1-0" %}
+
+{% block preface %}
+  {% filter ins %}
+    {% filter short %}
+      На стих <a href="https://vk.com/wall152243284_2170" target="_blank" rel="nofollow">«Поэты — жертвы феминизма…»</a>.
+    {% endfilter %}
+  {% endfilter %}
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Ну хоть, добро, жизнь переменна.
+    И что мы ищем, то найдём.
+    С душою доброй непременно
+    Мы ни за что не пропадём.
+  {% endfilter %}
+{% endblock %}

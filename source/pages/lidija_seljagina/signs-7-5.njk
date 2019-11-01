@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Сбивает с толку вешняя пора…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Сбивает с толку вешняя пора —
+    То опьянит, то в сон бросает с ног.
+    Шалит неординарно детвора.
+    Страна опять пред выбором дорог.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2003-04">Апрель 2003</time>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Как звено из цепочки…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Как звено из цепочки,
+    Извлекаю сюжеты.
+    Открываю замочки,
+    Моей жизни секреты.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2003-03">Март 2003</time>
+{% endblock %}

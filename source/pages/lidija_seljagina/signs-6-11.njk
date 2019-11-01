@@ -1,0 +1,15 @@
+{% extends template %}
+
+{% set title = "«Ай да одуванчики, белые головки…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Ай да одуванчики, белые головки,
+    Парашютом бросились, закружились ловко.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1994">1994</time>
+{% endblock %}

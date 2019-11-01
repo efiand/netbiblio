@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Спасибо им, обидчикам моим…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Спасибо им, обидчикам моим,
+    За то, что учат меня жить на белом свете,
+    За то, чтоб помнила: во многом мы в ответе
+    За все дела, которые творим.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1994">1994</time>
+{% endblock %}

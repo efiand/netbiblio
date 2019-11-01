@@ -1,0 +1,11 @@
+{% extends template %}
+
+{% set title = "«Вся вода Земли…»" %}
+{% set pubdate = "01.01.2012" %}
+
+{% block content %}
+  {% filter poem %}
+    Вся вода Земли.
+    И один родник.
+  {% endfilter %}
+{% endblock %}

@@ -1,0 +1,10 @@
+User-agent: Googlebot
+Allow: /amp/
+
+User-agent: Yandex
+Disallow: /amp/
+Host: https://netbiblio.ru
+
+User-agent: *
+Disallow: /amp/
+Sitemap: https://netbiblio.ru/sitemap.xml

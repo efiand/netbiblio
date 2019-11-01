@@ -1,0 +1,18 @@
+{% extends template %}
+
+{% set title = "«Мир прекрасен, если небо чисто…»" %}
+{% set pubdate = "17.04.2008" %}
+{% set prev = "lidija_seljagina/signs-5-5" %}
+
+{% block content %}
+  {% filter poem %}
+    Мир прекрасен, если небо чисто.
+    Мир чудесен, если тихо в нём,
+    Если у детей в глазах лучистых
+    Солнышко играет огоньком.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1963-03">Март 1963</time>
+{% endblock %}

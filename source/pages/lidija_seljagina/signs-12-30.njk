@@ -1,0 +1,20 @@
+{% extends template %}
+
+{% set title = "«Хожу на кладбище к своим друзьям…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Хожу на кладбище к своим друзьям.
+    Соседей — море там, так близких нам.
+    И мысли вертятся в моём мозгу,
+    И я в тот ряд уже уйти смогу.
+
+    Уже не страшен мрак среди своих.
+    Пополню я ряды друзей моих.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2002">2002</time>
+{% endblock %}

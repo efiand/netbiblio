@@ -1,0 +1,15 @@
+{% extends template %}
+
+{% set title = "Птицы счастья" %}
+{% set pubdate = "05.11.2008" %}
+{% set workdate = "07.10.2008" %}
+{% set workplace = "Дачное" %}
+
+{% block content %}
+  {% filter poem %}
+    Пока, ругаясь сгоряча,
+    Ловил проворную синицу,
+    Журавль, скучавший у плеча,
+    Успел неспешно удалиться…
+  {% endfilter %}
+{% endblock %}

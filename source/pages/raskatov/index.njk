@@ -1,0 +1,21 @@
+{% extends template %}
+
+{% set title = "Андрей Раскатов" %}
+{% set contact = "mailto:raskatov@netbiblio.ru" %}
+{% set pubdate = "10.03.1997" %}
+{% set prev = "korovionkoff/index" %}
+{% set next = "krylov/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+{% set biographyHeading = "О себе" %}
+
+{% block toc %}
+  {{ worksCollection("poem") }}
+{% endblock %}
+
+{% block biography %}
+  {% filter prose %}
+    Родился в городе Ленинграде. <time datetime="1991-09-06">06.09.1991</time> внезапно оказался в Санкт-Петербурге и живу здесь по сей день.
+    С <time datetime="1997-03-10">10.03.1997</time> собираю литературный архив, составляющий основу данного сайта. Некоторое время пытался писать и сам, и все мои творения находятся на этой странице.
+  {% endfilter %}
+{% endblock %}

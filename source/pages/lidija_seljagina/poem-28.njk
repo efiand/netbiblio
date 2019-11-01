@@ -1,0 +1,12 @@
+{% extends template %}
+
+{% set title = "Памяти Людмилы Сенчиной" %}
+{% set workdate = "28.01.2018" %}
+{% set pubdate = "10.03.2018" %}
+
+{% block content %}
+  {% filter poem %}
+    Голос серебряный, нежная стать…
+    Любить нам и помнить не перестать.
+  {% endfilter %}
+{% endblock %}

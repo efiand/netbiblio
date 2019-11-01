@@ -1,0 +1,22 @@
+{% extends template %}
+
+{% set title = "«Подстрелила меня тоска…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Подстрелила меня тоска.
+    Предо мной всего два листка.
+    Я обиду свою снесу,
+    А листки с собой унесу,
+
+    Чтобы сердце в нелёгком пути
+    Помогло надежду найти,
+    Чтобы руки в твоём письме
+    Были вечно поданы мне.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1963">1963</time>
+{% endblock %}

@@ -1,0 +1,15 @@
+{# Список ссылок автора #}
+{% macro authorLinks(links) %}
+  <h3 class="page__toc-title">Автор в Сети</h3>
+  <ul class="page__toc toc">
+
+    {# Приведение исходных данных к массиву (одна ссылка может быть задана строкой) #}
+    {% for link in (links if (links | isArray) else [links]) %}
+      <li class="toc__item">
+        <a class="toc__link" href="{{ link }}" target="_blank" rel="nofollow">
+          {{ link | noProtocol }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "Максим Чернюк" %}
+{% set pubdate = "15.01.2012" %}
+{% set prev = "alamirata/index" %}
+{% set next = "kostin/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Крупная проза" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">Такая коварная женская дружба</h3>
+  <p class="page__subtitle-descr">(Роман)</p>
+  {{ worksCollection("friendship") }}
+{% endblock %}

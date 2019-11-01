@@ -1,0 +1,18 @@
+{% extends template %}
+
+{% set title = "«Мудрость мысли и голоса звук…»" %}
+{% set workdate = "03.09.2006" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block preface %}
+  <p class="art__dedic">Нине Николаевне Кулагиной</p>
+{% endblock %}
+
+{% block content %}
+  {% filter poem %}
+    Мудрость мысли и голоса звук
+    Создают магический круг.
+    Зал притих, и раскрылась душа.
+    Поэтесса была хороша!
+  {% endfilter %}
+{% endblock %}

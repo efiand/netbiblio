@@ -1,0 +1,30 @@
+{% extends template %}
+
+{% set title = "Роман Кузнецов" %}
+{% set pubdate = "04.07.2011" %}
+{% set contact = "skype:jugulator84?userinfo" %}
+{% set prev = "miss_rina/index" %}
+{% set next = "peugeot93/index" %}
+{% set gender = "male" %}
+{% set biographyHeading = "Об авторе" %}
+
+{% block toc %}
+  <h2 class="art__subtitle">Стихотворения</h2>
+  <h3 class="page__toc-title">Цитадель</h3>
+  <p class="page__subtitle-descr">(Поэма)</p>
+  {{ worksCollection("citadel", 0) }}
+
+  <h2 class="art__subtitle">Малая проза</h2>
+  {{ worksCollection("prose") }}
+
+  <h2 class="art__subtitle">Крупная проза</h2>
+  <h3 class="page__toc-title">Матадор</h3>
+  <p class="page__subtitle-descr">(Повесть)</p>
+  {{ worksCollection("matador", 0) }}
+{% endblock %}
+
+{% block biography %}
+  {% filter prose("short") %}
+    Писать начал в 2006 году. Основные творения — роман «Сны наяву», напечатанный и изданный в Москве, и «Игры со временем» (в доработке). Победитель нескольких литературных конкурсов, печатался в ряде изданий.
+  {% endfilter %}
+{% endblock %}

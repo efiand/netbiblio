@@ -1,0 +1,20 @@
+{% extends template %}
+
+{% set title = "«А что ещё желанней может быть…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    А что ещё желанней может быть,
+    Когда кругом бушует и кипит,
+    Когда горит всё пламенем любви
+    И этим пламенем охвачен ты?
+
+    О, не ищите в строчках совершенства.
+    Ищите в душах тайники блаженства.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1963">1963</time>
+{% endblock %}

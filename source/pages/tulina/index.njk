@@ -1,0 +1,13 @@
+{% extends template %}
+
+{% set title = "Ирина Тулина" %}
+{% set pubdate = "10.03.1997" %}
+{% set prev = "worldeater/index" %}
+{% set next = "emma/index" %}
+{% set gender = "female" %}
+{% set tocBlockHeading = "Малая проза" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">Сказки о деде Андрее и бабке Тане</h3>
+  {{ worksCollection("dabt") }}
+{% endblock %}

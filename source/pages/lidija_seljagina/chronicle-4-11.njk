@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Есть у каждой нации черта…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Есть у каждой нации черта:
+    Немцы — это точность, финны — честность.
+    А России без субботников — нельзя!
+    В них-то и таится наша бедность!
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1990">1990</time>
+{% endblock %}

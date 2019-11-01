@@ -1,0 +1,13 @@
+{% extends template %}
+
+{% set title = "Александриец" %}
+{% set pubdate = "18.11.2011" %}
+{% set prev = "delf/index" %}
+{% set next = "akoloev/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">След незнакомки</h3>
+  {{ worksCollection("stranger") }}
+{% endblock %}

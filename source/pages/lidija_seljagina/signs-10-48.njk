@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Жизнь — это горный ручей, поток это…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Жизнь — это горный ручей, поток это,
+    Звучно бурлящий в тиши.
+    Жизнь — это значит, вокруг и около
+    Дышит, цветёт, шумит.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1970">1970</time>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends template %}
+
+{% set title = "Антонъ Сухановъ" %}
+{% set pubdate = "15.11.2011" %}
+{% set prev = "krylov/index" %}
+{% set next = "aram/index" %}
+{% set gender = "male" %}
+{% set biographyHeading = "Автобиография" %}
+
+{% block toc %}
+  <h2 class="art__subtitle">Стихотворения</h2>
+  <h3 class="page__toc-title">Тень прошлого</h3>
+  {{ worksCollection("shadow") }}
+
+  <h2 class="art__subtitle">Малая проза</h2>
+  <h3 class="page__toc-title">Рассказы</h3>
+  {{ worksCollection("prose") }}
+{% endblock %}
+
+{% block biography %}
+  {% filter prose %}
+    Родился в 1990 году в городе Липецке. Свободно говорю на немецком и английском языках. Изучаю славянскую историю и мифологию.
+  {% endfilter %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Слышишь? Ветер шумит и шумит за окном…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Слышишь? Ветер шумит и шумит за окном.
+    Люди гасят огонь, уходя на покой.
+    Слышишь? Сердце тоскует, любя, об одном,
+    Хочет очень побыть с тобой.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1961">1961</time>
+{% endblock %}

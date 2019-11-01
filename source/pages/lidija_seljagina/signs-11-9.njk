@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Есть люди, созидающие жизнь…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Есть люди, созидающие жизнь.
+    Есть люди, созерцающие действо.
+    Есть люди, разрушающие жизнь.
+    Есть люди, охраняющие детство.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2002-03">Март 2002</time>
+{% endblock %}

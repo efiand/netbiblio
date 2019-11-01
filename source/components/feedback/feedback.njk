@@ -1,0 +1,36 @@
+<div class="feedback modal" id="feedback">
+  <form class="feedback__form modal__inner post post--invalid-detect post--stored"
+    {{ 'action-xhr' if isAmp else 'action' }}="{{ feedback.action }}" method="post">
+    <button class="feedback__closer modal__closer">
+      <span class="visually-hidden">Закрыть окно</span>
+    </button>
+
+    <h3 class="feedback__heading art__subtitle page__noselect">
+      Оставьте отзыв
+    </h3>
+    <p class="art__ins art__short feedback__error-note page__noselect">
+      Для отправки сообщения об ошибке выделите текст и отправьте его в виде отзыва с пометкой «Ошибка на странице».
+    </p>
+
+    <label class="feedback__group">
+      Ваше имя:
+      <input class="feedback__field field field--stored"
+        name="{{ feedback.name }}" type="text" placeholder="Имя (Фамилия)" required>
+    </label>
+
+    <label class="feedback__group">
+      Ваш e-mail:
+      <input class="feedback__field field field--stored"
+        name="{{ feedback.email }}" type="email" placeholder="email@example.com" required>
+    </label>
+
+    <label class="feedback__group feedback__group--message">
+      Текст отзыва:
+      <textarea class="feedback__field feedback__field--message field field--message field--site-error-place"
+        name="{{ feedback.message }}" placeholder="В свободной форме" required></textarea>
+    </label>
+
+    <input type="hidden" name="{{ feedback.page }}" value="{{ page }}">
+    <button class="feedback__button button post__submit" type="submit">Отправить отзыв</button>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "Ольга Куршакова" %}
+{% set pubdate = "19.02.2008" %}
+{% set prev = "olgadyakova/index" %}
+{% set next = "associator/index" %}
+{% set gender = "female" %}
+{% set tocBlockHeading = "Стихотворения" %}
+{% set biographyHeading = "Об авторе" %}
+
+{% block toc %}
+  {{ worksCollection("poem") }}
+{% endblock %}
+
+{% block biography %}
+  {{ authorLinks("//stihi.ru/avtor/karro") }}
+{% endblock %}

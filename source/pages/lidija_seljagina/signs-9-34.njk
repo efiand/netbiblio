@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "«Вроде листик тот хреновый…»" %}
+{% set workdate = "12.08.2007" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Вроде листик тот хреновый —
+    Только не скажи…
+    Сколько силы у забора
+    Спрятано в межи!
+  {% endfilter %}
+{% endblock %}

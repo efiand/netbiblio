@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Мы знаем: деньги — зло…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Мы знаем: деньги — зло.
+    И всё равно при этом
+    Любое ремесло
+    Желает быть согретым.
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1993">1993</time>
+{% endblock %}

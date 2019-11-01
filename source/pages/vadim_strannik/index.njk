@@ -1,0 +1,18 @@
+{% extends template %}
+
+{% set title = "Вадим Странник" %}
+{% set pubdate = "08.08.2013" %}
+{% set prev = "buryan/index" %}
+{% set next = "valartulkas/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+{% set biographyHeading = "Об авторе" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">Откровения любви</h3>
+  {{ worksCollection("love") }}
+{% endblock %}
+
+{% block biography %}
+  {{ authorLinks("//stihi.ru/avtor/krishon") }}
+{% endblock %}

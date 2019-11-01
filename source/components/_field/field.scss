@@ -1,0 +1,39 @@
+.field {
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+  outline: none;
+  box-shadow: none;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: color, -webkit-text-fill-color, background-color, border-color;
+  appearance: textfield;
+
+  &:-webkit-autofill {
+    box-shadow: inset 0 0 0 100px #ffffff;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  &--message {
+    display: block;
+    overflow: auto;
+    resize: none;
+  }
+}

@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "«Располнело моё тело…»" %}
+{% set workdate = "04.06.2002" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Располнело моё тело.
+    В чём же дело? Не пойму:
+    То ли тело много ело,
+    То ли я иду ко дну.
+  {% endfilter %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Прошли все сроки, а я жду чего-то…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Прошли все сроки, а я жду чего-то
+    И говорю всем: «Пишет о любви».
+    Сама гляжу на старых писем строки
+    И шёпотом молю: «Люби…»
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="1960">1960</time>
+{% endblock %}

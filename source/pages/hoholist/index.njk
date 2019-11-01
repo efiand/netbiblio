@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "Алексей Горбатюк" %}
+{% set pubdate = "11.11.2011" %}
+{% set contact = "mailto:hoholist@mail.ru" %}
+{% set prev = "ton/index" %}
+{% set next = "decadent/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Стихотворения" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">Осенние мотивы</h3>
+  {{ worksCollection("autumn") }}
+
+  <h3 class="page__toc-title">На высокой струне</h3>
+  {{ worksCollection("string") }}
+{% endblock %}

@@ -1,0 +1,23 @@
+@mixin crossIcon ($size, $thickness) {
+  box-sizing: border-box;
+  width: $size;
+  height: $size;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: ($size / 2) - ($thickness / 2);
+    left: 0;
+    width: $size;
+    height: $thickness;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}

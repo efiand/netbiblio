@@ -1,0 +1,20 @@
+{% extends template %}
+
+{% set title = "Екатерина Гнездилова" %}
+{% set pubdate = "27.07.2012" %}
+{% set contact = "mailto:ruby14@mail.ru" %}
+{% set prev = "borodi4kate/index" %}
+{% set next = "kovalyova.k/index" %}
+{% set gender = "female" %}
+{% set tocBlockHeading = "Крупная проза" %}
+{% set biographyHeading = "Об авторе" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">До того, как прольётся кровь</h3>
+  <p class="page__subtitle-descr">(Мистика)</p>
+  {{ worksCollection("blood") }}
+{% endblock %}
+
+{% block biography %}
+  {{ authorLinks("//vk.com/id93437495") }}
+{% endblock %}

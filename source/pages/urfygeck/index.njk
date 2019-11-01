@@ -1,0 +1,14 @@
+{% extends template %}
+
+{% set title = "Урфи Гек" %}
+{% set pubdate = "22.09.2011" %}
+{% set prev = "sicista_napaea/index" %}
+{% set next = "avgustina/index" %}
+{% set gender = "male" %}
+{% set tocBlockHeading = "Крупная проза" %}
+
+{% block toc %}
+  <h3 class="page__toc-title">Фантазии маленького Кая</h3>
+  <p class="page__subtitle-descr">(Повесть)</p>
+  {{ worksCollection("fantasy") }}
+{% endblock %}

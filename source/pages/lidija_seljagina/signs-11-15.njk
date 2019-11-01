@@ -1,0 +1,17 @@
+{% extends template %}
+
+{% set title = "«Господи, слава Богу…»" %}
+{% set pubdate = "17.04.2008" %}
+
+{% block content %}
+  {% filter poem %}
+    Господи, слава Богу!
+    Снова ворвалась весна
+    Солнцем, капельным звоном.
+    Нет больше зимнего сна!
+  {% endfilter %}
+{% endblock %}
+
+{% block dateplace %}
+  <time class="page__workdate" datetime="2003-03">Март 2003</time>
+{% endblock %}

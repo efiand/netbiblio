@@ -1,0 +1,23 @@
+{% extends template %}
+
+{% set title = "Ольга Дьякова" %}
+{% set pubdate = "05.11.2007" %}
+{% set contact = "mailto:olga_dyakova@nm.ru" %}
+{% set prev = "esin/index" %}
+{% set next = "karro/index" %}
+{% set gender = "female" %}
+{% set tocBlockHeading = "Стихотворения" %}
+{% set biographyHeading = "Об авторе" %}
+
+{% block toc %}
+  {{ worksCollection("poem") }}
+{% endblock %}
+
+{% block biography %}
+  <p class="art__short">Поэт. Прозаик. Город: Санкт-Петербург.</p>
+
+  {{ authorLinks([
+    "//stihi.ru/avtor/olgadyakova",
+    "//vk.com/id159059"
+  ]) }}
+{% endblock %}

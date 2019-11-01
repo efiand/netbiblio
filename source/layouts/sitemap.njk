@@ -1,0 +1,12 @@
+{# Генерация sitemap из структуры исходников страниц #}
+{# Передаётся host из /source/settings/common.json #}
+{# и список страниц, сгенерированный gulp-задачей pages #}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in pages %}
+    <url>
+      <loc>{{ host }}/{{ page }}.html</loc>
+    </url>
+  {% endfor %}
+</urlset>

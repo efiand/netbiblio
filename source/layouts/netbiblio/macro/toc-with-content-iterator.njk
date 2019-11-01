@@ -1,0 +1,15 @@
+{# Вывод пункта оглавления с контентным итератором #}
+{% macro tocWithContentIterator(page, content, iterator) %}
+  <li class="toc__item">
+    <a
+      class="toc__link toc__link--collection toc__link--with-content-iterator"
+      href="/{{ page }}.html">
+      <span>{{ content }}</span>
+      <span class="toc__content-iterator">
+        <span
+          class="visually-hidden visually-hidden--no-mobile">(</span><span>{{ iterator }}</span><span
+          class="visually-hidden visually-hidden--no-mobile">)</span>
+      </span>
+    </a>
+  </li>
+{% endmacro %}
