@@ -1,8 +1,16 @@
 {% extends template %}
 
-{% set title = "В. В. Красюк" %}
+{% set title = "Памяти Веры Васильевны Красюк" %}
 {% set pubdate = "17.04.2008" %}
 {% set next = "lidija_seljagina/signs-9-1" %}
+
+{% block preface %}
+  {% filter ins %}
+    {% filter short %}
+      Сестрорецкая больница, хирургическое отделение.
+    {% endfilter %}
+  {% endfilter %}
+{% endblock %}
 
 {% block content %}
   {% filter poem %}

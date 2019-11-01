@@ -4,6 +4,14 @@
 {% set workdate = "10.12.2011" %}
 {% set pubdate = "05.11.2017" %}
 
+{% block preface %}
+  {% filter ins %}
+    {% filter prose %}
+      Военно-полевой медсестре в Великой Отечественной войне, а в мирное время участковой медсестре Курортного района до последних дней.
+    {% endfilter %}
+  {% endfilter %}
+{% endblock %}
+
 {% block content %}
   {% filter poem %}
     Наверно, страшно было спать порой,
