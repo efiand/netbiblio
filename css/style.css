@@ -559,6 +559,22 @@ img {
   margin-left: 0;
 }
 
+.banners {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.banners__item {
+  margin: 0 5px 5px;
+}
+
 .code {
   font-family: "Courier New", monospace;
 }
