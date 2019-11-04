@@ -37,6 +37,9 @@ function _createClass(Constructor, protoProps, staticProps) {
     }
     return path;
   };
+  if (window.location.protocol === "http:") {
+    window.location(window.location.replace("http:", "https:"));
+  }
   var scrollToHash = function scrollToHash(hash) {
     var speed = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
     var offset = window.pageYOffset; // С поправкой на высоту шапки
