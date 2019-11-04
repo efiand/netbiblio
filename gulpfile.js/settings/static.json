@@ -1,6 +1,7 @@
 {
   "src": {
     "copy": "source/static/**/*",
+    "redirects": "source/redirects/**/*.html",
     "lintspaces": [
       ".*",
       "source/static/**/*.{php,xml,svg,html,css,js,json,txt}"

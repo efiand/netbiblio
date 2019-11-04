@@ -1,0 +1,15 @@
+{% extends template %}
+
+{% set pageType = "index" %}
+{% set title = "Страница не найдена" %}
+{% set prev = "kiselev/index" %}
+{% set next = "icecreamhater/index" %}
+{% set prevTitle = "К крайнему автору" %}
+{% set nextTitle = "К первому автору" %}
+{% set openGraphType = "website" %}
+
+{% block content %}
+  {% filter prose("marked") %}
+    Страница не найдена. Возможно, её не существует или она начинается с `http:`.
+  {% endfilter %}
+{% endblock %}

@@ -10,7 +10,7 @@ plugins.requireDir(`filters`);
 functions.html = () => {
   return gulp.src(html.src.compile)
     .pipe(plugins.plumber())
-    .pipe(plugins.changed(common.dest, { extension: `.html` }))
+    .pipe(plugins.if(!settings.project.isAmp, plugins.changed(common.dest, { extension: `.html` })))
     .pipe(plugins.data((filename) => {
       return functions.resolvePageData(filename, functions, settings);
     }))

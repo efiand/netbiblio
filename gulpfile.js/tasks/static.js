@@ -9,6 +9,11 @@ gulp.task(`static:copy`, () => {
     .pipe(gulp.dest(tasks.common.dest));
 });
 
+gulp.task(`static:redirects`, () => {
+  return gulp.src(tasks.static.src.redirects)
+    .pipe(gulp.dest(tasks.common.dest));
+});
+
 gulp.task(`static:lintspaces`, () => {
   return gulp.src(tasks.static.src.lintspaces)
     .pipe(plugins.plumber())
@@ -16,4 +21,4 @@ gulp.task(`static:lintspaces`, () => {
     .pipe(plugins.lintspaces.reporter());
 });
 
-gulp.task(`static`, gulp.parallel(`static:copy`, `static:lintspaces`));
+gulp.task(`static`, gulp.parallel(`static:copy`, `static:redirects`, `static:lintspaces`));
