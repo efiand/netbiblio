@@ -36,7 +36,7 @@ function _createClass(Constructor, protoProps, staticProps) {
       target = target.parentElement;
     }
     return path;
-  };
+  }; // прогрессивное улучшение для статических страниц по форсированному переходу на https
   var url = window.location.href;
   if (window.location.protocol === "http:") {
     window.location.replace(url.replace("http:", "https:"));
