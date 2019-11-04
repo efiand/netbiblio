@@ -37,8 +37,9 @@ function _createClass(Constructor, protoProps, staticProps) {
     }
     return path;
   };
+  var url = window.location.href;
   if (window.location.protocol === "http:") {
-    window.location(window.location.replace("http:", "https:"));
+    window.location.replace(url.replace("http:", "https:"));
   }
   var scrollToHash = function scrollToHash(hash) {
     var speed = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
