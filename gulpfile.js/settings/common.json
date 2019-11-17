@@ -7,6 +7,9 @@
     "suffix": ".min"
   },
   "server": {
-    "server": "build"
+    "server": "build",
+    "https": false,
+    "port": 3333,
+    "ui": false
   }
 }

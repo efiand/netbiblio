@@ -8,7 +8,8 @@
     "start": "npm test && gulp dev",
     "build": "npm test && cross-env NODE_ENV=production gulp build && htmlhint build/**/*.html",
     "deploy": "gh-pages -d build",
-    "push": "git add . && git commit -m \"edit\" && git push"
+    "release": "npm run build && npm run deploy",
+    "save": "git add . && git commit -m \"Save content\" && git push"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
