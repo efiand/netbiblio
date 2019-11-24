@@ -6,6 +6,7 @@
   "scripts": {
     "test": "htmlhint --config .nunjuckshintrc **/*.njk",
     "start": "npm test && gulp dev",
+    "backend": "gulp backend",
     "build": "npm test && cross-env NODE_ENV=production gulp build && htmlhint build/**/*.html",
     "deploy": "gh-pages -d build",
     "release": "npm run build && npm run deploy",
@@ -44,6 +45,7 @@
     "gulp-remark-lint-dko": "^1.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
+    "gulp-rsync": "0.0.8",
     "gulp-sass": "^4.0.x",
     "gulp-stylelint": "^8.0.0",
     "gulp-uglify": "^3.0.1",
