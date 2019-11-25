@@ -21,7 +21,19 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 (function() {
-  // Клиентские модули
+  window.data = {
+    ERRORS: {
+      status: "\u041E\u0448\u0438\u0431\u043A\u0430 {{ status }}: {{ statusText }}",
+      connect: "\u041E\u0448\u0438\u0431\u043A\u0430 \u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u044F. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0451 \u0440\u0430\u0437.",
+      timeout: "\u0417\u0430\u043F\u0440\u043E\u0441 \u043D\u0435 \u0443\u0441\u043F\u0435\u043B \u0432\u044B\u043F\u043E\u043B\u043D\u0438\u0442\u044C\u0441\u044F \u0437\u0430 {{ timeout }} \u043C\u0441. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0451 \u0440\u0430\u0437."
+    },
+    FIELDS: {
+      page: "entry.506942381",
+      name: "entry.655502193",
+      email: "entry.1196004472",
+      message: "entry.2032621908"
+    }
+  }; // Клиентские модули
   // Применение класса к набору DOM-элементов
   var applyClass = function applyClass(selector, Class) {
     var nodeList = document.querySelectorAll(selector);
@@ -66,7 +78,35 @@ function _createClass(Constructor, protoProps, staticProps) {
     if (location.hash) {
       scrollToHash(location.hash, 3);
     }
-  }, 100); // Проверка наличия localStorage
+  }, 100);
+  var xhr = new XMLHttpRequest();
+  var api = {
+    ctx: null
+  };
+  xhr.addEventListener("load", function() {
+    if (xhr.status === 200) {
+      api.ctx.res = window.data.isIE ? JSON.parse(xhr.response) : xhr.response;
+      api.ctx.status = api.ctx.res.status;
+    } else {
+      api.ctx.status = window.renderTemplate(window.data.ERRORS.status, [xhr.status, xhr.statusText]);
+    }
+    api.ctx.responseHandler();
+  });
+  xhr.addEventListener("error", function() {
+    api.ctx.status = window.data.ERRORS.connect;
+    api.ctx.responseHandler();
+  });
+  xhr.addEventListener("timeout", function() {
+    api.ctx.status = window.renderTemplate(window.data.ERRORS.timeout, [xhr.timeout]);
+    api.ctx.responseHandler();
+  });
+  window.ajaxHandler = function(incomingCtx) {
+    api.ctx = incomingCtx;
+    xhr.open(api.ctx.form.method, api.ctx.action);
+    xhr.responseType = "json";
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send(api.ctx.formData ? "data=".concat(encodeURIComponent(JSON.stringify(api.ctx.formData))) : null);
+  }; // Проверка наличия localStorage
   var isStorageSupport = true;
   try {
     localStorage.getItem("test");
@@ -105,7 +145,17 @@ function _createClass(Constructor, protoProps, staticProps) {
       }]);
       return HashLinks;
     }();
-  applyClass("a[href^=\"#\"]", HashLinks); // Узнаем ширину полосы прокрутки
+  applyClass("a[href^=\"#\"]", HashLinks); // заменяет в строке вхождение вида {{ something }} на элемент массива data
+  // для полного преобразования число элементов должно быть равно числу вхождений
+  window.renderTemplate = function(str, data) {
+    var params = {
+      i: -1
+    };
+    return str.replace(/{{.*?}}/g, function(match) {
+      params.i++;
+      return data[params.i] || match;
+    });
+  }; // Узнаем ширину полосы прокрутки
   // Создадим элемент с прокруткой
   var div = document.createElement("div");
   div.style.overflowY = "scroll";
@@ -337,11 +387,20 @@ function _createClass(Constructor, protoProps, staticProps) {
     function() {
       function Post(element) {
         _classCallCheck(this, Post);
-        this.element = element;
+        this.form = element;
         this.opener = document.querySelector("[data-open=\"".concat(element.parentElement.id, "\"]"));
         this.submit = element.querySelector(".post__submit");
         this.fields = element.querySelectorAll(".field");
-        this.messageField = element.querySelector(".field--message"); // Обрабатывает ли форма отправку сообщения об ошибке
+        this.preloader = element.querySelector(".preloader");
+        this.statusBlock = element.querySelector(".post__status-block");
+        this.statusString = element.querySelector(".post__status");
+        this.statusCloser = this.statusBlock.querySelector(".post__status-closer");
+        this.messageField = element.querySelector(".field--message");
+        this.answerBlock = element.querySelector(".feedback__group--answer");
+        this.answerField = this.answerBlock.querySelector(".field--answer");
+        this.formData = {};
+        this.fieldSeries = {};
+        this.fieldNames = {}; // Обрабатывает ли форма отправку сообщения об ошибке
         this.isSiteErrorSend = this.messageField.classList.contains("field--site-error-place");
         this.setInitials();
         this.setListeners();
@@ -350,14 +409,20 @@ function _createClass(Constructor, protoProps, staticProps) {
         key: "setInitials",
         value: function setInitials() {
           // Чтобы до сабмита красные поля не смущали пользователей
-          this.element.classList.remove("post--invalid-detect");
+          this.form.classList.remove("post--invalid-detect");
+          this.answerBlock.classList.remove("hidden");
+          this.fieldNames = Object.keys(window.data.FIELDS);
+          for (var i = 0; i < this.fieldNames.length; i++) {
+            this.fieldSeries[this.fieldNames[i]] = this.form.querySelector("[name=\"".concat(window.data.FIELDS[this.fieldNames[i]], "\"]"));
+          }
         }
       }, {
         key: "setListeners",
         value: function setListeners() {
           var _this5 = this;
-          this.submit.addEventListener("click", function() {
-            _this5.submitHandler();
+          var self = this;
+          this.submit.addEventListener("click", function(evt) {
+            _this5.submitHandler(evt);
           });
           if (this.opener) {
             this.opener.addEventListener("click", function() {
@@ -370,7 +435,10 @@ function _createClass(Constructor, protoProps, staticProps) {
                 }
               });
             }
-          } // Отправка формы по Ctrl + Enter из поля текстового ввода
+          }
+          self.statusCloser.addEventListener("click", function() {
+            self.closeStatusHandler();
+          }); // Отправка формы по Ctrl + Enter из поля текстового ввода
           this.messageField.addEventListener("keydown", function(evt) {
             if (evt.keyCode === 13 && evt.ctrlKey) {
               evt.preventDefault();
@@ -409,9 +477,41 @@ function _createClass(Constructor, protoProps, staticProps) {
         }
       }, {
         key: "submitHandler",
-        value: function submitHandler() {
-          // Чтобы после первого сабмита красные поля появлялись
-          this.element.classList.add("post--invalid-detect");
+        value: function submitHandler(evt) {
+          var _this7 = this;
+          evt.preventDefault(); // Чтобы после первого сабмита красные поля появлялись
+          this.form.classList.remove("post--invalid-detect");
+          setTimeout(function() {
+            _this7.form.classList.add("post--invalid-detect");
+          }, 33);
+          if (this.form.checkValidity()) {
+            this.action = "//netbiblio.efiand.ru";
+            this.preloader.classList.remove("hidden");
+            for (var i = 0; i < this.fieldNames.length; i++) {
+              this.formData[this.fieldNames[i]] = this.fieldSeries[this.fieldNames[i]].value.trim();
+            }
+            this.formData.answer = this.answerField.value.trim();
+            window.ajaxHandler(this);
+          }
+        }
+      }, {
+        key: "responseHandler",
+        value: function responseHandler() {
+          var self = this;
+          self.statusString.innerHTML = self.status;
+          self.preloader.classList.add("hidden");
+          if (self.statusBlock) {
+            self.statusBlock.classList.remove("hidden");
+          }
+        }
+      }, {
+        key: "closeStatusHandler",
+        value: function closeStatusHandler() {
+          var self = this;
+          self.formData = {};
+          self.form.classList.remove("post--invalid-detect");
+          self.form.reset();
+          self.statusBlock.classList.add("hidden");
         }
       }]);
       return Post;
@@ -447,10 +547,10 @@ function _createClass(Constructor, protoProps, staticProps) {
       }, {
         key: "setListeners",
         value: function setListeners() {
-          var _this7 = this;
+          var _this8 = this;
           this.shower.addEventListener("click", function() {
-            _this7.shower.classList.add("hidden");
-            _this7.wrapper.classList.remove("hidden");
+            _this8.shower.classList.add("hidden");
+            _this8.wrapper.classList.remove("hidden");
           });
         }
       }]);
@@ -479,10 +579,10 @@ function _createClass(Constructor, protoProps, staticProps) {
       }, {
         key: "setListeners",
         value: function setListeners() {
-          var _this8 = this;
+          var _this9 = this;
           if (this.toggler) {
             this.toggler.addEventListener("click", function() {
-              _this8.tocToggleHandler();
+              _this9.tocToggleHandler();
             }); // Открытие оглавления по якорной ссылке
             if (window.location.hash === "#".concat(this.element.id)) {
               this.toggler.click();

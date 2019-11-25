@@ -920,10 +920,94 @@ img {
   content: none;
 }
 
+.post {
+  position: relative;
+}
+
 .modal--js .post--invalid-detect .field:invalid,
 .modal--js .post--invalid-detect .field:invalid:focus {
   -webkit-animation: shake 0.6s ease-in-out;
   animation: shake 0.6s ease-in-out;
+}
+
+.post__status-block {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #00796b;
+}
+
+.post__status-closer {
+  -webkit-align-self: center;
+  align-self: center;
+  margin-top: 40px;
+}
+
+.preloader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.preloader__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #00796b;
+  border-radius: 3px;
+  -webkit-transform: translate(-40px, -50%);
+  transform: translate(-40px, -50%);
+  -webkit-animation: fade-out 0.3s ease-in-out;
+  animation: fade-out 0.3s ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+.preloader__inner::before,
+.preloader__inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: inherit;
+  -webkit-animation: inherit;
+  animation: inherit;
+}
+
+.preloader__inner::before {
+  left: 30px;
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.preloader__inner::after {
+  left: 60px;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .reviews__heading {
@@ -1105,7 +1189,8 @@ img {
     width: calc(50% - 1rem);
   }
 
-  .feedback__group--message {
+  .feedback__group--message,
+  .feedback__group--answer {
     width: 100%;
   }
 
