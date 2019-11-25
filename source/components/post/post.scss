@@ -1,4 +1,6 @@
 .post {
+  position: relative;
+
   .modal--js &--invalid-detect {
     .field:invalid {
       &,
@@ -7,4 +9,24 @@
       }
     }
   }
+}
+
+.post__status-block {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid $color-brand;
+}
+
+.post__status-closer {
+  align-self: center;
+  margin-top: 40px;
 }

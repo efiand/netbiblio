@@ -1,10 +1,19 @@
 class Post {
   constructor(element) {
-    this.element = element;
+    this.form = element;
     this.opener = document.querySelector(`[data-open="${element.parentElement.id}"]`);
     this.submit = element.querySelector(`.post__submit`);
     this.fields = element.querySelectorAll(`.field`);
+    this.preloader = element.querySelector(`.preloader`);
+    this.statusBlock = element.querySelector(`.post__status-block`);
+    this.statusString = element.querySelector(`.post__status`);
+    this.statusCloser = this.statusBlock.querySelector(`.post__status-closer`);
     this.messageField = element.querySelector(`.field--message`);
+    this.answerBlock = element.querySelector(`.feedback__group--answer`);
+    this.answerField = this.answerBlock.querySelector(`.field--answer`);
+    this.formData = {};
+    this.fieldSeries = {};
+    this.fieldNames = {};
 
     // Обрабатывает ли форма отправку сообщения об ошибке
     this.isSiteErrorSend = this.messageField.classList.contains(`field--site-error-place`);
@@ -15,12 +24,21 @@ class Post {
 
   setInitials() {
     // Чтобы до сабмита красные поля не смущали пользователей
-    this.element.classList.remove(`post--invalid-detect`);
+    this.form.classList.remove(`post--invalid-detect`);
+
+    this.answerBlock.classList.remove(`hidden`);
+
+    this.fieldNames= Object.keys(window.data.FIELDS);
+    for (let i = 0; i < this.fieldNames.length; i++) {
+      this.fieldSeries[this.fieldNames[i]] = this.form.querySelector(`[name="${window.data.FIELDS[this.fieldNames[i]]}"]`);
+    }
   }
 
   setListeners() {
-    this.submit.addEventListener(`click`, () => {
-      this.submitHandler();
+    const self = this;
+
+    this.submit.addEventListener(`click`, (evt) => {
+      this.submitHandler(evt);
     });
 
     if (this.opener) {
@@ -36,6 +54,10 @@ class Post {
         });
       }
     }
+
+    self.statusCloser.addEventListener(`click`, () => {
+      self.closeStatusHandler();
+    });
 
     // Отправка формы по Ctrl + Enter из поля текстового ввода
     this.messageField.addEventListener(`keydown`, (evt) => {
@@ -76,9 +98,42 @@ class Post {
     this.fields[focusedIndex].focus();
   }
 
-  submitHandler() {
+  submitHandler(evt) {
+    evt.preventDefault();
+
     // Чтобы после первого сабмита красные поля появлялись
-    this.element.classList.add(`post--invalid-detect`);
+    this.form.classList.remove(`post--invalid-detect`);
+    setTimeout(() => {
+      this.form.classList.add(`post--invalid-detect`);
+    }, 33);
+
+    if (this.form.checkValidity()) {
+      this.action = `//netbiblio.efiand.ru`;
+      this.preloader.classList.remove(`hidden`);
+
+      for (let i = 0; i < this.fieldNames.length; i++) {
+        this.formData[this.fieldNames[i]] = this.fieldSeries[this.fieldNames[i]].value.trim();
+      }
+      this.formData.answer = this.answerField.value.trim();
+      window.ajaxHandler(this);
+    }
+  }
+
+  responseHandler() {
+    const self = this;
+    self.statusString.innerHTML = self.status;
+    self.preloader.classList.add(`hidden`);
+    if (self.statusBlock) {
+      self.statusBlock.classList.remove(`hidden`);
+    }
+  }
+
+  closeStatusHandler() {
+    const self = this;
+    self.formData = {};
+    self.form.classList.remove(`post--invalid-detect`);
+    self.form.reset();
+    self.statusBlock.classList.add(`hidden`);
   }
 }
 

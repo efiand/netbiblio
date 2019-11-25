@@ -8,7 +8,7 @@
   },
   "server": {
     "server": "build",
-    "https": false,
+    "https": true,
     "port": 3333,
     "ui": false
   }

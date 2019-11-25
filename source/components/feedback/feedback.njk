@@ -30,7 +30,22 @@
         name="{{ feedback.message }}" placeholder="В свободной форме" required></textarea>
     </label>
 
+    <label class="feedback__group feedback__group--answer hidden">
+      В каком году основано «Netbiblio» (ответ на главной, введите 4 цифры):
+      <input class="feedback__field field field--answer"
+        name="answer" type="number" placeholder="2020" required>
+    </label>
+
     <input type="hidden" name="{{ feedback.page }}" value="{{ page }}">
     <button class="feedback__button button post__submit" type="submit">Отправить отзыв</button>
+
+    <div class="preloader hidden">
+      <div class="preloader__inner" aria-label="Подождите, пока загрузятся данные…"></div>
+    </div>
+    <div class="post__status-block hidden">
+      <div class="post__status"></div>
+      <button class="button post__status-closer" type="button">Закрыть</button>
+    </div>
   </form>
+
 </div>
