@@ -1,9 +1,8 @@
 <?php
-
 $is_ajax = isset($_REQUEST['data']);
 $is_post = isset($_POST['name']);
 
-if (!$s_ajax && !$is_post) {
+if (!($is_ajax || $is_post)) {
   http_response_code(403);
   header('Location: //netbiblio.ru/404.html');
   exit;
@@ -14,7 +13,7 @@ $is_valid = true;
 $response['status'] = 'Назначение запроса не определено.';
 
 if (isset($data['answer']) && $data['answer'] !== '1997') {
-  $response['status'] = 'Ошибка отправки сообщения. Попробуйте ещё раз.';
+  $response['status'] = 'Ответ на контрольный вопрос неверен.';
   $is_valid = false;
 }
 
@@ -42,5 +41,5 @@ if ($is_ajax) {
   exit(json_encode($response, JSON_UNESCAPED_UNICODE));
 }
 
-header('Location: https://netbiblio.ru/send.html');
+header('Location: //netbiblio.ru/' . ($is_valid ? 'send' : 'no-send') . '.html');
 exit();

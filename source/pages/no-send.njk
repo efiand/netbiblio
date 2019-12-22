@@ -1,0 +1,15 @@
+{% extends template %}
+
+{% set pageType = "index" %}
+{% set title = "Сообщение не отправлено" %}
+{% set prev = "kiselev/index" %}
+{% set next = "icecreamhater/index" %}
+{% set prevTitle = "К крайнему автору" %}
+{% set nextTitle = "К первому автору" %}
+{% set openGraphType = "website" %}
+
+{% block content %}
+  {% filter prose %}
+    Ошибка отправки сообщения: ответ на контрольный вопрос неверен.
+  {% endfilter %}
+{% endblock %}
