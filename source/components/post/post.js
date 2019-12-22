@@ -13,7 +13,7 @@ class Post {
     this.answerField = this.answerBlock.querySelector(`.field--answer`);
     this.formData = {};
     this.fieldSeries = {};
-    this.fieldNames = {};
+    this.fieldNames = [];
 
     // Обрабатывает ли форма отправку сообщения об ошибке
     this.isSiteErrorSend = this.messageField.classList.contains(`field--site-error-place`);
@@ -26,11 +26,9 @@ class Post {
     // Чтобы до сабмита красные поля не смущали пользователей
     this.form.classList.remove(`post--invalid-detect`);
 
-    this.answerBlock.classList.remove(`hidden`);
-
-    this.fieldNames= Object.keys(window.data.FIELDS);
+    this.fieldNames = window.data.FIELDS;
     for (let i = 0; i < this.fieldNames.length; i++) {
-      this.fieldSeries[this.fieldNames[i]] = this.form.querySelector(`[name="${window.data.FIELDS[this.fieldNames[i]]}"]`);
+      this.fieldSeries[this.fieldNames[i]] = this.form.querySelector(`[name="${this.fieldNames[i]}"]`);
     }
   }
 
@@ -108,12 +106,13 @@ class Post {
     }, 33);
 
     if (this.form.checkValidity()) {
-      this.action = `//netbiblio.efiand.ru`;
+      this.action = this.form.action;
       this.preloader.classList.remove(`hidden`);
 
       for (let i = 0; i < this.fieldNames.length; i++) {
         this.formData[this.fieldNames[i]] = this.fieldSeries[this.fieldNames[i]].value.trim();
       }
+
       this.formData.answer = this.answerField.value.trim();
       window.ajaxHandler(this);
     }

@@ -15,28 +15,28 @@
     <label class="feedback__group">
       Ваше имя:
       <input class="feedback__field field field--stored"
-        name="{{ feedback.name }}" type="text" placeholder="Имя (Фамилия)" required>
+        name="name" type="text" placeholder="Имя (Фамилия)" required>
     </label>
 
     <label class="feedback__group">
       Ваш e-mail:
       <input class="feedback__field field field--stored"
-        name="{{ feedback.email }}" type="email" placeholder="email@example.com" required>
+        name="email" type="email" placeholder="email@example.com" required>
     </label>
 
     <label class="feedback__group feedback__group--message">
       Текст отзыва:
       <textarea class="feedback__field feedback__field--message field field--message field--site-error-place"
-        name="{{ feedback.message }}" placeholder="В свободной форме" required></textarea>
+        name="message" placeholder="В свободной форме" required></textarea>
     </label>
 
-    <label class="feedback__group feedback__group--answer hidden">
+    <label class="feedback__group feedback__group--answer">
       В каком году основано «Netbiblio» (ответ на главной, введите 4 цифры):
       <input class="feedback__field field field--answer"
         name="answer" type="number" placeholder="2020" required>
     </label>
 
-    <input type="hidden" name="{{ feedback.page }}" value="{{ page }}">
+    <input type="hidden" name="page" value="{{ page }}">
     <button class="feedback__button button post__submit" type="submit">Отправить отзыв</button>
 
     <div class="preloader hidden">

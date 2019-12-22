@@ -1,17 +1,24 @@
 <?php
 
-if (!isset($_REQUEST['data'])) {
+$is_ajax = isset($_REQUEST['data']);
+$is_post = isset($_POST['name']);
+
+if (!$s_ajax && !$is_post) {
   http_response_code(403);
   header('Location: //netbiblio.ru/404.html');
-  exit();
+  exit;
 }
 
+$data = $is_ajax ? json_decode($_REQUEST['data'], true) : $_POST;
+$is_valid = true;
 $response['status'] = 'Назначение запроса не определено.';
-$data = json_decode($_REQUEST['data'], true);
 
 if (isset($data['answer']) && $data['answer'] !== '1997') {
   $response['status'] = 'Ошибка отправки сообщения. Попробуйте ещё раз.';
-} else {
+  $is_valid = false;
+}
+
+if ($is_valid) {
   require('../../env.php');
   $db_link = mysqli_connect('localhost', 'root', $_ENV['DB_PASS'], 'netbiblio');
 
@@ -29,6 +36,11 @@ if (isset($data['answer']) && $data['answer'] !== '1997') {
   }
 }
 
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
-exit(json_encode($response, JSON_UNESCAPED_UNICODE));
+if ($is_ajax) {
+  header('Access-Control-Allow-Origin: *');
+  header('Content-Type: application/json');
+  exit(json_encode($response, JSON_UNESCAPED_UNICODE));
+}
+
+header('Location: https://netbiblio.ru/send.html');
+exit();

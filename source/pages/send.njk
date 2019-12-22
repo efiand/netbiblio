@@ -1,0 +1,16 @@
+{% extends template %}
+
+{% set pageType = "index" %}
+{% set title = "Сообщение отправлено" %}
+{% set prev = "kiselev/index" %}
+{% set next = "icecreamhater/index" %}
+{% set prevTitle = "К крайнему автору" %}
+{% set nextTitle = "К первому автору" %}
+{% set openGraphType = "website" %}
+
+{% block content %}
+  {% filter prose %}
+    Спасибо за помощь! Фрагмент передан дежурному редактору «Netbiblio».
+    Если отзыв содержателен, мы обязательно опубликуем его! Если текст действительно содержит указанную ошибку, мы исправим её в ближайшее время.
+  {% endfilter %}
+{% endblock %}
