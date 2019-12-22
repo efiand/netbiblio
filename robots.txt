@@ -2,14 +2,17 @@ User-agent: Googlebot
 Allow: /amp/
 Disallow: /amp/404.html
 Disallow: /amp/send.html
+Disallow: /amp/no-send.html
 Disallow: /404.html
 Disallow: /send.html
+Disallow: /no-send.html
 Sitemap: https://netbiblio.ru/sitemap.xml
 
 User-agent: Yandex
 Disallow: /amp/
 Disallow: /404.html
 Disallow: /send.html
+Disallow: /no-send.html
 Sitemap: https://netbiblio.ru/sitemap.xml
 Host: https://netbiblio.ru
 
@@ -17,4 +20,5 @@ User-agent: *
 Disallow: /amp/
 Disallow: /404.html
 Disallow: /send.html
+Disallow: /no-send.html
 Sitemap: https://netbiblio.ru/sitemap.xml
