@@ -6,6 +6,6 @@
   "acute": "<span class=\"art__acute\"></span>",
   "asters": "<div class=\"art__asters\" role=\"presentation\"></div>",
   "feedback": {
-    "action": "//netbiblio.efiand.ru/public"
+    "action": "//netbiblio.efiand.ru"
   }
 }
