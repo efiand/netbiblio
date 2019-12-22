@@ -27,12 +27,7 @@ function _createClass(Constructor, protoProps, staticProps) {
       connect: "\u041E\u0448\u0438\u0431\u043A\u0430 \u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u044F. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0451 \u0440\u0430\u0437.",
       timeout: "\u0417\u0430\u043F\u0440\u043E\u0441 \u043D\u0435 \u0443\u0441\u043F\u0435\u043B \u0432\u044B\u043F\u043E\u043B\u043D\u0438\u0442\u044C\u0441\u044F \u0437\u0430 {{ timeout }} \u043C\u0441. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0451 \u0440\u0430\u0437."
     },
-    FIELDS: {
-      page: "entry.506942381",
-      name: "entry.655502193",
-      email: "entry.1196004472",
-      message: "entry.2032621908"
-    }
+    FIELDS: ["page", "name", "email", "message", "answer"]
   }; // Клиентские модули
   // Применение класса к набору DOM-элементов
   var applyClass = function applyClass(selector, Class) {
@@ -400,7 +395,7 @@ function _createClass(Constructor, protoProps, staticProps) {
         this.answerField = this.answerBlock.querySelector(".field--answer");
         this.formData = {};
         this.fieldSeries = {};
-        this.fieldNames = {}; // Обрабатывает ли форма отправку сообщения об ошибке
+        this.fieldNames = []; // Обрабатывает ли форма отправку сообщения об ошибке
         this.isSiteErrorSend = this.messageField.classList.contains("field--site-error-place");
         this.setInitials();
         this.setListeners();
@@ -410,10 +405,9 @@ function _createClass(Constructor, protoProps, staticProps) {
         value: function setInitials() {
           // Чтобы до сабмита красные поля не смущали пользователей
           this.form.classList.remove("post--invalid-detect");
-          this.answerBlock.classList.remove("hidden");
-          this.fieldNames = Object.keys(window.data.FIELDS);
+          this.fieldNames = window.data.FIELDS;
           for (var i = 0; i < this.fieldNames.length; i++) {
-            this.fieldSeries[this.fieldNames[i]] = this.form.querySelector("[name=\"".concat(window.data.FIELDS[this.fieldNames[i]], "\"]"));
+            this.fieldSeries[this.fieldNames[i]] = this.form.querySelector("[name=\"".concat(this.fieldNames[i], "\"]"));
           }
         }
       }, {
@@ -485,7 +479,7 @@ function _createClass(Constructor, protoProps, staticProps) {
             _this7.form.classList.add("post--invalid-detect");
           }, 33);
           if (this.form.checkValidity()) {
-            this.action = "//netbiblio.efiand.ru";
+            this.action = this.form.action;
             this.preloader.classList.remove("hidden");
             for (var i = 0; i < this.fieldNames.length; i++) {
               this.formData[this.fieldNames[i]] = this.fieldSeries[this.fieldNames[i]].value.trim();
