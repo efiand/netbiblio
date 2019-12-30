@@ -23,9 +23,9 @@ function _createClass(Constructor, protoProps, staticProps) {
 (function() {
   window.data = {
     ERRORS: {
-      status: "\u041E\u0448\u0438\u0431\u043A\u0430 {{ status }}: {{ statusText }}",
+      status: "\u041E\u0448\u0438\u0431\u043A\u0430 {{status}}: {{statusText}}",
       connect: "\u041E\u0448\u0438\u0431\u043A\u0430 \u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u044F. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0451 \u0440\u0430\u0437.",
-      timeout: "\u0417\u0430\u043F\u0440\u043E\u0441 \u043D\u0435 \u0443\u0441\u043F\u0435\u043B \u0432\u044B\u043F\u043E\u043B\u043D\u0438\u0442\u044C\u0441\u044F \u0437\u0430 {{ timeout }} \u043C\u0441. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0451 \u0440\u0430\u0437."
+      timeout: "\u0417\u0430\u043F\u0440\u043E\u0441 \u043D\u0435 \u0443\u0441\u043F\u0435\u043B \u0432\u044B\u043F\u043E\u043B\u043D\u0438\u0442\u044C\u0441\u044F \u0437\u0430 {{timeout}} \u043C\u0441. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0451 \u0440\u0430\u0437."
     },
     FIELDS: ["page", "name", "email", "message", "answer"]
   }; // Клиентские модули
@@ -140,7 +140,7 @@ function _createClass(Constructor, protoProps, staticProps) {
       }]);
       return HashLinks;
     }();
-  applyClass("a[href^=\"#\"]", HashLinks); // заменяет в строке вхождение вида {{ something }} на элемент массива data
+  applyClass("a[href^=\"#\"]", HashLinks); // заменяет в строке вхождение вида {{something}} на элемент массива data
   // для полного преобразования число элементов должно быть равно числу вхождений
   window.renderTemplate = function(str, data) {
     var params = {
