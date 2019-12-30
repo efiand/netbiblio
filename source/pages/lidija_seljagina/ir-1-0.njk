@@ -3,7 +3,7 @@
 {% set parentTitle = "Иришкины истории" %}
 {% set title = "Предисловие" %}
 {% set pubdate = "10.03.2008" %}
-{% set prev = "lidija_seljagina/poem-73" %}
+{% set prev = "lidija_seljagina/poem-74" %}
 {% set openGraphImg = "ir.jpg" %}
 {% set openGraphImgType = "image/jpeg" %}
 {% set openGraphImgWidth = 700 %}
@@ -37,5 +37,8 @@
 {% endblock %}
 
 {% block addition %}
-  {{ figure(openGraphImg, openGraphImgAlt, "Обложка книги. Иллюстрация <a href=\"/lidija_seljagina/resorts.html#popov\">Евгения Попова</a> (2004). Название — автограф Лидии Селягиной (2007).", openGraphImgWidth, openGraphImgHeight) }}
+  {% set figureTitle %}
+    Обложка книги. Иллюстрация <a href="/lidija_seljagina/resorts.html#popov">Евгения Попова</a> (2004). Название — автограф Лидии Селягиной (2007).
+  {% endset %}
+  {{figure(openGraphImg, openGraphImgAlt, figureTitle, openGraphImgWidth, openGraphImgHeight)}}
 {% endblock %}

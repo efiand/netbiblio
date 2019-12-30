@@ -4,14 +4,14 @@
 
     {# Можно передать заголовок строкой или строки заголовка и описания массивом #}
     {% if (toc | isArray) %}
-      <h3 class="page__toc-title">{{ toc[0] }}</h3>
+      <h3 class="page__toc-title">{{toc[0]}}</h3>
       {% if toc[1] %}
-        <p class="page__subtitle-descr">({{ toc[1]}})</p>
+        <p class="page__subtitle-descr">({{toc[1]}})</p>
       {% endif %}
     {% else %}
-      <h3 class="page__toc-title">{{ toc }}</h3>
+      <h3 class="page__toc-title">{{toc}}</h3>
     {% endif %}
 
-    {{ worksCollection(prefix + "-" + loop.index, 0) }}
+    {{worksCollection(prefix + "-" + loop.index, 0)}}
   {% endfor %}
 {% endmacro %}

@@ -11,7 +11,7 @@
 {% set authors = [] %}
 {% for item in pages %}
   {% import "source/pages/" + item.page + ".njk" as author %}
-  {{ setTitle(item, author.title) }}
+  {{setTitle(item, author.title)}}
 {% endfor %}
 
 {% block content %}
@@ -42,7 +42,7 @@
         {% for item in pages | sort(false, true, "title") %}
           {% if item.page !== "docs/index" %}
             <li class="toc__item">
-              <a class="toc__link" href="/{{ item.page }}.html">{{ item.title }}</a>
+              <a class="toc__link" href="/{{item.page}}.html">{{item.title}}</a>
             </li>
           {% endif %}
         {% endfor %}
@@ -54,7 +54,7 @@
     <h2 class="art__subtitle">О проекте</h2>
 
     {% filter prose %}
-      {{ siteName }} — фонд авторской художественной литературы на русском языке.
+      {{siteName}} — фонд авторской художественной литературы на русском языке.
       Создан <time datetime="1997-10-03">10 марта 1997 года</time> поэтом <a href="/raskatov/index.html">Андреем Раскатовым</a>. В Сети с 2001 года. С 2008 года из личной коллекции создателя вырос в «Независимое объединение деятелей искусства», а с 2011 — в текущем статусе.
     {% endfilter %}
 
@@ -65,7 +65,7 @@
     {% endfilter %}
 
     {% filter prose %}
-      {{ siteName }} выполняет основную рутинную работу по подготовке книги, за которую издательства берут огромные деньги и которая требует больших затрат времени и сил. Поэтому {{ siteName }} обрадуется любому пожертвованию от авторов и читателей. Желающие поддержать нас — переходите по <a class="page__print-link" href="https://money.yandex.ru/to/41001643275981" target="_blank" rel="nofollow">этой ссылке</a>.
+      {{siteName}} выполняет основную рутинную работу по подготовке книги, за которую издательства берут огромные деньги и которая требует больших затрат времени и сил. Поэтому {{siteName}} обрадуется любому пожертвованию от авторов и читателей. Желающие поддержать нас — переходите по <a class="page__print-link" href="https://money.yandex.ru/to/41001643275981" target="_blank" rel="nofollow">этой ссылке</a>.
     {% endfilter %}
   </section>
 
@@ -75,7 +75,7 @@
     {% filter prose %}
       Присылайте произведения на <a href="mailto:raskatov@netbiblio.ru">raskatov@netbiblio.ru</a>, если согласны с <strong>политикой</strong> издательства:
       <span class="page__mark">1.</span> Произведения открыты для чтения и копирования людьми и роботами.
-      <span class="page__mark">2.</span> {{ siteName }} вправе исправлять орфографию, если она не соответствует Правилам русского языка.
+      <span class="page__mark">2.</span> {{siteName}} вправе исправлять орфографию, если она не соответствует Правилам русского языка.
     {% endfilter %}
   </section>
 {% endblock %}

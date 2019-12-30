@@ -11,13 +11,13 @@
 
 {% block toc %}
   <h3 class="page__toc-title">Двое</h3>
-  {{ worksCollection("two") }}
+  {{worksCollection("two")}}
 
   <h3 class="page__toc-title">Мой Век</h3>
-  {{ worksCollection("century") }}
+  {{worksCollection("century")}}
 
   <h3 class="page__toc-title">Пробегала мимо жизнь…</h3>
-  {{ worksCollection("life") }}
+  {{worksCollection("life")}}
 {% endblock %}
 
 {% block biography %}
@@ -29,7 +29,7 @@
 
 {% block reviews %}
   {% filter review("Татьяна Шеина", "sicista_napaea", "14.12.2011 09:31") %}
-    Татьяна, я очень рада Вас здесь видеть! Теперь ещё и по{{ acute }}лками будем дружить!
+    Татьяна, я очень рада Вас здесь видеть! Теперь ещё и по{{acute}}лками будем дружить!
   {% endfilter %}
 
   {% filter review("Лидия", "mavlyutova51@mail.ru", "04.12.2011 00:05") %}

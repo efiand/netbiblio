@@ -1,45 +1,45 @@
 {% if page !== "index" %}
-  <link rel="toc" href="{{ host }}/{{ tocHref }}">
+  <link rel="toc" href="{{host}}/{{tocHref}}">
 {% endif %}
 {% if pageType === "work" %}
-  <link rel="author" href="{{ host }}/{{ authorPage }}.html">
+  <link rel="author" href="{{host}}/{{authorPage}}.html">
 {% endif %}
 
-<link rel="amphtml" href="{{ host }}/amp/{{ page }}.html">
-<link rel="prev" href="/{{ prev }}.html">
-<link rel="next" href="/{{ next }}.html">
-<link rel="publisher" href="{{ host }}/index.html">
-<link rel="stylesheet" href="/css/style{{ minSuffix }}.css">
-<link rel="preload" href="/css/style{{ minSuffix }}.css" as="style">
-<link rel="preload" href="/js/scripts{{ minSuffix }}.js" as="script">
+<link rel="amphtml" href="{{host}}/amp/{{page}}.html">
+<link rel="prev" href="/{{prev}}.html">
+<link rel="next" href="/{{next}}.html">
+<link rel="publisher" href="{{host}}/index.html">
+<link rel="stylesheet" href="/css/style{{minSuffix}}.css">
+<link rel="preload" href="/css/style{{minSuffix}}.css" as="style">
+<link rel="preload" href="/js/scripts{{minSuffix}}.js" as="script">
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<meta property="og:title" content="{{ headTitle }}">
-<meta property="og:type" content="{{ openGraphType }}">
-<meta property="og:url" content="{{ url }}">
+<meta property="og:title" content="{{headTitle}}">
+<meta property="og:type" content="{{openGraphType}}">
+<meta property="og:url" content="{{url}}">
 <meta property="og:determiner" content="the">
 <meta property="og:locale" content="ru_RU">
-<meta property="og:site_name" content="{{ siteName }}">
-<meta property="og:description" content="{{ pageDescription }}">
-<meta property="og:image" content="/img/{{ openGraphImg }}">
-<meta property="og:image:type" content="{{ openGraphImgType }}">
-<meta property="og:image:width" content="{{ openGraphImgWidth }}">
-<meta property="og:image:height" content="{{ openGraphImgHeight }}">
-<meta property="og:image:alt" content="{{ openGraphImgAlt }}">
+<meta property="og:site_name" content="{{siteName}}">
+<meta property="og:description" content="{{pageDescription}}">
+<meta property="og:image" content="/img/{{openGraphImg}}">
+<meta property="og:image:type" content="{{openGraphImgType}}">
+<meta property="og:image:width" content="{{openGraphImgWidth}}">
+<meta property="og:image:height" content="{{openGraphImgHeight}}">
+<meta property="og:image:alt" content="{{openGraphImgAlt}}">
 
 {% if pageType === "author" %}
-  <meta property="profile:username" content="{{ nick }}">
-  <meta property="profile:gender" content="{{ gender }}">
-  <meta property="profile:first_name" content="{{ names[0] }}">
+  <meta property="profile:username" content="{{nick}}">
+  <meta property="profile:gender" content="{{gender}}">
+  <meta property="profile:first_name" content="{{names[0]}}">
   {% if names[1] %}
-    <meta property="profile:last_name" content="{{ names[1] }}">
+    <meta property="profile:last_name" content="{{names[1]}}">
   {% endif %}
 
 {% elif pageType === "work" %}
-  <meta property="article:author" content="{{ author }}">
-  <meta property="article:published_time" content="{{ pubdate | dateToUtc(3) }}">
-  <meta property="article:modified_time" content="{{ today | dateToUtc(3) }}">
+  <meta property="article:author" content="{{author}}">
+  <meta property="article:published_time" content="{{pubdate | dateToUtc(3)}}">
+  <meta property="article:modified_time" content="{{today | dateToUtc(3)}}">
 {% endif %}
 
 {# Код, сгенерированный RealFaviconGenerator #}
-{{ faviconsCode }}
+{{faviconsCode}}

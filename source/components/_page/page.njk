@@ -2,7 +2,7 @@
 
 {% block layout %}
   <!DOCTYPE html>
-  <html class="page" lang="ru" {{ htmlParams }}>
+  <html class="page" lang="ru" {{htmlParams}}>
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,9 +12,9 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="address=no">
 
-    <title>{{ headTitle }}</title>
-    <meta name="description" content="{{ pageDescription }}">
-    <link rel="canonical" href="{{ url }}">
+    <title>{{headTitle}}</title>
+    <meta name="description" content="{{pageDescription}}">
+    <link rel="canonical" href="{{url}}">
 
     {% include "source/layouts/netbiblio/head" + ampSuffix + ".njk" %}
   </head>
@@ -32,29 +32,29 @@
             {% block heading %}
               {% if title.slice(-2) === "…»" %}
                 <h1 class="art__title art__title--asters">
-                  <span class="visually-hidden">{{ title }}</span>
+                  <span class="visually-hidden">{{title}}</span>
                 </h1>
               {% else %}
                 <h1 class="art__title">
                   {% if parentTitle %}
                     {# Если страница — часть произведения, то здесь заголовок произведения #}
-                    {{ parentTitle }}
+                    {{parentTitle}}
                   {% else %}
-                    {{ title }}
+                    {{title}}
                   {% endif %}
                 </h1>
               {% endif %}
 
               {% if titleDescr %}
-                <p class="art__title-descr">({{ titleDescr }})</p>
+                <p class="art__title-descr">({{titleDescr}})</p>
               {% endif %}
             {% endblock %}
           </header>
 
           {% if pageType === "work" %}
             <p class="page__author">
-              <a class="page__author-link" href="/{{ authorPage }}.html" title="{{ tocTitle }}">
-                {{ author }}
+              <a class="page__author-link" href="/{{authorPage}}.html" title="{{tocTitle}}">
+                {{author}}
               </a>
             </p>
 
@@ -63,7 +63,7 @@
             {% block subtitle %}
               {% if parentTitle %}
                 {# Если страница — часть произведения, то здесь её заголовок #}
-                <h2 class="art__subtitle">{{ title }}</h2>
+                <h2 class="art__subtitle">{{title}}</h2>
               {% endif %}
             {% endblock %}
           {% endif %}
@@ -76,16 +76,16 @@
 
           {% if pageType === "author" %}
             {% if tocBlockHeading %}
-              <h2 class="art__subtitle">{{ tocBlockHeading }}</h2>
+              <h2 class="art__subtitle">{{tocBlockHeading}}</h2>
             {% endif %}
 
             {% block toc %}
-              {{ worksCollection() }}
+              {{worksCollection()}}
             {% endblock %}
 
             {% if biographyHeading %}
               {# Биография автора #}
-              <h2 class="art__subtitle page__targetable" id="biography">{{ biographyHeading }}</h2>
+              <h2 class="art__subtitle page__targetable" id="biography">{{biographyHeading}}</h2>
 
               {% block biography %}{% endblock %}
             {% endif %}
@@ -93,8 +93,8 @@
 
           {% block dateplace %}
             {% if workdate %}
-              <time class="page__workdate" datetime="{{ workdate | dateToUtc }}">
-                {{ workdate }}{% if workplace %}, {{ workplace }}{% endif %}
+              <time class="page__workdate" datetime="{{workdate | dateToUtc}}">
+                {{workdate}}{% if workplace %}, {{workplace}}{% endif %}
               </time>
             {% endif %}
           {% endblock %}
@@ -134,7 +134,7 @@
     </div>
 
     {% if not isAmp %}
-      <script src="/js/scripts{{ minSuffix }}.js"></script>
+      <script src="/js/scripts{{minSuffix}}.js"></script>
     {% endif %}
 
     {% if not isDev %}

@@ -16,7 +16,7 @@
 
   <ul class="page__toc toc
     {% if contains %}
-      toc--collection page__targetable" id="{{ contains }}
+      toc--collection page__targetable" id="{{contains}}
     {%- endif %}">
     {% for item in list %}
       {% import "source/pages/" + item + ".njk" as work %}
@@ -27,11 +27,11 @@
           {% if contains %}
             toc__link--collection
           {% endif %}"
-          href="/{{ item }}.html">
+          href="/{{item}}.html">
           {% if work.titleDescr %}
-            <span>{{ work.title }} <span class="toc__item-descr">({{ work.titleDescr }})</span></span>
+            <span>{{work.title}} <span class="toc__item-descr">({{work.titleDescr}})</span></span>
           {% else %}
-            {{ work.title }}
+            {{work.title}}
           {% endif %}
         </a>
       </li>

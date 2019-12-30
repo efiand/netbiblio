@@ -4,7 +4,7 @@
       {% filter minifyJson %}
         {
           "vars": {
-            "counterId": "{{ yandexMetrikaId }}",
+            "counterId": "{{yandexMetrikaId}}",
             "yaParams": "{\"key\":\"value\",\"__ymu\":{\"user_param_key\":\"user_param_value\"}}"
           },
           "triggers": {
@@ -56,7 +56,7 @@
       a.parentNode.insertBefore(k, a);
     })(window, document, "script", "//cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym");
 
-    ym({{ yandexMetrikaId }}, "init", {
+    ym({{yandexMetrikaId}}, "init", {
       clickmap: true,
       trackLinks: true,
       accurateTrackBounce: true,
@@ -66,7 +66,7 @@
   <noscript>
     <img
       class="visually-hidden"
-      src="//mc.yandex.ru/watch/{{ yandexMetrikaId }}"
+      src="//mc.yandex.ru/watch/{{yandexMetrikaId}}"
       width="1" height="1" alt="Счётчик посещений">
   </noscript>
 {% endif %}

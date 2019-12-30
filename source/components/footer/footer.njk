@@ -4,10 +4,10 @@
       href="//efiand.ru" rel="author" title="Портфолио веб-разработчика">efiand</a>, <time datetime="2019-03-22">22.03.2019</time></p>
   {% elif pageType === "author" %}
     <p class="page__copyright-item">© {% if contact %}<a class="page__copyright-link"
-      href="{{ contact }}" rel="nofollow" title="Связаться с автором">{{ title }}</a>{% else %}{{ title }}{% endif %}, публикации, <time datetime="{{ pubdate | dateToUtc }}">{{ pubdate }}</time></p>
+      href="{{contact}}" rel="nofollow" title="Связаться с автором">{{title}}</a>{% else %}{{title}}{% endif %}, публикации, <time datetime="{{pubdate | dateToUtc}}">{{pubdate}}</time></p>
   {% elif pageType === "work" %}
     <p class="page__copyright-item">© <a class="page__copyright-link"
-      href="/{{ authorPage }}.html" rel="author" title="{{ tocTitle }}">{{ author }}</a>, публикация, <time datetime="{{ pubdate | dateToUtc }}">{{ pubdate }}</time></p>
+      href="/{{authorPage}}.html" rel="author" title="{{tocTitle}}">{{author}}</a>, публикация, <time datetime="{{pubdate | dateToUtc}}">{{pubdate}}</time></p>
   {% else %}
     <p class="page__copyright-item">© <a class="page__copyright-link"
       href="/raskatov/index.html" rel="author" title="Произведения руководителя проекта">Андрей Раскатов</a>, идея и наполнение, <time datetime="1997-03-10">10.03.1997</time></p>

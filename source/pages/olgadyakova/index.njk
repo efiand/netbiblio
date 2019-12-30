@@ -10,14 +10,14 @@
 {% set biographyHeading = "Об авторе" %}
 
 {% block toc %}
-  {{ worksCollection("poem") }}
+  {{worksCollection("poem")}}
 {% endblock %}
 
 {% block biography %}
   <p class="art__short">Поэт. Прозаик. Город: Санкт-Петербург.</p>
 
-  {{ authorLinks([
+  {{authorLinks([
     "//stihi.ru/avtor/olgadyakova",
     "//vk.com/id159059"
-  ]) }}
+  ])}}
 {% endblock %}

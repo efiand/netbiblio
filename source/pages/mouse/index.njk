@@ -16,14 +16,14 @@
 
 {% block toc %}
   <h3 class="page__toc-title">Любовь размножается только в неволе</h3>
-  {{ worksCollection("love") }}
+  {{worksCollection("love")}}
 
   <h2 class="art__subtitle">Малая проза</h2>
   <h3 class="page__toc-title">Егоркины сказки</h3>
-  {{ worksCollection("ft") }}
+  {{worksCollection("ft")}}
 
   <h3 class="page__toc-title">Невозможные отношения</h3>
-  {{ worksCollection("impossible") }}
+  {{worksCollection("impossible")}}
 {% endblock %}
 
 {% block biography %}
@@ -35,5 +35,5 @@
     <time datetime="2012-01-29">29.01.2012</time> полностью отказалась от своего псевдонима (Алёна Маус) в пользу настоящего имени.
   {% endfilter %}
 
-  {{ figure("mouse.jpg", "Елена Мухамадеева", "", openGraphImgWidth, openGraphImgHeight) }}
+  {{figure("mouse.jpg", "Елена Мухамадеева", "", openGraphImgWidth, openGraphImgHeight)}}
 {% endblock %}

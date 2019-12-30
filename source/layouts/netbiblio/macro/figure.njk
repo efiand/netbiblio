@@ -7,10 +7,10 @@
   {% endif %}
 
   <figure class="art__illustration">
-    {{ img("/img/" + src, alt, "art__img", width, height) }}
+    {{img("/img/" + src, alt, "art__img", width, height)}}
 
     {% if caption %}
-      <figcaption class="art__illustration-descr">{{ caption }}</figcaption>
+      <figcaption class="art__illustration-descr">{{caption}}</figcaption>
     {% endif %}
   </figure>
 {% endmacro %}

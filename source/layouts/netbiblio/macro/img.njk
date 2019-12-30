@@ -9,13 +9,13 @@
   {% endif %}
 
   {% if isAmp %}
-    <amp-img {{ cssClass }} src="{{ src | withoutExt }}.webp" {{ size }} alt="{{ alt }}">
-      <amp-img fallback src="{{ src }}" {{ size }} alt="{{ alt }}"></amp-img>
+    <amp-img {{cssClass}} src="{{src | withoutExt}}.webp" {{size}} alt="{{alt}}">
+      <amp-img fallback src="{{src}}" {{size}} alt="{{alt}}"></amp-img>
     </amp-img>
   {% else %}
     <picture>
-      <source type="image/webp" srcset="{{ src | withoutExt }}.webp"/>
-      <img {{ cssClass }} src="{{ src }}" {{ size }} alt="{{ alt }}">
+      <source type="image/webp" srcset="{{src | withoutExt}}.webp"/>
+      <img {{cssClass}} src="{{src}}" {{size}} alt="{{alt}}">
     </picture>
   {% endif %}
 {% endmacro %}

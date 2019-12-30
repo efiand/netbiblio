@@ -17,7 +17,7 @@
 {% block toc %}
   <h2 class="art__subtitle">Следы оставлю на Земле</h2>
   <p class="page__subtitle-descr">(Сборник стихотворений)</p>
-  {{ tocSeria([
+  {{tocSeria([
     "Земля любимая",
     "О поэзии и поэтах",
     "Литературному клубу «Рунеж»",
@@ -30,7 +30,7 @@
     "Лирика",
     "Ах, думы краткие мои!",
     "Раздумья"
-  ], "signs") }}
+  ], "signs")}}
 
   <h2 class="art__subtitle">Дорогие мои земляки!</h2>
   <p class="page__subtitle-descr">(Сборник стихотворений)</p>
@@ -41,49 +41,49 @@
       </a>
     </li>
   </ul>
-  {{ tocSeria([
+  {{tocSeria([
     "Родные местечки",
     "Дорогие мои земляки!",
     "О поэзии вчера и сегодня"
-  ], "fc") }}
+  ], "fc")}}
 
   <h2 class="art__subtitle">Летопись от Древнекиевской Руси до России. От Рюрика до Путина</h2>
   <p class="page__subtitle-descr">(В стихах)</p>
-  {{ tocSeria([
+  {{tocSeria([
     "Часть 1-я",
     "Часть 2-я",
     "Часть 3-я",
     ["Перестройка, перебранка, перекличка", "Летопись 90-х гг. XX века в России"]
-  ], "chronicle") }}
+  ], "chronicle")}}
 
   <h2 class="art__subtitle">Стихотворения</h2>
-  {{ worksCollection("poem") }}
+  {{worksCollection("poem")}}
 
   <h3 class="page__toc-title">Любознательным ребяткам всё расскажем по порядку</h3>
-  {{ worksCollection("children") }}
+  {{worksCollection("children")}}
 
   <h2 class="art__subtitle">Иришкины истории</h2>
   <p class="page__subtitle-descr">(Рассказы)</p>
-  {{ tocSeria([
+  {{tocSeria([
     "Детство",
     "Юность",
     "Тяжела ты, шапка Мономаха!",
     "Жизнь продолжается"
-  ], "ir") }}
+  ], "ir")}}
 
   <h2 class="art__subtitle">
     Точка отсчёта <small>или</small> По лабиринтам жизни
   </h2>
-  {{ tocSeria([
+  {{tocSeria([
     "I",
     "II"
-  ], "point") }}
+  ], "point")}}
 {% endblock %}
 
 {% block biography %}
-  {{ worksCollection("bio") }}
+  {{worksCollection("bio")}}
 
-  {{ figure("lidija_seljagina.jpg", "", "Лидия Дмитриевна Селягина на службе", openGraphImgWidth, openGraphImgHeight) }}
+  {{figure("lidija_seljagina.jpg", "", "Лидия Дмитриевна Селягина на службе", openGraphImgWidth, openGraphImgHeight)}}
 
   {% filter prose %}
     Я, Селягина Лидия Дмитриевна, родилась в Ленинграде 24 августа 1941 года. Девичья фамилия — Виноградова.
@@ -101,7 +101,7 @@
   </ul>
 
   <h3 class="page__toc-title">Истории участкового инспектора</h3>
-  {{ worksCollection("inspector") }}
+  {{worksCollection("inspector")}}
 
-  {{ authorLinks("//vk.com/l_sel") }}
+  {{authorLinks("//vk.com/l_sel")}}
 {% endblock %}

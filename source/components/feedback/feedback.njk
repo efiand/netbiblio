@@ -1,6 +1,6 @@
 <div class="feedback modal" id="feedback">
   <form class="feedback__form modal__inner post post--invalid-detect post--stored"
-    {{ 'action-xhr' if isAmp else 'action' }}="{{ feedback.action }}" method="post">
+    {{'action-xhr' if isAmp else 'action'}}="{{feedback.action}}" method="post">
     <button class="feedback__closer modal__closer">
       <span class="visually-hidden">Закрыть окно</span>
     </button>
@@ -36,7 +36,7 @@
         name="answer" type="number" placeholder="2020" required>
     </label>
 
-    <input type="hidden" name="page" value="{{ page }}">
+    <input type="hidden" name="page" value="{{page}}">
     <button class="feedback__button button post__submit" type="submit">Отправить отзыв</button>
 
     <div class="preloader hidden">

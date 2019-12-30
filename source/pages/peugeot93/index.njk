@@ -23,7 +23,7 @@
     </li>
   </ul>
   <h3 class="page__toc-title">Утро вечера мудрёнее</h3>
-  {{ worksCollection("morning") }}
+  {{worksCollection("morning")}}
 
   <h2 class="art__subtitle">Малая проза</h2>
   <ul class="page__toc toc">
@@ -35,7 +35,7 @@
   </ul>
 
   <h3 class="page__toc-title">Про…</h3>
-  {{ worksCollection("about") }}
+  {{worksCollection("about")}}
 {% endblock %}
 
 {% block biography %}
@@ -49,10 +49,10 @@
     Сейчас Руслан много работает на съёмочной площадке и готовит к изданию новые книги.
   {% endfilter %}
 
-  {{ authorLinks([
+  {{authorLinks([
     "//ruslanlukianov.narod.ru",
     "//stihi.ru/avtor/peugeot93"
-  ]) }}
+  ])}}
 
-  {{ figure("peugeot93.jpg", "Руслан Лукьянов", "", openGraphImgWidth, openGraphImgHeight) }}
+  {{figure("peugeot93.jpg", "Руслан Лукьянов", "", openGraphImgWidth, openGraphImgHeight)}}
 {% endblock %}
