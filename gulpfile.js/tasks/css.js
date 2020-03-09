@@ -8,9 +8,9 @@ gulp.task(`css:compile`, () => {
     .pipe(plugins.plumber())
     .pipe(plugins.include())
     .pipe(plugins.sass())
-    .pipe(plugins.combineMq())
     .pipe(plugins.postcss([
-      require(`autoprefixer`)()
+      require(`mqpacker`),
+      require(`autoprefixer`)
     ]))
     .pipe(plugins.csscomb())
     .pipe(gulp.dest(css.dest))
