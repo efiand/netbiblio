@@ -105,3 +105,9 @@
 
   {{authorLinks("//vk.com/l_sel")}}
 {% endblock %}
+
+{% block reviews %}
+  {% filter review("Антон Шумак", "dorih2@yandex.ru", "11.07.2020 06:56") %}
+    Богатая биография. Отличный слог. Обожаю тех, кто пишет на правильном русском языке.
+  {% endfilter %}
+{% endblock %}

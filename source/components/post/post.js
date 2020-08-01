@@ -57,14 +57,15 @@ class Post {
       self.closeStatusHandler();
     });
 
-    // Отправка формы по Ctrl + Enter из поля текстового ввода
-    this.messageField.addEventListener(`keydown`, (evt) => {
-      if (evt.keyCode === 13 && evt.ctrlKey) {
-        evt.preventDefault();
-
-        this.submit.click();
-      }
-    });
+    for (let i = 0; i < this.fields.length; i++) {
+      this.fields[i].addEventListener(`keydown`, (evt) => {
+        // Отправка формы по Ctrl + Enter из поля текстового ввода
+        if (evt.keyCode === 13 && (evt.ctrlKey || this.fields[i].tagName.toLowerCase() === `input`)) {
+          evt.preventDefault();
+          this.submit.click();
+        }
+      });
+    }
   }
 
   openHandler() {
@@ -131,7 +132,7 @@ class Post {
     const self = this;
     self.formData = {};
     self.form.classList.remove(`post--invalid-detect`);
-    self.form.reset();
+    self.messageField.value = ``;
     self.statusBlock.classList.add(`hidden`);
   }
 }

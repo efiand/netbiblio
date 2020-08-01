@@ -17,6 +17,7 @@
   align-items: flex-end;
 
   &--answer {
+    margin-top: -0.5em;
     margin-left: 2rem;
   }
 }
@@ -37,7 +38,10 @@
 
 .reviews__body {
   width: 100%;
-  margin-top: 0.5rem;
+
+  &.art__ins {
+    margin-top: 0.5rem;
+  }
 
   .art__poem {
     margin: 0 auto;
