@@ -432,13 +432,19 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
           self.statusCloser.addEventListener("click", function() {
             self.closeStatusHandler();
-          }); // Отправка формы по Ctrl + Enter из поля текстового ввода
-          this.messageField.addEventListener("keydown", function(evt) {
-            if (evt.keyCode === 13 && evt.ctrlKey) {
-              evt.preventDefault();
-              _this5.submit.click();
-            }
           });
+          var _loop = function _loop(i) {
+            _this5.fields[i].addEventListener("keydown", function(evt) {
+              // Отправка формы по Ctrl + Enter из поля текстового ввода
+              if (evt.keyCode === 13 && (evt.ctrlKey || _this5.fields[i].tagName.toLowerCase() === "input")) {
+                evt.preventDefault();
+                _this5.submit.click();
+              }
+            });
+          };
+          for (var i = 0; i < this.fields.length; i++) {
+            _loop(i);
+          }
         }
       }, {
         key: "openHandler",
@@ -504,7 +510,7 @@ function _createClass(Constructor, protoProps, staticProps) {
           var self = this;
           self.formData = {};
           self.form.classList.remove("post--invalid-detect");
-          self.form.reset();
+          self.messageField.value = "";
           self.statusBlock.classList.add("hidden");
         }
       }]);

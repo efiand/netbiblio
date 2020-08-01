@@ -961,6 +961,7 @@ img {
   align-items: flex-end;
 }
 .reviews__item--answer {
+  margin-top: -0.5em;
   margin-left: 2rem;
 }
 
@@ -976,6 +977,8 @@ img {
 
 .reviews__body {
   width: 100%;
+}
+.reviews__body.art__ins {
   margin-top: 0.5rem;
 }
 .reviews__body .art__poem {
