@@ -151,15 +151,8 @@ function _createClass(Constructor, protoProps, staticProps) {
       return data[params.i] || match;
     });
   }; // Узнаем ширину полосы прокрутки
-  // Создадим элемент с прокруткой
-  var div = document.createElement("div");
-  div.style.overflowY = "scroll";
-  div.style.width = "50px";
-  div.style.height = "50px";
-  div.style.visibility = "hidden";
-  document.body.appendChild(div);
-  var scrollWidth = div.offsetWidth - div.clientWidth;
-  document.body.removeChild(div); // Классы компонентов
+  var scrollWidth = window.innerWidth - document.documentElement.clientWidth; // Задел на рефакторинг
+  document.documentElement.style.setProperty("--scroll-width", "".concat(scrollWidth, "px")); // Классы компонентов
   var Button =
     /*#__PURE__*/
     function() {
@@ -268,7 +261,10 @@ function _createClass(Constructor, protoProps, staticProps) {
           } // Если внутри форма с поддержкой отправки ошибок - открытие по Ctrl + Enter
           if (this.siteErrorSender) {
             document.addEventListener("keydown", function(evt) {
-              if (!document.body.classList.contains("modal-mode") && evt.keyCode === 13 && evt.ctrlKey) {
+              if (evt.defaultPrevented) {
+                return;
+              }
+              if (!document.documentElement.classList.contains("modal-mode") && evt.key === "Enter" && evt.ctrlKey) {
                 _this3.openHandler(evt);
               }
             });
@@ -277,7 +273,10 @@ function _createClass(Constructor, protoProps, staticProps) {
             _this3.closeHandler(evt);
           }); // Закрытие модального окна по Esc
           document.addEventListener("keydown", function(evt) {
-            if (evt.keyCode === 27) {
+            if (evt.defaultPrevented) {
+              return;
+            }
+            if (evt.key === "Escape") {
               _this3.closeHandler(evt);
             }
           });
@@ -308,9 +307,8 @@ function _createClass(Constructor, protoProps, staticProps) {
           evt.preventDefault();
           this.offset = window.pageYOffset;
           this.element.classList.add("modal--target");
-          document.body.classList.add("modal-mode");
-          document.body.style.width = "calc(100% - ".concat(scrollWidth, "px)");
-          document.body.style.top = "-".concat(this.offset, "px");
+          document.documentElement.classList.add("modal-mode");
+          document.documentElement.style.top = "-".concat(this.offset, "px");
           if (!evt.keyCode) {
             evt.target.blur();
           }
@@ -321,8 +319,7 @@ function _createClass(Constructor, protoProps, staticProps) {
           evt.preventDefault();
           this.element.classList.remove("modal--target");
           this.inner.classList.remove("post--invalid-detect");
-          document.body.classList.remove("modal-mode");
-          document.body.style.width = "100%";
+          document.documentElement.classList.remove("modal-mode");
           window.scrollTo(0, this.offset);
         }
       }]);
