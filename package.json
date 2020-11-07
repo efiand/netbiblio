@@ -25,7 +25,6 @@
     "gulp-amphtml-validator": "^1.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-beautify": "^2.0.1",
-    "gulp-changed": "^4.0.2",
     "gulp-csscomb": "^3.0.8",
     "gulp-csso": "^4.0.1",
     "gulp-data": "^1.3.1",
