@@ -150,9 +150,7 @@ function _createClass(Constructor, protoProps, staticProps) {
       params.i++;
       return data[params.i] || match;
     });
-  }; // Узнаем ширину полосы прокрутки
-  var scrollWidth = window.innerWidth - document.documentElement.clientWidth; // Задел на рефакторинг
-  document.documentElement.style.setProperty("--scroll-width", "".concat(scrollWidth, "px")); // Классы компонентов
+  }; // Классы компонентов
   var Button =
     /*#__PURE__*/
     function() {
@@ -208,7 +206,33 @@ function _createClass(Constructor, protoProps, staticProps) {
       }]);
       return Field;
     }();
-  applyClass(".field", Field);
+  applyClass(".field", Field); // Узнаем ширину полосы прокрутки
+  var scrollWidth = window.innerWidth - document.documentElement.clientWidth; // Быстрый фикс отмены кастомной прокрутки, если на уровне страницы - нулевая (признак мобильной платформы)
+  if (!scrollWidth) {
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+    try {
+      for (var _iterator = document.querySelectorAll(".custom-scroll")[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var el = _step.value;
+        el.classList.remove("custom-scroll");
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return != null) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+  }
+  document.documentElement.style.setProperty("--scroll-width", "".concat(scrollWidth, "px"));
   var Feedback =
     /*#__PURE__*/
     function() {
