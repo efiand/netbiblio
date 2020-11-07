@@ -155,6 +155,7 @@
 }
 
 .page__copyright {
+  display: table;
   flex-shrink: 0;
   align-self: center;
   margin: auto auto 0;
