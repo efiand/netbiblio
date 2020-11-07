@@ -1,14 +1,5 @@
 // Узнаем ширину полосы прокрутки
+const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
 
-// Создадим элемент с прокруткой
-let div = document.createElement(`div`);
-
-div.style.overflowY = `scroll`;
-div.style.width = `50px`;
-div.style.height = `50px`;
-div.style.visibility = `hidden`;
-
-document.body.appendChild(div);
-
-const scrollWidth = div.offsetWidth - div.clientWidth;
-document.body.removeChild(div);
+// Задел на рефакторинг
+document.documentElement.style.setProperty(`--scroll-width`, `${scrollWidth}px`);

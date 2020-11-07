@@ -35,7 +35,7 @@
 .modal-mode {
   position: fixed;
   left: 0;
-  width: 100%;
+  width: calc(100% + var(--scroll-width));
   overflow: hidden;
 
   .modal {

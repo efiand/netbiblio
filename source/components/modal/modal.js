@@ -33,7 +33,11 @@ class Modal {
     // Если внутри форма с поддержкой отправки ошибок - открытие по Ctrl + Enter
     if (this.siteErrorSender) {
       document.addEventListener(`keydown`, (evt) => {
-        if (!document.body.classList.contains(`modal-mode`) && evt.keyCode === 13 && evt.ctrlKey) {
+        if (evt.defaultPrevented) {
+          return;
+        }
+
+        if (!document.documentElement.classList.contains(`modal-mode`) && evt.key === `Enter` && evt.ctrlKey) {
           this.openHandler(evt);
         }
       });
@@ -45,7 +49,11 @@ class Modal {
 
     // Закрытие модального окна по Esc
     document.addEventListener(`keydown`, (evt) => {
-      if (evt.keyCode === 27) {
+      if (evt.defaultPrevented) {
+        return;
+      }
+
+      if (evt.key === `Escape`) {
         this.closeHandler(evt);
       }
     });
@@ -79,9 +87,8 @@ class Modal {
     this.offset = window.pageYOffset;
 
     this.element.classList.add(`modal--target`);
-    document.body.classList.add(`modal-mode`);
-    document.body.style.width = `calc(100% - ${scrollWidth}px)`;
-    document.body.style.top = `-${this.offset}px`;
+    document.documentElement.classList.add(`modal-mode`);
+    document.documentElement.style.top = `-${this.offset}px`;
 
     if (!evt.keyCode) {
       evt.target.blur();
@@ -93,8 +100,7 @@ class Modal {
 
     this.element.classList.remove(`modal--target`);
     this.inner.classList.remove(`post--invalid-detect`);
-    document.body.classList.remove(`modal-mode`);
-    document.body.style.width = `100%`;
+    document.documentElement.classList.remove(`modal-mode`);
     window.scrollTo(0, this.offset);
   }
 }

@@ -1,0 +1,21 @@
+.custom-scroll {
+  scrollbar-color: $color-brand $color-brand-lite;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-brand-lite;
+    border: 3px solid #ffffff;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: $color-brand-lite;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-brand;
+    border: none;
+    border-radius: 2px;
+  }
+}
