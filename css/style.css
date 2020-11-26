@@ -1044,9 +1044,8 @@ img {
 }
 
 .visually-hidden {
-  position: absolute;
-  left: -10000px;
-  clip: rect(0, 0, 0, 0);
+  position: fixed;
+  right: 200vw;
 }
 
 @media screen {
@@ -1093,8 +1092,8 @@ img {
     user-select: none;
   }
   .collapse {
-    position: absolute;
-    left: -10000px;
+    position: fixed;
+    right: 200vw;
     visibility: hidden;
   }
 }
