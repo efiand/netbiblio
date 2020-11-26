@@ -1,7 +1,7 @@
 .collapse {
   @media screen {
-    position: absolute;
-    left: -10000px;
+    position: fixed;
+    right: 200vw;
     visibility: hidden;
   }
 }
@@ -11,9 +11,8 @@
 }
 
 .visually-hidden {
-  position: absolute;
-  left: -10000px;
-  clip: rect(0, 0, 0, 0);
+  position: fixed;
+  right: 200vw;
 
   &--no-mobile {
     @media (max-width: 767px) {
