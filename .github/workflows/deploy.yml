@@ -1,0 +1,27 @@
+name: GitHub Pages deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Install dependencies
+      run: |
+        npm i
+    - name: Run test and build
+      run: |
+        npm run build
+    - name: Deploy to GitHub Pages
+      uses: Cecilapp/GitHub-Pages-deploy@master
+      env:
+        EMAIL: efiand@ya.ru
+        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BUILD_DIR: build
