@@ -20,6 +20,9 @@
   </head>
 
   <body class="page__body">
+    {% if isNewYear %}
+      <div class="page__canvas" id="snow-container" aria-hidden="true"></div>
+    {% endif %}
     <div class="page__inner">
       {% include "source/components/nav/nav.njk" %}
 
@@ -134,6 +137,10 @@
     </div>
 
     {% if not isAmp %}
+      {% if isNewYear %}
+        <script src="/js/snowfall.min.js"></script>
+      {% endif %}
+
       <script src="/js/scripts{{minSuffix}}.js"></script>
     {% endif %}
 

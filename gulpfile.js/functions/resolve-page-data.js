@@ -5,7 +5,8 @@ const { functions } = require(`../store`);
 
 functions.resolvePageData = (filename, funcs, settings) => {
   const date = new Date();
-  const day = funcs.outputWithLeadZero(date.getDate());
+  const dateDay = date.getDate();
+  const day = funcs.outputWithLeadZero(dateDay);
   const month = funcs.outputWithLeadZero(date.getMonth() + 1);
 
   const page = funcs.returnPageName(filename);
@@ -19,7 +20,8 @@ functions.resolvePageData = (filename, funcs, settings) => {
     setTitle(object, value) {
       object.title = value;
     },
-    today: `${day}.${month}.${date.getFullYear()}`
+    today: `${day}.${month}.${date.getFullYear()}`,
+    isNewYear: (month === `12` && dateDay > 24) || (month === `01` && dateDay < 15)
   };
 
   // Авторские страницы - индексные в подкаталогах

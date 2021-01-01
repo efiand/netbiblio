@@ -10,6 +10,8 @@
 }
 
 .page__body {
+  position: relative;
+  z-index: 1;
   min-width: 320px;
   margin: 0;
   overflow-y: scroll;
@@ -17,6 +19,20 @@
 
   @media screen {
     background-color: $color-back;
+  }
+}
+
+.page__canvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  display: none;
+
+  @media screen and (min-width: 1154px) {
+    display: block;
   }
 }
 
