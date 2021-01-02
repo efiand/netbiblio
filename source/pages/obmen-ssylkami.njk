@@ -12,12 +12,20 @@
   <ul class="banners">
     <li class="banners__item">
       <a href="http://stihi.orthodoxy.ru/">
-        <img src="http://stihi.orthodoxy.ru/images/psth1.gif" width="88" height="31" alt="Антология православной поэзии, православный сайт stihi.orthodoxy.ru">
+        {% if isAmp %}
+          <amp-img src="http://stihi.orthodoxy.ru/images/psth1.gif" width="88" height="31" alt="Антология православной поэзии, православный сайт stihi.orthodoxy.ru"></amp-img>
+        {% else %}
+          <img src="http://stihi.orthodoxy.ru/images/psth1.gif" width="88" height="31" alt="Антология православной поэзии, православный сайт stihi.orthodoxy.ru">
+        {% endif %}
       </a>
     </li>
     <li class="banners__item">
       <a href="http://olgabossa.narod.ru/">
-        <img src="http://olgabossa.narod.ru/2.jpg" width="88" height="31" alt="Ольга Босс — личная страничка">
+        {% if isAmp %}
+          <amp-img src="http://olgabossa.narod.ru/2.jpg" width="88" height="31" alt="Ольга Босс — личная страничка"></amp-img>
+        {% else %}
+          <img src="http://olgabossa.narod.ru/2.jpg" width="88" height="31" alt="Ольга Босс — личная страничка">
+        {% endif %}
       </a>
     </li>
   </ul>
