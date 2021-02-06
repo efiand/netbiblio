@@ -10,7 +10,7 @@
   // Классы компонентов
   //=require ../components/**/*.js
 
-  if (snowfall) { // eslint-disable-line
+  if (typeof snowfall !== `undefined`) { // eslint-disable-line
     snowfall.start({ // eslint-disable-line
       bg: `transparent`,
       primary: `#ffffff`,
