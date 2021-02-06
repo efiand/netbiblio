@@ -622,7 +622,7 @@ function _createClass(Constructor, protoProps, staticProps) {
       return Toc;
     }();
   applyClass(".toc", Toc);
-  if (snowfall) {
+  if (typeof snowfall !== "undefined") {
     // eslint-disable-line
     snowfall.start({
       // eslint-disable-line
