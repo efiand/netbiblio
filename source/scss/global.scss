@@ -49,3 +49,11 @@ img {
 @page :right {
   margin: 0.75in 0.62in 1.125in 0.75in;
 }
+
+@media screen and (min-width: 768px) {
+  /* Стили планшета */
+}
+
+@media screen and (min-width: 1154px) {
+  /* Стили десктопа */
+}
