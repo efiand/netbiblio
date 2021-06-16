@@ -12,7 +12,7 @@
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "autoprefixer": "^9.7.4",
-    "browser-sync": "^2.26.13",
+    "browser-sync": "^2.26.14",
     "cross-env": "^5.2.0",
     "del": "^3.0.0",
     "eslint": "^5.16.0",
@@ -64,6 +64,5 @@
     "last 6 version",
     "> 0.2%",
     "not dead"
-  ],
-  "dependencies": {}
+  ]
 }
