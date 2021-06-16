@@ -13,7 +13,9 @@
     <meta name="format-detection" content="address=no">
 
     <title>{{headTitle}}</title>
-    <meta name="description" content="{{pageDescription}}">
+    {% if pageDescription %}
+      <meta name="description" content="{{pageDescription}}">
+    {% endif %}
     <link rel="canonical" href="{{url}}">
 
     {% include "source/layouts/netbiblio/head" + ampSuffix + ".njk" %}

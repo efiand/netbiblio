@@ -20,7 +20,10 @@
 <meta property="og:determiner" content="the">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="{{siteName}}">
-<meta property="og:description" content="{{pageDescription}}">
+{% if pageDescription %}
+  <meta property="og:description" content="{{pageDescription}}">
+{% endif %}
+
 <meta property="og:image" content="/img/{{openGraphImg}}">
 <meta property="og:image:type" content="{{openGraphImgType}}">
 <meta property="og:image:width" content="{{openGraphImgWidth}}">
