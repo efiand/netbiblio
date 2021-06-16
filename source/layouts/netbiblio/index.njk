@@ -38,9 +38,7 @@
     {% endif %}
     {% set headTitle = headTitle + titlePostfix %}
 
-    {% if not pageDescription %}
-      {% set pageDescription = title + titlePostfix + " — публикация бесплатного веб-издательства " + siteName + "." %}
-    {% endif %}
+    {% set pageDescription = title + titlePostfix + " — публикация бесплатного веб-издательства " + siteName + "." %}
   {% else %}
     {% set headTitle = siteName + titleDelimiter + author + titleDelimiter + title %}
   {% endif %}
