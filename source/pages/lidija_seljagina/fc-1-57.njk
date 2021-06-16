@@ -1,8 +1,12 @@
 {% extends template %}
 
-{% set title = "Вдове" %}
+{% set title = "«Соловьиная песня оборвалась в ночи…»" %}
 {% set workdate = "28.05.2012" %}
 {% set pubdate = "05.11.2017" %}
+
+{% block preface %}
+  <p class="art__dedic">Вдове</p>
+{% endblock %}
 
 {% block content %}
   {% filter poem %}
