@@ -9,9 +9,8 @@
 <link rel="prev" href="/{{prev}}.html">
 <link rel="next" href="/{{next}}.html">
 <link rel="publisher" href="{{host}}/index.html">
-<link rel="stylesheet" href="/css/style{{minSuffix}}.css">
-<link rel="preload" href="/css/style{{minSuffix}}.css" as="style">
-<link rel="preload" href="/js/scripts{{minSuffix}}.js" as="script">
+<link rel="stylesheet" href="{{host if page === '404' else ''}}/css/style{{minSuffix}}.css">
+<link rel="preload" href="{{host if page === '404' else ''}}/css/style{{minSuffix}}.css" as="style">
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <meta property="og:title" content="{{headTitle}}">
