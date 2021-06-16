@@ -12,15 +12,16 @@
 {% set headTitle = siteName + titleDelimiter + title %}
 
 {% if pageType === "author" %}
-  {% if nick !== "docs" %}
+  {% if nick === "docs" %}
+    {% set openGraphType = "website" %}
+  {% else %}
     {% set prevTitle = "К предыдущему автору" %}
     {% set nextTitle = "К следующему автору" %}
+    {% set pageDescription = title + " — автор бесплатного веб-издательства " + siteName + "." %}
+    {% set openGraphType = "profile" %}
 
     {# Набор из имени и фамилии #}
     {% set names = title.split(" ") %}
-
-    {% set pageDescription = title + " — автор бесплатного веб-издательства " + siteName + "." %}
-    {% set openGraphType = "profile" %}
   {% endif %}
 
 {% elif pageType === "work" %}
@@ -30,7 +31,9 @@
   {% import "source/pages/" + authorPage + ".njk" as authorParams %}
   {% set author = authorParams.title %}
 
-  {% if nick !== "docs" %}
+  {% if nick === "docs" %}
+    {% set headTitle = siteName + titleDelimiter + author + titleDelimiter + title %}
+  {% else %}
     {# Название и описание страницы с произведением #}
     {% set titlePostfix = " (автор — " + author + ")" %}
     {% if parentTitle %}
@@ -39,8 +42,6 @@
     {% set headTitle = headTitle + titlePostfix %}
 
     {% set pageDescription = title + titlePostfix + " — публикация бесплатного веб-издательства " + siteName + "." %}
-  {% else %}
-    {% set headTitle = siteName + titleDelimiter + author + titleDelimiter + title %}
   {% endif %}
 
   {# Если часть имени после дефиса является числом - страница является частью сборника #}
