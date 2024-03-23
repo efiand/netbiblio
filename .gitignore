@@ -1,0 +1,13 @@
+*.sublime*
+.DS_Store
+.env
+.vercel
+/.svelte-kit
+/build
+.well-known
+Thumbs.db
+__MACOS*/
+logs/
+node_modules
+npm-debug.*
+vscode/

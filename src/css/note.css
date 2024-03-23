@@ -1,0 +1,104 @@
+/* Текст с тултипом внутри */
+/* Примеры разметки: */
+/* <span class="note">поэт<span>Стрельнинский поэт Юрий Инге — прим. авт.</span></span>, */
+/* <abbr class="note">РЖД <span>Российские <a href="//rzd.ru">железные дороги</a></span></abbr> */
+
+.note {
+	position: relative;
+}
+
+.note > span {
+	left: 0;
+	z-index: 3;
+	box-sizing: border-box;
+	text-indent: 0;
+	font-size: 0.75rem;
+	font-family: var(--font-sans-serif);
+	color: var(--color-brand);
+	hyphens: auto;
+	background-color: var(--color-brand-lite);
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	pointer-events: none;
+	cursor: initial;
+}
+
+.note:hover > span,
+.note:focus > span,
+.note:focus-within > span {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.note > span::selection {
+	color: var(--color-paper);
+	background-color: var(--color-brand);
+}
+
+span.note,
+abbr.note {
+	border-bottom: 1px dashed var(--color-brand);
+	cursor: help;
+}
+
+span.note:hover,
+span.note:focus,
+abbr.note:hover,
+abbr.note:focus {
+	color: var(--color-brand);
+}
+
+@media (max-width: 767px) {
+	.note > span {
+		position: fixed;
+		top: 0;
+		width: 100vw;
+		padding: 0.75rem;
+		text-align: center;
+		border-bottom: 1px solid;
+	}
+}
+
+@media (min-width: 768px) {
+	.note > span {
+		position: absolute;
+		bottom: 100%;
+		min-width: 15rem;
+		max-width: 20rem;
+		margin: 0.25rem;
+		padding: 0.5rem 0.75rem;
+		text-align: left;
+		border: 1px solid;
+		border-radius: 0.25rem;
+	}
+
+	.note-right > span {
+		right: 0;
+		left: auto;
+		text-align: right;
+	}
+
+	.note > span::after {
+		/* Для сбережения ховера при смещении от враппера к тултипу */
+		content: " ";
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: 0;
+		height: 0.5rem;
+	}
+}
+
+@media print {
+	.note {
+		position: static;
+	}
+
+	.note > span::before {
+		content: "[";
+	}
+
+	.note > span::after {
+		content: "]";
+	}
+}

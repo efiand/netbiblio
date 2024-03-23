@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model authors {
+  id        Int     @id @default(autoincrement())
+  name      String  @unique @db.VarChar(100)
+  nickname  String  @unique @db.VarChar(50)
+  biography String? @db.Text
+
+  books books[]
+
+  @@index([nickname, name])
+}
+
+model books {
+  id               Int     @id @default(autoincrement())
+  name             String  @unique @db.VarChar(100)
+  title            String  @db.VarChar(500)
+  titleDescription String? @db.VarChar(1000)
+  order            Int?
+
+  authorId Int
+
+  author    authors     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  bookPages bookPages[]
+
+  @@index([title])
+}
+
+model bookPages {
+  id               Int       @id @default(autoincrement())
+  number           Int
+  title            String    @db.VarChar(500)
+  titleDescription String?   @db.VarChar(1000)
+  body             String?   @db.MediumText
+  writeDate        String?   @db.Text
+  writedAt         DateTime?
+  writedIn         String?   @db.Text
+  isPoem           Boolean   @default(false)
+
+  bookId Int
+
+  book          books           @relation(fields: [bookId], references: [id], onDelete: Cascade)
+  bookPageParts bookPageParts[]
+
+  @@unique([bookId, number])
+  @@index([title])
+}
+
+model bookPageParts {
+  id          Int     @id @default(autoincrement())
+  number      Int
+  title       String? @db.VarChar(500)
+  description String? @db.VarChar(1000)
+  content     String  @db.Text
+  signature   String? @db.VarChar(1000)
+  isPoem      Boolean @default(false)
+  isSecondary Boolean @default(false)
+  inRightSide Boolean @default(false)
+  isCite      Boolean @default(false)
+  isCentered  Boolean @default(false)
+
+  bookPageId Int
+
+  bookPage bookPages @relation(fields: [bookPageId], references: [id], onDelete: Cascade)
+
+  @@unique([bookPageId, number])
+}

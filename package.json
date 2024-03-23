@@ -1,0 +1,55 @@
+{
+	"name": "netbiblio",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "cross-env svelte-kit dev",
+		"build": "svelte-kit build",
+		"preview": "svelte-kit preview",
+		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
+		"test": "editorconfig-cli && npm run lint",
+		"postinstall": "npx prisma generate"
+	},
+	"browserslist": [
+		"last 6 version",
+		"not dead",
+		"not IE 11"
+	],
+	"pre-commit": "test",
+	"editorconfig-cli": [
+		"*.js",
+		"src/**/*.js",
+		"src/**/*.svelte",
+		"src/**/*.html",
+		"src/**/*.css"
+	],
+	"dependencies": {
+		"@prisma/client": "3.10.0",
+		"dayjs": "1.10.6",
+		"dotenv": "10.0.0",
+		"express": "4.18.2",
+		"http-status-codes": "2.1.4",
+		"lodash.clonedeep": "4.5.0"
+	},
+	"devDependencies": {
+		"@babel/core": "7.15.8",
+		"@babel/eslint-parser": "7.15.4",
+		"@htmlacademy/editorconfig-cli": "1.0.0",
+		"@sveltejs/adapter-node": "1.0.0-next.55",
+		"@sveltejs/kit": "1.0.0-next.193",
+		"autoprefixer": "10.3.4",
+		"cross-env": "7.0.3",
+		"cross-fetch": "4.0.0",
+		"cssnano": "5.0.8",
+		"eslint": "7.22.0",
+		"eslint-config-prettier": "8.1.0",
+		"eslint-plugin-svelte3": "3.2.0",
+		"postcss-sort-media-queries": "4.1.0",
+		"pre-commit": "1.2.2",
+		"prettier": "2.2.1",
+		"prettier-plugin-svelte": "2.2.0",
+		"prisma": "3.10.0",
+		"svelte": "3.44.1"
+	}
+}

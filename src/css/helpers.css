@@ -1,0 +1,46 @@
+.visually-hidden {
+	position: fixed;
+	transform: scale(0);
+}
+
+.description {
+	margin: 0 0 0.5rem;
+	margin: 0;
+	font-size: 0.8125rem;
+	text-align: center;
+	page-break-after: avoid;
+}
+
+.spaced {
+	letter-spacing: 0.25em;
+}
+
+.error {
+	color: var(--color-error);
+}
+
+h3 + .description {
+	margin-top: -0.5rem;
+}
+
+.buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
+
+.img-link[href],
+.img-link[href]:hover,
+.img-link[href]:active {
+	background-color: transparent;
+	box-shadow: none;
+}
+
+@media screen {
+	.collapse {
+		position: fixed;
+		visibility: hidden;
+		transform: scale(0);
+	}
+}

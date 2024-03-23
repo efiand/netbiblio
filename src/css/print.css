@@ -1,0 +1,71 @@
+@media print {
+	html {
+		font-size: 12pt;
+	}
+
+	#app,
+	#app * {
+		line-height: 1.2rem;
+		font-family: "Times New Roman", serif;
+		color: inherit;
+		background-color: transparent;
+		box-shadow: none;
+	}
+
+	#app main {
+		display: block;
+	}
+
+	#app a {
+		text-decoration: none;
+	}
+
+	#app a[href]::after {
+		content: "[" attr(href) "]";
+		position: static;
+		display: inline;
+		margin-left: 0.25rem;
+		text-decoration: underline;
+	}
+
+	#app a[href^="/"]::after {
+		content: "[netbiblio.ru" attr(href) "]";
+	}
+
+	#app .noprint,
+	#app .button {
+		display: none;
+	}
+
+	#app .note {
+		border: none;
+	}
+
+	#app .note > span {
+		position: static;
+		margin: 0;
+		padding: 0;
+		font: inherit;
+		border: none;
+		opacity: 1;
+	}
+
+	#app .note > span::before {
+		position: static;
+		margin-left: 0.25rem;
+		content: "[";
+	}
+
+	#app .note > span::after {
+		position: static;
+		content: "]";
+	}
+}
+
+@page: left {
+	margin: 0.75in 0.75in 1.125in 0.62in;
+}
+
+@page: right {
+	margin: 0.75in 0.62in 1.125in 0.75in;
+}
